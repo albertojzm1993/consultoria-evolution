@@ -1,0 +1,359 @@
+<title>Proceso de Consultoría · Mapa de Transformación</title>
+<style>
+  :root {
+    --ink:        #16202e;
+    --ink-soft:   #3a4657;
+    --paper:      #f4f2ec;
+    --paper-card: #ffffff;
+    --line:       #d9d4c7;
+    --brass:      #b07f2a;
+    --brass-soft: #e9dcbf;
+    --teal:       #2f6b6b;
+    --muted:      #6a7383;
+    --shadow:     0 1px 2px rgba(22,32,46,.06), 0 8px 24px rgba(22,32,46,.06);
+    --spine:      #c9c2b1;
+    --decision:   #b07f2a;
+    --loop:       #2f6b6b;
+    --serif: "Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink:        #eef1f6;
+      --ink-soft:   #c3cbd8;
+      --paper:      #10151d;
+      --paper-card: #1a212c;
+      --line:       #2b3542;
+      --brass:      #d8ab55;
+      --brass-soft: #3a3220;
+      --teal:       #6bb4b0;
+      --muted:      #8b95a5;
+      --shadow:     0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+      --spine:      #38424f;
+      --decision:   #d8ab55;
+      --loop:       #6bb4b0;
+    }
+  }
+  :root[data-theme="light"] {
+    --ink:#16202e;--ink-soft:#3a4657;--paper:#f4f2ec;--paper-card:#fff;--line:#d9d4c7;
+    --brass:#b07f2a;--brass-soft:#e9dcbf;--teal:#2f6b6b;--muted:#6a7383;
+    --shadow:0 1px 2px rgba(22,32,46,.06),0 8px 24px rgba(22,32,46,.06);
+    --spine:#c9c2b1;--decision:#b07f2a;--loop:#2f6b6b;
+  }
+  :root[data-theme="dark"] {
+    --ink:#eef1f6;--ink-soft:#c3cbd8;--paper:#10151d;--paper-card:#1a212c;--line:#2b3542;
+    --brass:#d8ab55;--brass-soft:#3a3220;--teal:#6bb4b0;--muted:#8b95a5;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+    --spine:#38424f;--decision:#d8ab55;--loop:#6bb4b0;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: clamp(2rem,5vw,4.5rem) clamp(1.1rem,4vw,2rem) 5rem; }
+
+  /* ---- Masthead ---- */
+  .eyebrow {
+    font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--brass); font-weight: 700; margin: 0 0 1rem;
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 600;
+    font-size: clamp(2.1rem,6vw,3.4rem); line-height: 1.05; letter-spacing: -.01em;
+    margin: 0 0 1rem; text-wrap: balance;
+  }
+  .lede {
+    font-size: clamp(1.02rem,2.2vw,1.18rem); color: var(--ink-soft);
+    max-width: 60ch; margin: 0 0 1.6rem;
+  }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; padding-top: 1.2rem;
+    border-top: 1px solid var(--line); font-size: .82rem; color: var(--muted);
+  }
+  .meta b { color: var(--ink); font-weight: 600; }
+  .loop-note {
+    display: inline-flex; align-items: center; gap: .45rem;
+    color: var(--loop); font-weight: 600;
+  }
+  .loop-note::before { content: "↺"; font-size: 1.1em; }
+
+  /* ---- Spine / timeline ---- */
+  .spine { position: relative; margin-top: clamp(2.4rem,6vw,3.6rem); }
+  .spine::before {
+    content: ""; position: absolute; left: 21px; top: 6px; bottom: 40px;
+    width: 2px; background: var(--spine);
+  }
+
+  .phase { position: relative; padding: 0 0 1.15rem 3.85rem; }
+  .node {
+    position: absolute; left: 0; top: 0; width: 44px; height: 44px; border-radius: 50%;
+    display: grid; place-items: center; font-family: var(--serif);
+    font-weight: 600; font-size: 1.15rem; color: var(--ink);
+    background: var(--paper-card); border: 2px solid var(--spine);
+    box-shadow: var(--shadow); z-index: 2;
+  }
+  .phase.decision .node { border-color: var(--decision); color: var(--decision); }
+  .phase.loop .node { border-color: var(--loop); color: var(--loop); }
+
+  .card {
+    background: var(--paper-card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 1.15rem 1.3rem 1.25rem; box-shadow: var(--shadow);
+  }
+  .phase.decision .card { border-color: var(--decision); }
+  .phase.loop .card { border-color: color-mix(in srgb, var(--loop) 55%, var(--line)); }
+
+  .card h2 {
+    font-family: var(--serif); font-weight: 600; font-size: 1.28rem;
+    margin: 0 0 .1rem; letter-spacing: -.01em; text-wrap: balance;
+  }
+  .tag {
+    display: inline-block; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+    font-weight: 700; padding: .16rem .5rem; border-radius: 999px; margin-bottom: .55rem;
+  }
+  .tag.decision { background: var(--brass-soft); color: var(--brass); }
+  .tag.loop { background: color-mix(in srgb, var(--loop) 18%, transparent); color: var(--loop); }
+  .tag.pre { background: color-mix(in srgb, var(--muted) 16%, transparent); color: var(--muted); }
+
+  .obj { color: var(--ink-soft); margin: .1rem 0 .85rem; }
+  .obj b { color: var(--ink); }
+
+  .rows { display: grid; gap: .5rem; }
+  .row { display: grid; grid-template-columns: 96px 1fr; gap: .2rem .9rem; align-items: baseline; }
+  .row .k {
+    font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+    font-weight: 700; color: var(--muted); padding-top: .12rem;
+  }
+  .row .v { font-size: .93rem; color: var(--ink-soft); }
+  .row .v .deliver {
+    display: inline-flex; align-items: baseline; gap: .4rem;
+    font-weight: 600; color: var(--ink);
+  }
+  .row .v .deliver::before { content: "▪"; color: var(--brass); }
+  @media (max-width: 480px) {
+    .row { grid-template-columns: 1fr; gap: .1rem; }
+    .row .k { padding-top: .3rem; }
+  }
+
+  .callout {
+    margin-top: .85rem; padding: .6rem .8rem; border-radius: 8px;
+    font-size: .87rem; line-height: 1.5;
+    background: color-mix(in srgb, var(--decision) 12%, transparent);
+    border-left: 3px solid var(--decision); color: var(--ink-soft);
+  }
+  .phase.loop .callout {
+    background: color-mix(in srgb, var(--loop) 12%, transparent);
+    border-left-color: var(--loop);
+  }
+  .callout b { color: var(--ink); }
+
+  /* ---- Cross-cutting + checklist ---- */
+  .band { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .band h3 {
+    font-family: var(--serif); font-weight: 600; font-size: 1.4rem; margin: 0 0 1rem;
+    letter-spacing: -.01em;
+  }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: .8rem; }
+  .mini {
+    background: var(--paper-card); border: 1px solid var(--line); border-radius: 10px;
+    padding: .9rem 1rem;
+  }
+  .mini h4 { margin: 0 0 .2rem; font-size: .95rem; }
+  .mini p { margin: 0; font-size: .86rem; color: var(--muted); }
+
+  .check { list-style: none; margin: 0; padding: 0; display: grid; gap: .35rem; }
+  .check li {
+    display: flex; align-items: baseline; gap: .65rem; font-size: .93rem; color: var(--ink-soft);
+  }
+  .check li::before {
+    content: ""; flex: 0 0 auto; width: 15px; height: 15px; margin-top: .2rem;
+    border: 2px solid var(--spine); border-radius: 4px;
+  }
+  .check li b { color: var(--ink); font-weight: 600; }
+
+  footer {
+    margin-top: 3rem; padding-top: 1.3rem; border-top: 1px solid var(--line);
+    font-size: .8rem; color: var(--muted); text-align: center;
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Metodología de Consultoría</p>
+    <h1>Mapa de Transformación del Negocio</h1>
+    <p class="lede">Nueve etapas para llevar a una empresa desde el primer contacto hasta la mejora continua. Cada fase produce un entregable concreto y prepara el terreno para la siguiente.</p>
+    <div class="meta">
+      <span><b>9</b> fases · de la 0 a la 8</span>
+      <span class="loop-note">La fase 8 realimenta el Diagnóstico</span>
+      <span>El cliente decide en la <b>Fase 4</b></span>
+    </div>
+  </header>
+
+  <div class="spine">
+
+    <!-- 0 -->
+    <section class="phase">
+      <div class="node">0</div>
+      <div class="card">
+        <span class="tag pre">Previa · Comercial</span>
+        <h2>Contacto y Encaje</h2>
+        <p class="obj"><b>Objetivo:</b> confirmar que hay un problema real, presupuesto y química antes de empezar.</p>
+        <div class="rows">
+          <div class="row"><span class="k">Hago</span><span class="v">Llamada de descubrimiento, defino alcance y forma de trabajo, firmo propuesta + NDA.</span></div>
+          <div class="row"><span class="k">Pregunto</span><span class="v">¿Qué les duele? ¿Por qué ahora? ¿Quién decide y quién paga?</span></div>
+          <div class="row"><span class="k">Entrego</span><span class="v"><span class="deliver">Propuesta aceptada + contrato / NDA firmado</span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1 -->
+    <section class="phase">
+      <div class="node">1</div>
+      <div class="card">
+        <h2>Perfil Maestro del Negocio</h2>
+        <p class="obj"><b>Objetivo:</b> comprender quién es la empresa.</p>
+        <div class="rows">
+          <div class="row"><span class="k">Hago</span><span class="v">Recojo identidad (misión, valores, historia), modelo de negocio y contexto de mercado.</span></div>
+          <div class="row"><span class="k">Pregunto</span><span class="v">¿A qué se dedican de verdad? ¿Cuál es su propuesta de valor? ¿Quién es su cliente ideal?</span></div>
+          <div class="row"><span class="k">Entrego</span><span class="v"><span class="deliver">Ficha “Perfil Maestro” (dossier de la empresa)</span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="phase">
+      <div class="node">2</div>
+      <div class="card">
+        <h2>Auditoría 360º</h2>
+        <p class="obj"><b>Objetivo:</b> analizar el estado actual con datos, sin opinar todavía.</p>
+        <div class="rows">
+          <div class="row"><span class="k">Hago</span><span class="v">Reviso seis áreas: Comercial, Marketing, Operaciones, Finanzas, Personas y Tecnología / Datos.</span></div>
+          <div class="row"><span class="k">Pregunto</span><span class="v">¿Qué pasa de verdad (no lo que creen)? ¿Dónde están los datos? ¿Qué funciona y qué no?</span></div>
+          <div class="row"><span class="k">Entrego</span><span class="v"><span class="deliver">Informe de Auditoría 360º (fotografía objetiva)</span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="phase">
+      <div class="node">3</div>
+      <div class="card">
+        <h2>Diagnóstico Estratégico</h2>
+        <p class="obj"><b>Objetivo:</b> identificar problemas raíz y oportunidades interpretando la auditoría.</p>
+        <div class="rows">
+          <div class="row"><span class="k">Hago</span><span class="v">Cruzo hallazgos, separo síntomas de causas raíz y priorizo por impacto/urgencia (DAFO, gap analysis).</span></div>
+          <div class="row"><span class="k">Pregunto</span><span class="v">¿Cuál es el problema detrás del problema? ¿Qué tres cosas cambian todo? ¿Dónde está el dinero sobre la mesa?</span></div>
+          <div class="row"><span class="k">Entrego</span><span class="v"><span class="deliver">Diagnóstico Estratégico (causas + oportunidades priorizadas)</span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="phase decision">
+      <div class="node">4</div>
+      <div class="card">
+        <span class="tag decision">◀ El cliente decide aquí</span>
+        <h2>Briefing Estratégico</h2>
+        <p class="obj"><b>Objetivo:</b> presentar todas las líneas de mejora posibles y su impacto, para que el cliente elija.</p>
+        <div class="rows">
+          <div class="row"><span class="k">Hago</span><span class="v">Traduzco el diagnóstico en líneas de mejora con impacto, esfuerzo, coste y riesgo. Presento escenarios mínimo / recomendado / ambicioso.</span></div>
+          <div class="row"><span class="k">Pregunto</span><span class="v">¿Qué gana con cada línea? ¿Qué pasa si no hace nada? ¿Qué está dispuesto a invertir?</span></div>
+          <div class="row"><span class="k">Entrego</span><span class="v"><span class="deliver">Briefing + decisión firmada del cliente</span></span></div>
+        </div>
+        <div class="callout"><b>Bisagra del proyecto.</b> No avances a la Fase 5 sin una elección explícita y firmada del cliente.</div>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="phase">
+      <div class="node">5</div>
+      <div class="card">
+        <h2>Motor de Estrategia Empresarial</h2>
+        <p class="obj"><b>Objetivo:</b> convertir los objetivos elegidos en un conjunto coherente de iniciativas.</p>
+        <div class="rows">
+          <div class="row"><span class="k">Hago</span><span class="v">Razono <i>objetivo → capacidad necesaria → iniciativa</i>. Verifico que no se contradicen y defino su KPI.</span></div>
+          <div class="row"><span class="k">Pregunto</span><span class="v">¿Esta iniciativa sirve al objetivo? ¿Se pisan entre ellas? ¿Cómo sabremos que funcionó?</span></div>
+          <div class="row"><span class="k">Entrego</span><span class="v"><span class="deliver">Catálogo de Iniciativas (objetivo → capacidad → iniciativa → KPI)</span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section class="phase">
+      <div class="node">6</div>
+      <div class="card">
+        <h2>Plan Director de Transformación</h2>
+        <p class="obj"><b>Objetivo:</b> definir el camino estratégico agrupando iniciativas en <b>fases de madurez</b> (no de tiempo).</p>
+        <div class="rows">
+          <div class="row"><span class="k">Hago</span><span class="v">Fijo madurez actual y destino. Agrupo por capacidad y secuencio para que cada fase desbloquee la siguiente: cimientos → optimizar → digitalizar → automatizar → escalar → IA.</span></div>
+          <div class="row"><span class="k">Pregunto</span><span class="v">¿Qué va primero y por qué? ¿Qué victorias tempranas generan confianza? ¿Qué desbloquea cada fase?</span></div>
+          <div class="row"><span class="k">Entrego</span><span class="v"><span class="deliver">Plan Director (camino por fases de madurez, para Dirección)</span></span></div>
+        </div>
+        <div class="callout" style="background:color-mix(in srgb,var(--muted) 12%,transparent);border-left-color:var(--muted)">Aquí <b>no</b> hay cronograma, tareas ni presupuesto. Eso pertenece a la Fase 7.</div>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="phase">
+      <div class="node">7</div>
+      <div class="card">
+        <h2>Plan de Implantación</h2>
+        <p class="obj"><b>Objetivo:</b> detallar tareas, responsables, dependencias y cronograma.</p>
+        <div class="rows">
+          <div class="row"><span class="k">Hago</span><span class="v">Desgloso iniciativas en tareas accionables, asigno responsable (RACI), fechas, dependencias e hitos (Gantt / tablero).</span></div>
+          <div class="row"><span class="k">Pregunto</span><span class="v">¿Quién hace qué y para cuándo? ¿Qué bloquea a qué? ¿Cómo se ve “hecho”?</span></div>
+          <div class="row"><span class="k">Entrego</span><span class="v"><span class="deliver">Plan de Implantación (tareas + responsables + calendario)</span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section class="phase loop">
+      <div class="node">8</div>
+      <div class="card">
+        <span class="tag loop">↺ Bucle continuo</span>
+        <h2>Seguimiento y Optimización</h2>
+        <p class="obj"><b>Objetivo:</b> medir resultados, revisar KPIs y proponer mejoras continuas.</p>
+        <div class="rows">
+          <div class="row"><span class="k">Hago</span><span class="v">Reuniones periódicas, cuadro de mando de KPIs vs objetivos, y ajusto el plan según los datos.</span></div>
+          <div class="row"><span class="k">Pregunto</span><span class="v">¿Vamos según lo previsto? ¿Qué KPI se ha movido? ¿Qué corregir o duplicar?</span></div>
+          <div class="row"><span class="k">Entrego</span><span class="v"><span class="deliver">Informe de seguimiento + cuadro de mando actualizado</span></span></div>
+        </div>
+        <div class="callout"><b>Cierra el círculo.</b> Cada revisión es un micro-diagnóstico que realimenta la Fase 3. El proceso no termina, se optimiza.</div>
+      </div>
+    </section>
+
+  </div><!-- /spine -->
+
+  <div class="band">
+    <h3>Elementos transversales</h3>
+    <div class="grid2">
+      <div class="mini"><h4>Gobernanza</h4><p>Quién decide, cada cuánto nos reunimos y cómo se aprueban los cambios.</p></div>
+      <div class="mini"><h4>Comunicación</h4><p>Un único punto de contacto, actas de reunión e informes claros.</p></div>
+      <div class="mini"><h4>Documentación</h4><p>Cada fase deja un entregable escrito y fechado.</p></div>
+      <div class="mini"><h4>Gestión del cambio</h4><p>Las personas de la empresa tienen que querer el cambio, no solo la dirección.</p></div>
+    </div>
+  </div>
+
+  <div class="band">
+    <h3>Checklist de avance</h3>
+    <ul class="check">
+      <li><b>0.</b>&nbsp;Propuesta y NDA firmados</li>
+      <li><b>1.</b>&nbsp;Perfil Maestro completo</li>
+      <li><b>2.</b>&nbsp;Auditoría 360º entregada</li>
+      <li><b>3.</b>&nbsp;Diagnóstico validado internamente</li>
+      <li><b>4.</b>&nbsp;Briefing presentado y decisión del cliente firmada</li>
+      <li><b>5.</b>&nbsp;Catálogo de iniciativas con KPIs</li>
+      <li><b>6.</b>&nbsp;Plan Director por fases de madurez aprobado</li>
+      <li><b>7.</b>&nbsp;Plan de implantación con responsables</li>
+      <li><b>8.</b>&nbsp;Cuadro de mando activo y primera revisión hecha</li>
+    </ul>
+  </div>
+
+  <footer>Mapa de Transformación del Negocio · metodología de consultoría en 9 fases</footer>
+</div>

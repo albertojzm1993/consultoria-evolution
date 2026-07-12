@@ -1,0 +1,17 @@
+FOTOS DE LA LANDING DE MUNAY
+============================
+
+Suelta aquí estos archivos (mismo nombre) y aparecerán solos en la landing.
+Mientras no estén, se ven placeholders elegantes; no rompe nada.
+
+  logo.png        -> El logo real de Munay (mejor PNG con fondo transparente).
+                     Va en la cabecera, la localización y el pie.
+  nosotras.jpg    -> Foto de Ruth y Sabrina (la del salón, las dos juntas).
+  trabajo-1.jpg   -> Un trabajo real (color / mechas).
+  trabajo-2.jpg   -> Un recogido / peinado.
+  trabajo-3.jpg   -> Keratina / melena con brillo.
+  trabajo-4.jpg   -> El salón por dentro (ambiente).
+
+De dónde sacarlas: del Instagram público @munay_hairsalon o de sus stories/reels.
+Formato: JPG o PNG. Ideal apaisado/vertical según el hueco (las de trabajo son
+verticales 3:4; la de Nosotras, apaisada o vertical, se recorta sola).

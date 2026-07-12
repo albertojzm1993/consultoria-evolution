@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "cliente": "Clínica Dental Sonría",
+    "sector": "clínica dental",
+    "version": "1.0.0",
+    "fecha": "2026-07-07",
+    "idioma_principal": "es"
+  },
+  "verbal": {
+    "mision": "Devolver a cada persona la confianza de sonreír sin miedo al dentista.",
+    "vision": "Ser la clínica de referencia en trato humano de nuestra ciudad para 2028.",
+    "valores": [
+      "Explicamos cada tratamiento antes de tocar nada.",
+      "Presupuesto cerrado por escrito, sin sorpresas.",
+      "Puntualidad: respetamos tu tiempo con cita a hora fija."
+    ],
+    "propuesta_valor": "Odontología sin miedo, con precios claros y trato de tú a tú.",
+    "personalidad": ["cercana", "tranquilizadora", "experta", "transparente"],
+    "arquetipo": "El Cuidador",
+    "tono": {
+      "somos": ["claros", "cálidos", "tranquilizadores"],
+      "no_somos": ["fríos", "técnicos en exceso", "comerciales agresivos"],
+      "reglas": [
+        "Tuteamos siempre al paciente.",
+        "Frases de menos de 20 palabras; cero tecnicismos sin explicar.",
+        "Nunca prometemos resultados garantizados (línea roja legal).",
+        "Hablamos de 'inversión en tu salud', no de 'precio barato'."
+      ]
+    },
+    "mensajes_clave": [
+      "Sabrás siempre qué te vamos a hacer y cuánto cuesta.",
+      "Aquí no se juzga: cuidamos, no regañamos.",
+      "Tecnología puntera al servicio de tu tranquilidad."
+    ],
+    "tagline": "Sonríe sin miedo.",
+    "palabras_prohibidas": ["barato", "low cost", "chollo", "oferta agresiva"],
+    "glosario": { "cita": "sesión", "precio": "inversión", "cliente": "paciente" }
+  },
+  "color": {
+    "primary":   { "hex": "#0E7C86", "on": "#FFFFFF" },
+    "secondary": { "hex": "#0A2A3B", "on": "#FFFFFF" },
+    "accent":    { "hex": "#F4A259", "on": "#0A0A0A" },
+    "neutral": {
+      "ink": "#0A1417", "body": "#334047", "muted": "#6B7A80",
+      "line": "#E2E8EA", "surface": "#FFFFFF", "bg": "#F5F9F9"
+    },
+    "state": { "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626" },
+    "dark": {
+      "bg": "#081416", "surface": "#0F2226", "ink": "#F1FAFA",
+      "body": "#C7D6D8", "line": "#1E3A3F"
+    }
+  },
+  "typography": {
+    "heading": { "family": "Poppins", "fallback": "system-ui, sans-serif", "weights": [600, 700], "google_font": true },
+    "body": { "family": "Inter", "fallback": "system-ui, sans-serif", "weights": [400, 500], "google_font": true },
+    "scale": { "h1": "3.0", "h2": "2.25", "h3": "1.75", "h4": "1.25", "body": "1.0", "small": "0.875" },
+    "line_height": { "heading": 1.15, "body": 1.6 },
+    "letter_spacing_headings": "-0.02em"
+  },
+  "geometry": {
+    "radius": { "sm": "6px", "md": "12px", "lg": "20px", "pill": "9999px" },
+    "spacing_base": "8px",
+    "container_max": "1160px",
+    "shadow": {
+      "sm": "0 1px 2px rgba(0,0,0,.06)",
+      "md": "0 8px 24px rgba(10,42,59,.10)",
+      "lg": "0 24px 60px rgba(10,42,59,.16)"
+    },
+    "border_width": "1px"
+  },
+  "imagery": {
+    "estilo_foto": "luminoso y real, luz natural, pacientes reales sonriendo con naturalidad, nada de stock genérico",
+    "estilo_ilustracion": "líneas finas en primario y acento",
+    "iconos": "Lucide (outline, 1.5px)",
+    "prompt_ia_base": "fotografía luminosa y natural de clínica dental moderna, luz de día suave, tonos turquesa y arena acordes a la marca, personas reales, ambiente tranquilo y limpio, composición con espacio negativo"
+  },
+  "logo": {
+    "principal": "assets/logo.svg",
+    "isotipo": "assets/isotipo.svg",
+    "favicon": "assets/favicon.svg",
+    "clearspace": "Altura de la 'o' de Sonría",
+    "min_size_px": 24,
+    "usos_incorrectos": ["no deformar", "no rotar", "no añadir sombras", "no sobre fondos sin contraste"]
+  },
+  "social": {
+    "instagram": "", "facebook": "", "linkedin": "",
+    "tiktok": "", "youtube": "", "whatsapp": ""
+  },
+  "contacto": {
+    "empresa": "Clínica Dental Sonría", "telefono": "", "email": "",
+    "direccion": "", "google_maps_place_id": "", "horario": ""
+  }
+}

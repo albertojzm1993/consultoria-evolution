@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "cliente": "M8",
+    "sector": "movimiento consciente y salud postural",
+    "version": "1.0.0",
+    "fecha": "2026-07-09",
+    "idioma_principal": "es",
+    "nota": "Fuente de verdad DEFINITIVA de la marca M8, derivada de la identidad ya aplicada en la landing (index-v2): rosa fresco + verde bosque + blanco + texto negro, tipografías Calistoga (titulares) + Hanken Grotesk (texto). El rosa fresco (primary) lleva SIEMPRE texto negro encima; para texto rosa pequeño sobre blanco se usa el rosa profundo (primary_text). Sustituye a la v0.4.0-provisional."
+  },
+  "verbal": {
+    "mision": "Ayudar a cada persona a recuperar y mantener un cuerpo que funcione: móvil, fuerte y sin dolor, enseñándole a moverse con consciencia y de forma segura, progresiva y adaptada a ella.",
+    "vision": "Crecer hacia un espacio de acompañamiento holístico que una la actividad física de calidad con el trabajo emocional y de consciencia (coaching, Terapia TRI y Reiki), ayudando a las personas de forma integral: cuerpo, mente y emoción.",
+    "valores": ["Movimiento", "Consciencia corporal", "Salud", "Cercanía", "Aprendizaje", "Bienestar"],
+    "propuesta_valor": "No te enseñamos a hacer ejercicio: te enseñamos a mover tu cuerpo para que vuelva a funcionar como debería.",
+    "personalidad": ["cercana", "humana", "profesional", "serena", "consciente", "cuidadora"],
+    "arquetipo": "El Cuidador (con matiz de Sabio)",
+    "tono": {
+      "somos": ["cercano", "pausado", "didáctico", "humano", "inspirador"],
+      "no_somos": ["competitivo", "agresivo", "puramente técnico", "comercial agresivo"],
+      "reglas": [
+        "Hablar del beneficio de la persona, no del ejercicio.",
+        "Tono cálido y de tú a tú; nunca militar ni de 'sufrimiento'.",
+        "Evitar promesas estéticas o de rendimiento rápido."
+      ]
+    },
+    "mensajes_clave": [
+      "Aprende a mover tu cuerpo, no solo a ejercitarlo.",
+      "Menos dolor, más movilidad y equilibrio.",
+      "Un método consciente para cuerpo y mente.",
+      "Guiado por Ana Moliner, gimnasta profesional.",
+      "No es un gimnasio: es armonía en el movimiento."
+    ],
+    "tagline": "Movimiento consciente para un cuerpo que funciona",
+    "palabras_prohibidas": ["culturismo", "cuerpo 10", "ponte cachas", "quema grasa", "sacrificio", "competición", "sin dolor no hay gloria", "gimnasio"],
+    "glosario": {
+      "M de Moviment": "Significado del nombre M8; escribir así, no 'M ocho'.",
+      "Bungee Postural": "Nombre propio de la actividad estrella; siempre en mayúsculas iniciales.",
+      "Ana Moliner": "Propietaria y cara de la marca, gimnasta profesional."
+    }
+  },
+  "color": {
+    "_paleta": "Rosa fresco + verde bosque + blanco + texto negro, con verde lima (#9CDB2B) como acento fresco y energético (pedido por la clienta, jul-2026). Valores tomados de la landing (index-v2).",
+    "primary":      { "hex": "#EC44A8", "on": "#151515", "_uso": "rosa fresco; CTA y rellenos con TEXTO NEGRO encima" },
+    "primary_text": { "hex": "#D0328E", "on": "#FFFFFF", "_uso": "rosa profundo para TEXTO rosa sobre blanco (AA), eyebrows y hover" },
+    "secondary":    { "hex": "#2E5D39", "on": "#FFFFFF", "_uso": "verde bosque; secciones oscuras y CTA secundario" },
+    "accent":       { "hex": "#FCE8F4", "on": "#151515", "_uso": "rosa muy claro para fondos suaves de sección" },
+    "extra":        { "pink_bright": "#F58FD0", "green_soft": "#EDF3E4", "sage": "#7FA36B", "sage_light": "#C9DCA6", "green_deep": "#244A2E", "lime": "#9CDB2B" },
+    "_lime_uso":    "Verde lima vivo (#9CDB2B): acento fresco/energético; en la landing tiñe los fondos de sección (Holístico, Cómo funciona). Siempre con TEXTO OSCURO (ink) encima; no usar para texto pequeño sobre blanco.",
+    "neutral": { "ink": "#151515", "body": "#34383A", "muted": "#7C8080",
+                 "line": "#ECEAEA", "surface": "#FFFFFF", "bg": "#FFFFFF" },
+    "state": { "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626" },
+    "dark": { "bg": "#244A2E", "surface": "#2E5D39", "ink": "#FFFFFF",
+              "body": "#DCE8DC", "line": "#3D6048" }
+  },
+  "typography": {
+    "heading": { "family": "Calistoga", "fallback": "Georgia, 'Times New Roman', serif", "weights": [400], "google_font": true },
+    "body":    { "family": "Hanken Grotesk", "fallback": "system-ui, -apple-system, sans-serif", "weights": [400,500,600,700], "google_font": true },
+    "scale": { "h1": "3.0", "h2": "2.25", "h3": "1.75", "h4": "1.25", "body": "1.0", "small": "0.875" },
+    "line_height": { "heading": 1.1, "body": 1.65 },
+    "letter_spacing_headings": "-0.01em"
+  },
+  "geometry": {
+    "radius": { "sm": "12px", "md": "18px", "lg": "26px", "pill": "9999px" },
+    "spacing_base": "8px", "container_max": "1160px",
+    "shadow": { "sm": "0 1px 2px rgba(21,21,21,.06)", "md": "0 10px 30px rgba(36,74,46,.10)", "lg": "0 28px 70px rgba(36,74,46,.18)" },
+    "border_width": "1px"
+  },
+  "imagery": {
+    "estilo_foto": "Fotografía real, luz natural, cuerpos en movimiento; estudio con espejos, suelo oscuro y plantas, o exteriores (playa, duna, montaña). Ana como protagonista. Tono humano y sereno, nada estridente.",
+    "estilo_ilustracion": "Trazo fino, orgánico; el colibrí como símbolo recurrente.",
+    "iconos": "Lucide (outline, 1.5px)",
+    "prompt_ia_base": "Warm, natural-light photography of a woman 35-60 practicing conscious postural movement in a bright studio with mirrors and plants, or outdoors; calm, human, serene mood; fresh pink and forest green brand accents; no gym-machine aesthetic, no competitive vibe"
+  },
+  "logo": { "principal": "assets/logo.svg", "isotipo": "assets/isotipo.svg", "favicon": "assets/favicon.svg",
+            "inverso": "assets/logo-m8-blanco.png", "isotipo_inverso": "assets/logo-colibri-blanco.png",
+            "simbolo": "colibrí", "clearspace": "Altura de la X del logo", "min_size_px": 24, "usos_incorrectos": ["no deformar","no rotar","no sombras","no cambiar los colores de marca"] },
+  "social": { "instagram": "https://www.instagram.com/volarenlibertad/", "instagram_antiguo": "https://www.instagram.com/m8anamoliner/", "facebook": "", "linkedin": "", "tiktok": "", "youtube": "https://www.youtube.com/@anamoliner1701", "whatsapp": "34658089112" },
+  "contacto": { "empresa": "M8 (M de Moviment)", "razon_social": "M8MOLINER, SL", "telefono": "658089112", "email": "m8anamoliner@gmail.com", "direccion": "Carrer de Lo Gaiter del Llobregat, 74, Loc 3, 08820 El Prat de Llobregat, Barcelona", "google_maps_place_id": "", "horario": "" }
+}

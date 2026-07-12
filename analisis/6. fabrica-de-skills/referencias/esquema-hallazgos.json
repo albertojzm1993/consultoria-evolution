@@ -1,0 +1,32 @@
+{
+  "cliente": "nombre-cliente",
+  "fecha": "2026-07-07",
+  "origen": "auditoria | diagnostico | peticion-cliente | manual",
+  "hallazgos": [
+    {
+      "id": "SEO-01",
+      "area": "SEO",
+      "titulo": "Meta descripciones ausentes en páginas clave",
+      "evidencia": "12 de 18 páginas del sitio no tienen meta description.",
+      "impacto": "Menor CTR en buscadores y pérdida de tráfico orgánico cualificado.",
+      "recomendacion": "Redactar meta descripciones optimizadas (150-160 caracteres) para las 18 páginas.",
+      "prioridad": "importante",
+      "dificultad": "baja",
+      "tipo_servicio": "seo",
+      "entregable_esperado": "Documento con las 18 meta descripciones listas para pegar en el gestor web.",
+      "pedido_por_cliente": false
+    }
+  ],
+
+  "_leyenda": {
+    "prioridad": ["critico", "importante", "recomendable"],
+    "dificultad": ["baja", "media", "alta"],
+    "tipo_servicio": [
+      "seo", "seo-local", "copywriting", "rendimiento-web", "ux-conversion",
+      "redes-sociales", "publicidad", "email-marketing", "reputacion",
+      "automatizacion", "chatbot", "analitica", "branding", "captacion",
+      "generico"
+    ],
+    "pedido_por_cliente": "true si el cliente lo pidió explícitamente; influye en prioridad de ejecución"
+  }
+}

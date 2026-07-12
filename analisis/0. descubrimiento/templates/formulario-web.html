@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cuéntanos tu negocio · Evolution 360</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0E2A47; --navy2:#0A1E35; --green:#10B981; --green-mid:#34D399;
+    --green-text:#0A6E50; --ink:#0B1220; --body:#3F4652; --muted:#71767F;
+    --line:#E5E8EC; --soft:#EAF0F7; --green-soft:#E7F7F1;
+    --amber:#D97706; --blue:#2E6FB0; --bg:#F6F8FB;
+    --fh:'Poppins',system-ui,sans-serif; --fb:'Inter',system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:var(--fb); color:var(--body); background:var(--bg); font-size:16px; line-height:1.55; }
+  h1,h2,h3{ font-family:var(--fh); color:var(--navy); letter-spacing:-.02em; margin:0; }
+  a{ color:var(--green-text); }
+
+  /* HERO */
+  .hero{ background:radial-gradient(120% 90% at 88% 10%, #163a5e 0%, var(--navy) 48%, var(--navy2) 100%); color:#fff; padding:40px 22px 44px; position:relative; overflow:hidden; }
+  .hero::after{ content:""; position:absolute; right:-120px; bottom:-150px; width:420px; height:420px; border:40px solid rgba(52,211,153,.10); border-radius:50%; }
+  .wrap{ max-width:760px; margin:0 auto; position:relative; z-index:2; }
+  .hero__logo{ width:190px; height:auto; margin-bottom:34px; }
+  .hero__tag{ display:inline-block; font-weight:600; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--green-mid); border:1px solid rgba(52,211,153,.4); border-radius:999px; padding:6px 14px; margin-bottom:16px; }
+  .hero__tag b{ font-weight:700; color:#EAFBF4; }
+  .closing{ margin-top:34px; padding:34px 28px; background:linear-gradient(160deg,#fff 0%, var(--green-soft) 100%); border:1px solid #C7EADD; border-radius:18px; text-align:center; }
+  .closing__k{ font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:12px; color:var(--green-text); }
+  .closing__t{ font-size:24px; color:var(--navy); margin:8px 0 12px; }
+  .closing__p{ color:var(--body); font-size:16px; max-width:30rem; margin:0 auto 24px; }
+  .closing__logo{ width:210px; height:auto; }
+  .hero__title{ color:#fff; font-size:34px; line-height:1.08; font-weight:700; margin:0 0 12px; }
+  .hero__title span{ color:var(--green-mid); }
+  .hero__sub{ color:#C7D6E6; font-size:17px; max-width:34rem; }
+
+  main{ max-width:760px; margin:0 auto; padding:26px 22px 140px; }
+  .intro p{ margin:0 0 12px; }
+  .notes{ list-style:none; margin:14px 0 0; padding:0; }
+  .notes li{ position:relative; padding:12px 14px 12px 42px; background:#fff; border:1px solid var(--line); border-radius:12px; margin-bottom:9px; color:var(--ink); }
+  .notes li::before{ content:""; position:absolute; left:16px; top:16px; width:13px; height:13px; border-radius:50%; background:var(--green); box-shadow:0 0 0 3px var(--green-soft); }
+  .notes b{ color:var(--navy); }
+  .legend{ display:flex; flex-wrap:wrap; gap:10px 20px; margin:16px 0 4px; padding:13px 16px; background:#fff; border:1px solid var(--line); border-radius:12px; font-size:14px; }
+  .legend span{ display:inline-flex; align-items:center; gap:8px; }
+  .tier{ display:inline-block; width:10px; height:10px; border-radius:50%; flex:0 0 auto; }
+  .tier--e{ background:var(--green); } .tier--r{ background:var(--amber); } .tier--o{ background:var(--blue); }
+
+  /* PARTES Y BLOQUES */
+  .part{ margin:34px 0 4px; padding-bottom:12px; border-bottom:2px solid var(--navy); }
+  .part__k{ font-weight:600; letter-spacing:.14em; text-transform:uppercase; font-size:12px; color:var(--green-text); }
+  .part__t{ font-size:26px; margin:5px 0 3px; }
+  .part__d{ color:var(--muted); font-style:italic; margin:0; }
+
+  .block{ background:#fff; border:1px solid var(--line); border-radius:16px; padding:20px 20px 8px; margin-top:18px; box-shadow:0 1px 2px rgba(10,30,53,.04); }
+  .block__head{ display:flex; align-items:center; gap:12px; }
+  .block__num{ flex:0 0 auto; width:32px; height:32px; border-radius:50%; background:var(--navy); color:#fff; font-family:var(--fh); font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .block__title{ font-size:19px; }
+  .block__lead{ font-size:14px; color:var(--muted); font-style:italic; margin:10px 0 0; }
+
+  .q{ margin:16px 0; }
+  .q__label{ display:flex; align-items:flex-start; gap:9px; margin:0 0 7px; color:var(--ink); font-weight:600; font-size:15px; }
+  .q__label .tier{ margin-top:5px; }
+  .hint{ display:block; font-weight:400; font-style:italic; color:var(--muted); font-size:13px; margin-top:2px; }
+  input[type=text], textarea{ width:100%; font-family:var(--fb); font-size:15px; color:var(--ink); background:#fff; border:1.5px solid var(--line); border-radius:10px; padding:11px 13px; transition:border-color .15s, box-shadow .15s; }
+  input[type=text]:focus, textarea:focus{ outline:none; border-color:var(--green); box-shadow:0 0 0 3px var(--green-soft); }
+  textarea{ min-height:78px; resize:vertical; }
+
+  .opts{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:9px; margin-top:4px; }
+  .opt{ display:flex; align-items:center; gap:10px; padding:10px 12px; border:1.5px solid var(--line); border-radius:10px; cursor:pointer; font-size:15px; color:var(--ink); user-select:none; }
+  .opt:hover{ border-color:var(--green-mid); }
+  .opt input{ accent-color:var(--green); width:17px; height:17px; }
+  .opt.sel{ border-color:var(--green); background:var(--green-soft); }
+
+  .magic{ border:1.5px solid var(--green); background:linear-gradient(120deg,#fff, var(--green-soft)); }
+  .magic .block__title{ color:var(--navy); }
+
+  /* BARRA INFERIOR */
+  .bar{ position:fixed; left:0; right:0; bottom:0; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); border-top:1px solid var(--line); padding:12px 22px; z-index:20; }
+  .bar__in{ max-width:760px; margin:0 auto; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .prog{ flex:1 1 180px; min-width:150px; }
+  .prog__t{ font-size:13px; color:var(--muted); margin-bottom:5px; }
+  .prog__t b{ color:var(--navy); }
+  .prog__bar{ height:8px; background:var(--soft); border-radius:99px; overflow:hidden; }
+  .prog__fill{ height:100%; width:100%; transform:scaleX(0); transform-origin:left; background:linear-gradient(90deg,var(--navy),var(--green)); border-radius:99px; transition:transform .3s; }
+  .btn{ font-family:var(--fb); font-weight:600; font-size:15px; border:none; border-radius:11px; padding:12px 20px; cursor:pointer; }
+  .btn--go{ background:var(--green); color:#04231A; }
+  .btn--go:hover{ background:var(--green-mid); }
+  .btn--ghost{ background:transparent; color:var(--navy); border:1.5px solid var(--line); }
+  .btn--ghost:hover{ border-color:var(--navy); }
+
+  /* MODAL SALIDA */
+  .modal{ position:fixed; inset:0; background:rgba(10,30,53,.55); display:none; align-items:center; justify-content:center; padding:20px; z-index:40; }
+  .modal.open{ display:flex; }
+  .card{ background:#fff; border-radius:18px; max-width:640px; width:100%; max-height:88vh; overflow:auto; padding:26px; }
+  .card h3{ font-size:21px; margin-bottom:6px; }
+  .card p{ margin:0 0 14px; color:var(--body); font-size:15px; }
+  .out{ width:100%; min-height:220px; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:13px; border:1.5px solid var(--line); border-radius:12px; padding:14px; color:var(--ink); background:var(--bg); }
+  .card__actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+  .toast{ position:fixed; bottom:96px; left:50%; transform:translateX(-50%); background:var(--navy); color:#fff; padding:11px 20px; border-radius:99px; font-size:14px; font-weight:600; opacity:0; transition:opacity .25s; z-index:60; pointer-events:none; }
+  .toast.show{ opacity:1; }
+  .foot{ text-align:center; color:var(--muted); font-size:13px; margin-top:30px; }
+
+  @media (max-width:560px){ .hero__title{ font-size:28px; } .part__t{ font-size:22px; } .block{ padding:16px 15px 6px; } }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <svg class="hero__logo" viewBox="0 0 430 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Evolution 360">
+        <defs><linearGradient id="evo" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#8FB0D6"/><stop offset="1" stop-color="#34D399"/></linearGradient></defs>
+        <g transform="translate(6,13) scale(0.74)"><path d="M34 22.3 A32 32 0 1 1 60.9 19.9" fill="none" stroke="url(#evo)" stroke-width="10" stroke-linecap="round"/><circle cx="60.9" cy="19.9" r="5.2" fill="#34D399"/></g>
+        <text x="94" y="64" font-family="Poppins, system-ui, sans-serif" font-size="45" font-weight="600" letter-spacing="-1" fill="#FFFFFF">Evolution<tspan fill="#34D399" font-weight="700"> 360</tspan></text>
+      </svg>
+      <div class="hero__tag">El primer paso · <b>Descubrimiento</b></div>
+      <h1 class="hero__title">Cuéntanos tu <span>negocio</span></h1>
+      <p class="hero__sub">Antes de proponerte nada, queremos entenderlo de verdad. Esta es la forma más rápida de que nos lo cuentes con tus palabras.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p>Tres cosas antes de empezar:</p>
+      <ul class="notes">
+        <li><b>No hay respuestas correctas ni incorrectas.</b> Queremos tu punto de vista, no un examen.</li>
+        <li><b>Rellena solo lo que puedas.</b> Lo que no sepas, déjalo en blanco: lo completamos nosotros. No necesitas datos internos ni cifras confidenciales.</li>
+        <li><b>Se guarda solo</b> en este navegador mientras escribes. Al terminar, pulsa "Generar mis respuestas" y nos lo envías.</li>
+      </ul>
+      <div class="legend">
+        <span><span class="tier tier--e"></span> <b>Esencial</b></span>
+        <span><span class="tier tier--r"></span> <b>Recomendada</b></span>
+        <span><span class="tier tier--o"></span> <b>Opcional</b></span>
+      </div>
+    </section>
+
+    <div id="form"></div>
+
+    <div class="closing">
+      <div class="closing__k">Ya está</div>
+      <h2 class="closing__t">¡Gracias por compartirlo!</h2>
+      <p class="closing__p">Esta información nos será muy útil para entender tu negocio a fondo y empezar a diseñar su evolución. Cuando termines, pulsa "Generar mis respuestas" y nos las envías.</p>
+      <svg class="closing__logo" viewBox="0 0 430 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Evolution 360">
+        <defs><linearGradient id="evo-dark" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0E2A47"/><stop offset="1" stop-color="#10B981"/></linearGradient></defs>
+        <g transform="translate(6,13) scale(0.74)"><path d="M34 22.3 A32 32 0 1 1 60.9 19.9" fill="none" stroke="url(#evo-dark)" stroke-width="10" stroke-linecap="round"/><circle cx="60.9" cy="19.9" r="5.2" fill="#10B981"/></g>
+        <text x="94" y="64" font-family="Poppins, system-ui, sans-serif" font-size="45" font-weight="600" letter-spacing="-1" fill="#0E2A47">Evolution<tspan fill="#10B981" font-weight="700"> 360</tspan></text>
+      </svg>
+    </div>
+  </main>
+
+  <div class="bar">
+    <div class="bar__in">
+      <div class="prog">
+        <div class="prog__t">Esenciales: <b id="pnum">0</b> / <span id="ptot">0</span></div>
+        <div class="prog__bar"><div class="prog__fill" id="pfill"></div></div>
+      </div>
+      <button class="btn btn--ghost" id="clear">Empezar de cero</button>
+      <button class="btn btn--go" id="gen">Generar mis respuestas</button>
+    </div>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="card">
+      <h3>¡Listo! Estas son tus respuestas</h3>
+      <p>Cópialas o descárgalas y envíanoslas por WhatsApp o email. Con esto empezamos a trabajar.</p>
+      <textarea class="out" id="out" readonly></textarea>
+      <div class="card__actions">
+        <button class="btn btn--go" id="copy">Copiar</button>
+        <button class="btn btn--ghost" id="download">Descargar (.txt)</button>
+        <button class="btn btn--ghost" id="mail" style="display:none">Enviar por email</button>
+        <button class="btn btn--ghost" id="wa" style="display:none">Enviar por WhatsApp</button>
+        <button class="btn btn--ghost" id="close">Cerrar</button>
+      </div>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+
+<script>
+// ---- Configuración de envío (rellena para activar los botones) ----
+// Email de empresa (Gmail dedicado). Provisional hasta tener dominio propio + Workspace,
+// entonces pasará a hola@evolution360.xx. Ver memoria [[email-corporativo-pendiente]].
+const EVO = { whatsapp: "", email: "evolution360.ai@gmail.com" };
+
+// ---- Modelo único: de aquí salen el formulario Y el texto de respuestas ----
+const FORM = [
+ { part:"Parte 1 · Lo esencial", desc:"Unos 15 minutos. Con esto ya podemos arrancar.", blocks:[
+   { n:1, title:"Lo básico", lead:"Datos para identificar y contactar con tu negocio.", qs:[
+     {id:"nombre", t:"e", type:"text", q:"Nombre de la empresa / marca"},
+     {id:"contacto", t:"e", type:"text", q:"Persona de contacto"},
+     {id:"email", t:"e", type:"text", q:"Email"},
+     {id:"tel", t:"e", type:"text", q:"Teléfono / WhatsApp"},
+     {id:"dir", t:"r", type:"text", q:"Dirección", hint:"si tienes local"},
+     {id:"horario", t:"r", type:"text", q:"Horario de atención"},
+     {id:"web", t:"r", type:"text", q:"Web actual y redes sociales", hint:"pega los enlaces"},
+     {id:"idioma", t:"o", type:"text", q:"Idioma(s) en los que atiendes"},
+   ]},
+   { n:2, title:"¿A qué te dedicas?", lead:"Explícalo como se lo contarías a alguien que no te conoce de nada.", qs:[
+     {id:"actividad", t:"e", type:"area", q:"¿A qué os dedicáis exactamente?"},
+     {id:"estrella", t:"e", type:"text", q:"¿Cuál es vuestro producto o servicio estrella?"},
+     {id:"otros", t:"r", type:"text", q:"¿Qué otros servicios o programas ofrecéis?", hint:"actuales y futuros"},
+     {id:"canal", t:"e", type:"text", q:"¿Presencial, online o ambas?"},
+   ]},
+   { n:3, title:"A dónde quieres llegar", lead:"La parte más importante para nosotros: tu dirección. Sueña un poco aquí.", qs:[
+     {id:"obj12", t:"e", type:"area", q:"¿Qué te gustaría conseguir en los próximos 12 meses?"},
+     {id:"obj5", t:"e", type:"area", q:"Y mirando más lejos: ¿a dónde quieres llevar el negocio en 3-5 años?"},
+     {id:"pendiente", t:"r", type:"text", q:"¿Qué te gustaría hacer y todavía no has podido?", hint:"ideas, proyectos, actividades nuevas…"},
+   ]},
+   { n:4, title:"Tu cliente ideal", lead:"", qs:[
+     {id:"mejorcli", t:"e", type:"area", q:"Describe a tu mejor cliente", hint:"edad, situación, qué le preocupa"},
+     {id:"problema", t:"e", type:"text", q:"¿Qué problema real le resuelves? ¿Qué gana o deja de sufrir contigo?"},
+     {id:"porque", t:"r", type:"text", q:"¿Por qué te eligen los que te eligen?"},
+   ]},
+   { n:5, title:"Cómo quieres que te perciban", lead:"Marca las que mejor os representen y luego elige las 5 más importantes.", qs:[
+     {id:"percepcion", t:"e", type:"check", q:"¿Cómo quieres que perciban tu marca?",
+       options:["Cercano","Premium","Técnico","Divertido","Elegante","Familiar","Exclusivo","Innovador","Artesanal","Profesional","Moderno","Clásico"]},
+     {id:"percepcion5", t:"e", type:"text", q:"De las que has marcado, ¿cuáles son las 5 más importantes?"},
+     {id:"noser", t:"r", type:"text", q:"¿Qué NO queréis parecer nunca?", hint:"frío, cutre, agresivo, aburrido, genérico…"},
+   ]},
+   { n:6, title:"El día a día del negocio", lead:"Lo que no se ve desde fuera. Sé sincero: aquí es donde más te podemos ayudar.", qs:[
+     {id:"mejorar3", t:"e", type:"area", q:"Si pudieras mejorar tres cosas de tu negocio mañana mismo, ¿cuáles serían?"},
+     {id:"tiempo", t:"e", type:"text", q:"¿Qué parte del negocio os consume más tiempo?"},
+     {id:"dinero", t:"e", type:"text", q:"¿Qué crees que os está haciendo perder dinero, o dejar de ganarlo?"},
+   ]},
+ ]},
+ { part:"Parte 2 · A fondo", desc:"Opcional, pero es donde el análisis se vuelve extraordinario. Rellena lo que puedas.", blocks:[
+   { n:7, title:"Vuestra historia", lead:"", qs:[
+     {id:"historia", t:"r", type:"area", q:"¿Desde cuándo estáis en activo? Cuéntanos brevemente vuestra historia."},
+     {id:"equipo", t:"o", type:"text", q:"¿Cuántos sois en el equipo, aproximadamente?"},
+     {id:"orgullo", t:"o", type:"text", q:"¿Qué os hace sentir orgullosos de vuestro negocio?"},
+   ]},
+   { n:8, title:"Qué os hace diferentes", lead:"", qs:[
+     {id:"diferencia", t:"r", type:"area", q:"¿Qué os diferencia de verdad de la competencia?", hint:'algo concreto, no "calidad y buen trato"'},
+     {id:"admira", t:"o", type:"text", q:"¿Hay competidores o referentes que admires? ¿Por qué?"},
+     {id:"noadmira", t:"o", type:"text", q:"¿Y alguno en el que NUNCA querrías convertirte? ¿Qué es lo que no te gusta?"},
+   ]},
+   { n:9, title:"Vuestros clientes, a fondo", lead:"Estas preguntas nos dicen muchísimo. A menudo son más reveladoras que ninguna otra.", qs:[
+     {id:"nocliente", t:"r", type:"text", q:"¿Qué clientes NO quieres?"},
+     {id:"mejorcaso", t:"r", type:"area", q:"¿Cuál ha sido vuestro mejor cliente? ¿Por qué?"},
+     {id:"peorcaso", t:"r", type:"area", q:"¿Cuál ha sido vuestro peor cliente? ¿Por qué?"},
+   ]},
+   { n:10, title:"Lo que sabéis y nadie más sabe", lead:"Esto es oro: alimenta vuestra web, blog, redes, preguntas frecuentes y respuestas automáticas.", qs:[
+     {id:"preg_diarias", t:"r", type:"area", q:"¿Qué preguntas os hacen los clientes todos los días?"},
+     {id:"mitos", t:"o", type:"text", q:"¿Qué mitos o creencias equivocadas existen sobre vuestro sector?"},
+     {id:"errores", t:"o", type:"text", q:"¿Qué error comete casi siempre un cliente?"},
+     {id:"saber_antes", t:"r", type:"text", q:"¿Qué te gustaría que todo el mundo supiera antes de contactaros?"},
+   ]},
+   { n:11, title:"Vuestra forma de hablar", lead:"Para que todo lo que escribamos suene a vosotros, no a nosotros.", qs:[
+     {id:"frase_si", t:"r", type:"text", q:"¿Qué frase repetís continuamente?"},
+     {id:"frase_no", t:"r", type:"text", q:"¿Qué frases no diríais nunca?"},
+     {id:"mision", t:"o", type:"text", q:"Misión: ¿por qué existe vuestro negocio? ¿Qué buscáis para vuestros clientes?"},
+     {id:"vision", t:"o", type:"text", q:"Visión: ¿en qué queréis convertiros? ¿Cuál es el sueño grande?"},
+     {id:"valores", t:"o", type:"text", q:"Valores: ¿qué principios no negociáis nunca?"},
+   ]},
+   { n:12, title:"Identidad visual", lead:"Cómo os veis. Con lo que te gusta y lo que no, nos vale.", qs:[
+     {id:"logo", t:"r", type:"text", q:"¿Tienes logo?", hint:"nos lo pasas por email/WhatsApp"},
+     {id:"colores", t:"r", type:"text", q:"¿Colores corporativos actuales o que te gustaría usar?"},
+     {id:"colores_veto", t:"o", type:"text", q:"¿Colores que AMAS y colores VETADOS?"},
+     {id:"sensacion", t:"o", type:"text", q:"¿Qué sensación quieres que transmita el diseño?", hint:"elegante, dinámico, minimalista, cálido…"},
+     {id:"refs", t:"r", type:"area", q:"Enséñanos 2-3 webs o marcas que visualmente te gusten. ¿Qué te gusta de cada una?"},
+     {id:"refs_no", t:"o", type:"text", q:"¿Alguna que NO te guste? ¿Por qué?"},
+     {id:"fotos", t:"o", type:"text", q:"¿Tienes fotos o vídeos propios de calidad, o partimos de cero?"},
+   ]},
+   { n:13, title:"Más sobre el día a día", lead:"", qs:[
+     {id:"repetir", t:"o", type:"text", q:"¿Qué tareas repetís una y otra vez?"},
+     {id:"sin_tiempo", t:"o", type:"text", q:"¿Qué sabes que deberías hacer pero nunca encuentras el momento?"},
+     {id:"frustra", t:"o", type:"text", q:"¿Qué proceso te genera más frustración?"},
+     {id:"dependencia", t:"o", type:"text", q:"¿Qué parte del negocio depende demasiado de una sola persona?"},
+     {id:"semana", t:"o", type:"text", q:"Si desaparecieras una semana, ¿qué dejaría de funcionar?"},
+     {id:"boton", t:"o", type:"text", q:"Si pudieras eliminar una tarea para siempre, ¿cuál sería?"},
+   ]},
+   { n:14, title:"Materiales y accesos", lead:"", qs:[
+     {id:"materiales", t:"o", type:"text", q:"¿Tienes textos, catálogos, presentaciones o documentos que nos sirvan?"},
+     {id:"dominio", t:"o", type:"text", q:"¿Tienes dominio y hosting contratados? ¿Tienes acceso?"},
+     {id:"correo", t:"o", type:"text", q:"¿Correo corporativo propio?"},
+     {id:"herramientas", t:"o", type:"text", q:"¿Qué herramientas usáis en el día a día?", hint:"reservas, facturación, CRM, redes…"},
+   ]},
+   { n:15, title:"La pregunta mágica", lead:"", magic:true, qs:[
+     {id:"magica", t:"r", type:"area", q:"Si durante un mes pudiéramos trabajar dentro de vuestro negocio, ¿qué os gustaría que descubriéramos o mejoráramos?", hint:"Tómate tu tiempo. Suele decir más que todo el resto del formulario junto."},
+   ]},
+ ]},
+];
+
+const TLAB = {e:"Esencial", r:"Recomendada", o:"Opcional"};
+const KEY = "evo_descubrimiento_v1";
+const el = (t,c)=>{ const e=document.createElement(t); if(c) e.className=c; return e; };
+
+// ---- Render del formulario ----
+const root = document.getElementById("form");
+FORM.forEach(part=>{
+  const p = el("section","part");
+  p.innerHTML = `<div class="part__k">${part.part.split(" · ")[0]}</div><h2 class="part__t">${part.part.split(" · ")[1]||part.part}</h2><p class="part__d">${part.desc}</p>`;
+  root.appendChild(p);
+  part.blocks.forEach(b=>{
+    const bl = el("section","block"+(b.magic?" magic":""));
+    bl.innerHTML = `<div class="block__head"><span class="block__num">${b.n}</span><h3 class="block__title">${b.title}</h3></div>${b.lead?`<p class="block__lead">${b.lead}</p>`:""}`;
+    b.qs.forEach(q=>{
+      const wrap = el("div","q");
+      const lab = `<p class="q__label"><span class="tier tier--${q.t}" title="${TLAB[q.t]}"></span><span>${q.q}${q.hint?`<span class="hint">${q.hint}</span>`:""}</span></p>`;
+      if(q.type==="check"){
+        let opts = `<div class="opts">`;
+        q.options.forEach((o,i)=>{ opts += `<label class="opt"><input type="checkbox" data-check="${q.id}" value="${o}"> ${o}</label>`; });
+        opts += `</div>`;
+        wrap.innerHTML = lab + opts;
+      } else if(q.type==="area"){
+        wrap.innerHTML = lab + `<textarea id="f_${q.id}" data-q="${q.id}"></textarea>`;
+      } else {
+        wrap.innerHTML = lab + `<input type="text" id="f_${q.id}" data-q="${q.id}">`;
+      }
+      bl.appendChild(wrap);
+    });
+    root.appendChild(bl);
+  });
+});
+
+// ---- Estado: guardar / cargar (localStorage) ----
+function collect(){
+  const data = {};
+  document.querySelectorAll("[data-q]").forEach(i=>{ if(i.value.trim()) data[i.dataset.q]=i.value.trim(); });
+  const checks = {};
+  document.querySelectorAll("[data-check]").forEach(c=>{ if(c.checked){ (checks[c.dataset.check]=checks[c.dataset.check]||[]).push(c.value); } });
+  Object.assign(data, Object.fromEntries(Object.entries(checks).map(([k,v])=>[k, v.join(", ")])));
+  return data;
+}
+function save(){ localStorage.setItem(KEY, JSON.stringify(collect())); }
+function load(){
+  let data={}; try{ data=JSON.parse(localStorage.getItem(KEY)||"{}"); }catch(e){}
+  Object.entries(data).forEach(([k,v])=>{
+    const f=document.getElementById("f_"+k); if(f){ f.value=v; }
+    document.querySelectorAll(`[data-check="${k}"]`).forEach(c=>{ if(v.split(", ").includes(c.value)){ c.checked=true; c.closest(".opt").classList.add("sel"); } });
+  });
+}
+
+// ---- Progreso (solo esenciales) ----
+const essentials = [];
+FORM.forEach(p=>p.blocks.forEach(b=>b.qs.forEach(q=>{ if(q.t==="e") essentials.push(q.id); })));
+document.getElementById("ptot").textContent = essentials.length;
+function progress(){
+  const d = collect();
+  const done = essentials.filter(id=>d[id]).length;
+  document.getElementById("pnum").textContent = done;
+  document.getElementById("pfill").style.transform = "scaleX("+(done/essentials.length)+")";
+}
+
+// ---- Eventos ----
+root.addEventListener("input", ()=>{ save(); progress(); });
+root.addEventListener("change", e=>{
+  if(e.target.matches("[data-check]")){ e.target.closest(".opt").classList.toggle("sel", e.target.checked); save(); progress(); }
+});
+
+// ---- Generar texto estructurado ----
+function build(){
+  const d = collect();
+  let out = "CUÉNTANOS TU NEGOCIO — Respuestas del cliente\n(Formulario de Descubrimiento · Evolution 360)\n";
+  FORM.forEach(part=>{
+    part.blocks.forEach(b=>{
+      const answered = b.qs.filter(q=>d[q.id]);
+      if(!answered.length) return;
+      out += `\n## ${b.n}. ${b.title}\n`;
+      answered.forEach(q=>{ out += `- ${q.q}\n  ${d[q.id]}\n`; });
+    });
+  });
+  return out.trim()+"\n";
+}
+
+// ---- Barra / modal ----
+const modal=document.getElementById("modal"), toast=document.getElementById("toast");
+function showToast(m){ toast.textContent=m; toast.classList.add("show"); setTimeout(()=>toast.classList.remove("show"),1800); }
+document.getElementById("gen").onclick = ()=>{
+  const txt = build();
+  document.getElementById("out").value = txt;
+  const nombre = collect().nombre || "";
+  if(EVO.email){ const m=document.getElementById("mail"); m.style.display=""; m.onclick=()=>{ location.href="mailto:"+EVO.email+"?subject="+encodeURIComponent("Formulario de descubrimiento"+(nombre?" — "+nombre:""))+"&body="+encodeURIComponent(txt); }; }
+  if(EVO.whatsapp){ const w=document.getElementById("wa"); w.style.display=""; w.onclick=()=>window.open(`https://wa.me/${EVO.whatsapp}?text=`+encodeURIComponent(txt.slice(0,1500)),"_blank"); }
+  modal.classList.add("open");
+};
+document.getElementById("close").onclick = ()=>modal.classList.remove("open");
+modal.addEventListener("click", e=>{ if(e.target===modal) modal.classList.remove("open"); });
+document.getElementById("copy").onclick = async ()=>{
+  const t=document.getElementById("out").value;
+  try{ await navigator.clipboard.writeText(t); showToast("Copiado ✓"); }
+  catch(e){ document.getElementById("out").select(); document.execCommand("copy"); showToast("Copiado ✓"); }
+};
+document.getElementById("download").onclick = ()=>{
+  const blob=new Blob([document.getElementById("out").value],{type:"text/plain;charset=utf-8"});
+  const a=el("a"); a.href=URL.createObjectURL(blob); a.download="respuestas-descubrimiento.txt"; a.click(); URL.revokeObjectURL(a.href);
+};
+document.getElementById("clear").onclick = ()=>{
+  if(confirm("¿Borrar todo lo escrito y empezar de cero?")){ localStorage.removeItem(KEY); location.reload(); }
+};
+
+load(); progress();
+</script>
+</body>
+</html>

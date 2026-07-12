@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--
+  Plantilla de informe PDF de MARCA. La skill rellena los {{...}} con el contenido
+  del entregable y la identidad del cliente (logo, colores, tipografías, imágenes).
+  El índice se genera solo desde los <h2>/<h3> de .contenido.
+  Objetivo: que el PDF parezca material oficial de la empresa del cliente.
+  Convertir: scripts/generar-pdf.ps1 -Html <este archivo> -Out <pdf>
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Radiografía digital — Munay Hair Salon</title>
+<!-- Fuentes lo más parecidas posible a las de la marca (si hay internet). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="{{google_fonts_url}}" rel="stylesheet">
+<link rel="stylesheet" href="file:///C:/Users/Usuario/Desktop/Claude/Consultoria/plantillas/informe/informe.css">
+<!-- Identidad del cliente inyectada desde brand-tokens.json. Si aún no hay marca,
+     deja este bloque vacío y se usan los defaults del CSS. Incluye TODOS los tokens:
+     :root{ --color-primary; --color-secondary; --color-accent; --ink; --soft;
+     --font-heading; --font-body; --cover-img:url('../marca/assets/portada.jpg'); } -->
+<style>{{tokens_css}}</style>
+</head>
+<body>
+
+  <!-- Cabecera y pie repetidos en cada página (marca + contacto + página) -->
+  <div class="page-header">
+    <span>{{logo_header_html}}</span>
+    <span class="brandbar"></span>
+    <span>Radiografía digital</span>
+  </div>
+  <div class="page-footer">
+    <span>Evolution 360 · Documento confidencial de Munay Hair Salon</span>
+    <span></span>
+    <span>12 de julio de 2026</span>
+  </div>
+
+  <!-- PORTADA — foto a pantalla completa + overlay del color de marca.
+       El script inyecta la foto en --cover-img (marca/assets/portada.*); si no
+       hay foto, cae a un degradado de la paleta (sigue premium). -->
+  <section class="cover cover--foto">
+    <header class="cover__top">
+      {{logo_html}}
+      <span class="cover__tag">Informe de consultoría</span>
+    </header>
+    <div class="cover__body">
+      <div class="cover__kicker">Cortesia - sin compromiso</div>
+      <h1 class="cover__title">Radiografía digital</h1>
+      <div class="cover__rule"></div>
+      <p class="cover__subtitle">Vuestra presencia online: que funciona y donde esta la oportunidad</p>
+    </div>
+    <footer class="cover__bottom">
+      <div class="cover__meta">
+        <div><b>Cliente:</b> Munay Hair Salon</div>
+        <div><b>Sector:</b> Peluqueria - Color - El Prat de Llobregat</div>
+        <div><b>Proyecto:</b> Radiografia digital</div>
+        <div><b>Preparado por:</b> Evolution 360</div>
+        <div><b>Fecha:</b> 12 de julio de 2026</div>
+        <div><b>Versión:</b> 1.1</div>
+      </div>
+      <p class="cover__confidencial">Este documento contiene información
+      confidencial de Munay Hair Salon. Prohibida su difusión sin autorización.</p>
+    </footer>
+  </section>
+
+  <!-- ÍNDICE (automático) -->
+  <nav class="toc">
+    <h2>Índice</h2>
+    <ol id="toc-list"></ol>
+  </nav>
+
+  <!-- CONTENIDO — la skill sustituye <p>Esto no es una propuesta ni un intento de venderos nada. Es una mirada honesta a vuestra presencia digital: qué está funcionando, qué os está frenando y por dónde empezaríamos si algún día quisierais darle un empujón. Lo hemos preparado para vosotras a partir de lo que se ve por fuera (vuestro Instagram y la aplicación de reservas), sin haber entrado en vuestros números.</p>
+<p>Cuando una conclusión es un hecho que hemos comprobado, lo marcamos con <code>[V]</code>. Cuando es un razonamiento a partir de indicios, con <code>[I]</code>. Cuando es una hipótesis por confirmar con vosotras, con <code>[H]</code>.</p>
+<h2>Lo que ya tenéis a favor</h2>
+<p>Antes de mirar lo que falla, conviene decir lo que está bien, porque es más de lo que muchos negocios de vuestro sector consiguen.</p>
+<ul>
+<li><strong>Sois especialistas, no una peluquería más.</strong> Vuestra propia bio lo deja claro: expertas en color, diagnóstico capilar, keratina y botox. Un nicho de valor alto, donde la gente paga por la especialista y no por la más barata. <code>[V]</code></li>
+<li><strong>Tenéis una marca con personalidad.</strong> Vuestro Instagram (836 seguidoras, 143 publicaciones y muchos reels) tiene un tono cercano, femenino y con humor. Comunicáis bien, y eso no se compra. <code>[V]</code></li>
+<li><strong>Ya trabajáis el vídeo.</strong> Apostáis por los reels, que es justo donde hoy se gana alcance. La materia prima para crecer ya la estáis produciendo. <code>[V]</code></li>
+<li><strong>Tenéis una identidad reconocible.</strong> Vuestro logo y vuestra estética (crema, negro, un aire elegante) dan una imagen cuidada. Falta llevarla más allá de Instagram. <code>[V]</code></li>
+</ul>
+<h2>El estado de vuestra presencia digital</h2>
+<p>Mirando cada pieza por separado, esto es lo que encontramos y la gravedad que le damos.</p>
+<table>
+<thead>
+<tr>
+<th>Área</th>
+<th>Qué encontramos</th>
+<th style="text-align: center;">Gravedad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web propia</td>
+<td>No tenéis. Para reservar usáis una aplicación de terceros que abre tras iniciar sesión y lanza avisos de "instala la app" y un mensaje de "Deuda".</td>
+<td style="text-align: center;">Crítico</td>
+</tr>
+<tr>
+<td>Visibilidad en Google</td>
+<td>Al buscar por vuestro nombre y dirección no aparecéis con ficha ni con reseñas. La competencia de la zona sí aparece.</td>
+<td style="text-align: center;">Crítico</td>
+</tr>
+<tr>
+<td>Paso de Instagram a reserva</td>
+<td>Quien se decide desde el móvil tiene que instalar o registrarse en una app. Cada paso extra pierde reservas.</td>
+<td style="text-align: center;">Importante</td>
+</tr>
+<tr>
+<td>Reseñas</td>
+<td>No hay reseñas públicas a la vista que den confianza a quien todavía no os conoce.</td>
+<td style="text-align: center;">Importante</td>
+</tr>
+<tr>
+<td>Instagram</td>
+<td>Activo, cuidado y con buen tono. Es vuestro punto fuerte; hoy trabaja casi solo.</td>
+<td style="text-align: center;">A favor</td>
+</tr>
+</tbody>
+</table>
+<p>La lectura rápida: por dentro estáis bien y por fuera estáis desarmadas. Todo lo que atrae (el trabajo y el Instagram) apunta a gente que ya os conoce, pero no hay nada que os haga encontrables para quien no os sigue, ni un camino fácil para que reserve. <code>[I]</code></p>
+<h2 class="nueva-pagina">La aplicación de reservas, mirada de cerca</h2>
+<p>Le hemos dedicado un apartado propio porque es el corazón de vuestra operativa digital y, ahora mismo, es también uno de vuestros mayores frenos.</p>
+<p>Lo que usáis (la aplicación en <code>appmunay.viday.es</code>) es una herramienta genérica de un tercero, la misma que usan muchos negocios distintos con otro nombre encima. Al abrirla, antes de dejar reservar, aparecen avisos para instalar la aplicación, un aviso de que se usa "otro navegador" y hasta un mensaje de "Deuda". Para una clienta de siempre es un incordio menor. Para una clienta nueva es una puerta que cuesta abrir, y muchas se dan la vuelta. <code>[V]</code></p>
+<p>Además, la aplicación está infrautilizada. Tiene varios módulos (inicio, mis citas, reservar cita, perfil, empresa, notificaciones), pero hoy funcionan como poco más que una agenda de citas. Esos mismos módulos se pueden ampliar muchísimo, o sustituir por un sistema propio que trabaje para vosotras en vez de solo apuntar horas:</p>
+<ul>
+<li><strong>Reserva sin registro ni descargas</strong>, en dos toques desde Instagram o Google.</li>
+<li><strong>Ficha de clienta con su historial de color</strong> (fórmulas, tonos, fechas), para no empezar de cero cada vez y para vender continuidad.</li>
+<li><strong>Recordatorios automáticos</strong> el día antes, que reducen los plantones.</li>
+<li><strong>Avisos de "toca retoque"</strong> a las clientas de color pasadas unas semanas, que rellenan huecos de agenda.</li>
+<li><strong>Notificaciones y promociones</strong> a vuestra propia base de clientas, sin depender del alcance de Instagram.</li>
+</ul>
+<p>Dicho corto: no es que la herramienta sea mala, es que la estáis usando al diez por ciento y encima os pone trabas en el momento más importante, que es cuando alguien quiere reservar. <code>[I]</code></p>
+<h2>El mapa de la competencia</h2>
+<p>Una peluquería nueva no compite solo por manos, compite por aparecer. Al buscar "peluquería en El Prat", quien todavía no os conoce se encuentra con salones de la zona listados en Google, Booksy, Fresha o Treatwell, con fotos, reseñas y un botón de reservar. A Munay no la encuentra, porque no está en esos sitios. <code>[V]</code></p>
+<p>Esto significa que, a día de hoy, gran parte de la demanda local que decide por internet ni siquiera os llega a considerar. No porque seáis peores, sino porque no estáis donde esa gente mira. Es una carrera en la que aún no habéis salido a correr, y se puede corregir rápido. <code>[I]</code></p>
+<h2 class="nueva-pagina">Por qué pasa esto</h2>
+<p>El problema de Munay no es de talento ni de propuesta. Es de escaparate y de puerta. Hacéis un buen trabajo y lo contáis bien, pero ese valor se queda dentro de vuestro círculo porque falta lo que lo saca al mundo y lo que deja entrar a la gente nueva.</p>
+<div class="flow"><div class="flow__node flow__node--start">Vuestro trabajo y vuestro Instagram enamoran a quien ya os conoce</div><div class="flow__arrow"></div><div class="flow__node">No hay web propia ni ficha de Google que os haga encontrables</div><div class="flow__arrow"></div><div class="flow__node">Quien busca peluquería en El Prat y no os sigue, no os ve</div><div class="flow__arrow"></div><div class="flow__node">Y quien sí quiere reservar tropieza con una app con fricción</div><div class="flow__arrow"></div><div class="flow__node flow__node--end">El buen trabajo no se convierte en clientas nuevas al ritmo que podría</div></div>
+<div class="box box--insight">
+<h3>La idea de fondo</h3>
+<p>No es un problema de cómo trabajáis, es de cómo os encuentran y de cómo os reservan. Ya tenéis lo difícil. Falta el puente entre "me gustan" y "reservo".</p>
+</div>
+
+<h2>Dónde está la palanca</h2>
+<p>Si hubiera que tocar una sola cosa, sería esta: una página propia que salga en Google y que reciba las reservas sin fricción. Ese único movimiento resuelve tres cosas a la vez. Os vuelve encontrables para la demanda nueva, convierte la reputación que hoy está escondida en clientas, y da por fin un destino claro adonde llevar a la gente desde los reels. <code>[I]</code></p>
+<p>Lo bueno es que ninguna de estas piezas es cara ni lenta. Son semanas de trabajo, no años, y se apoyan en lo que ya tenéis: buen contenido, buen trabajo y una marca bonita.</p>
+<h2 class="nueva-pagina">Oportunidades y riesgos</h2>
+<div class="box box--oportunidad">
+<h3>Oportunidad</h3>
+<p>Una página propia, la ficha de Google y una reserva de un solo toque convertirían vuestra reputación en clientas nuevas de forma constante, no solo por recomendación.</p>
+</div>
+
+<div class="box box--oportunidad">
+<h3>Oportunidad</h3>
+<p>Los reels que ya hacéis pueden trabajar en más sitios a la vez: en la web y en la ficha de Google, no solo en Instagram.</p>
+</div>
+
+<div class="box box--oportunidad">
+<h3>Oportunidad</h3>
+<p>La ficha de clienta con historial de color y los avisos de retoque llenarían huecos de agenda con clientas que ya os conocen.</p>
+</div>
+
+<div class="box box--riesgo">
+<h3>Riesgo si sigue igual</h3>
+<p>La demanda local que hoy no os conoce se la quedan peluquerías menos buenas pero más visibles. Ser invisible en Google tiene un coste silencioso: clientas que nunca llegan a saber que existís.</p>
+</div>
+
+<h2>Próximos pasos recomendados</h2>
+<p>Los ordenamos por prioridad, no por fechas. El calendario lo decidís vosotras.</p>
+<p><strong>Prioridad 1: haceros encontrables y fáciles de reservar.</strong> Una página propia de una sola pantalla, con vuestra marca, servicios, un botón de reserva directo y el mapa. Algo que salga en Google y que podáis poner en la bio. Es la pieza que abre la puerta.</p>
+<p><strong>Prioridad 2: aparecer en Google y generar confianza.</strong> Reclamar y rellenar la ficha de Google del negocio (fotos, horario, servicios) y empezar a pedir reseñas de forma sistemática, con un pequeño gesto al terminar cada servicio. Es gratis y es lo primero que ve quien os busca.</p>
+<p><strong>Prioridad 3: que la reserva trabaje para vosotras.</strong> Simplificar la reserva para que no obligue a instalar nada, y sumarle poco a poco lo que hoy le falta: ficha de clienta con historial de color, recordatorios de cita y avisos de retoque. Menos plantones, agenda más llena y ninguna clienta esperando.</p>
+<p>Ojalá algo de esto os sirva, trabajéis con quien trabajéis. Lo hicimos con cariño y con la ilusión de veros crecer.</p> por el cuerpo del informe.
+       Componentes de marca disponibles (ver informe.css):
+       · Cajas:  <div class="box box--insight"><span class="box__t">Insight</span><p>…</p></div>
+                 box--oportunidad · box--riesgo · box--accion · box--prioridad
+       · Prioridad: <span class="tag tag--critico">Crítico</span> (importante/recomendable)
+       · KPIs: <div class="kpis"><div class="kpi"><div class="kpi__n">+430</div><div class="kpi__l">clientes</div></div></div>
+       · Figuras: <figure class="figure"><img src="…"><figcaption>…</figcaption></figure> -->
+  <main class="contenido" id="contenido">
+    <p>Esto no es una propuesta ni un intento de venderos nada. Es una mirada honesta a vuestra presencia digital: qué está funcionando, qué os está frenando y por dónde empezaríamos si algún día quisierais darle un empujón. Lo hemos preparado para vosotras a partir de lo que se ve por fuera (vuestro Instagram y la aplicación de reservas), sin haber entrado en vuestros números.</p>
+<p>Cuando una conclusión es un hecho que hemos comprobado, lo marcamos con <code>[V]</code>. Cuando es un razonamiento a partir de indicios, con <code>[I]</code>. Cuando es una hipótesis por confirmar con vosotras, con <code>[H]</code>.</p>
+<h2>Lo que ya tenéis a favor</h2>
+<p>Antes de mirar lo que falla, conviene decir lo que está bien, porque es más de lo que muchos negocios de vuestro sector consiguen.</p>
+<ul>
+<li><strong>Sois especialistas, no una peluquería más.</strong> Vuestra propia bio lo deja claro: expertas en color, diagnóstico capilar, keratina y botox. Un nicho de valor alto, donde la gente paga por la especialista y no por la más barata. <code>[V]</code></li>
+<li><strong>Tenéis una marca con personalidad.</strong> Vuestro Instagram (836 seguidoras, 143 publicaciones y muchos reels) tiene un tono cercano, femenino y con humor. Comunicáis bien, y eso no se compra. <code>[V]</code></li>
+<li><strong>Ya trabajáis el vídeo.</strong> Apostáis por los reels, que es justo donde hoy se gana alcance. La materia prima para crecer ya la estáis produciendo. <code>[V]</code></li>
+<li><strong>Tenéis una identidad reconocible.</strong> Vuestro logo y vuestra estética (crema, negro, un aire elegante) dan una imagen cuidada. Falta llevarla más allá de Instagram. <code>[V]</code></li>
+</ul>
+<h2>El estado de vuestra presencia digital</h2>
+<p>Mirando cada pieza por separado, esto es lo que encontramos y la gravedad que le damos.</p>
+<table>
+<thead>
+<tr>
+<th>Área</th>
+<th>Qué encontramos</th>
+<th style="text-align: center;">Gravedad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web propia</td>
+<td>No tenéis. Para reservar usáis una aplicación de terceros que abre tras iniciar sesión y lanza avisos de "instala la app" y un mensaje de "Deuda".</td>
+<td style="text-align: center;">Crítico</td>
+</tr>
+<tr>
+<td>Visibilidad en Google</td>
+<td>Al buscar por vuestro nombre y dirección no aparecéis con ficha ni con reseñas. La competencia de la zona sí aparece.</td>
+<td style="text-align: center;">Crítico</td>
+</tr>
+<tr>
+<td>Paso de Instagram a reserva</td>
+<td>Quien se decide desde el móvil tiene que instalar o registrarse en una app. Cada paso extra pierde reservas.</td>
+<td style="text-align: center;">Importante</td>
+</tr>
+<tr>
+<td>Reseñas</td>
+<td>No hay reseñas públicas a la vista que den confianza a quien todavía no os conoce.</td>
+<td style="text-align: center;">Importante</td>
+</tr>
+<tr>
+<td>Instagram</td>
+<td>Activo, cuidado y con buen tono. Es vuestro punto fuerte; hoy trabaja casi solo.</td>
+<td style="text-align: center;">A favor</td>
+</tr>
+</tbody>
+</table>
+<p>La lectura rápida: por dentro estáis bien y por fuera estáis desarmadas. Todo lo que atrae (el trabajo y el Instagram) apunta a gente que ya os conoce, pero no hay nada que os haga encontrables para quien no os sigue, ni un camino fácil para que reserve. <code>[I]</code></p>
+<h2 class="nueva-pagina">La aplicación de reservas, mirada de cerca</h2>
+<p>Le hemos dedicado un apartado propio porque es el corazón de vuestra operativa digital y, ahora mismo, es también uno de vuestros mayores frenos.</p>
+<p>Lo que usáis (la aplicación en <code>appmunay.viday.es</code>) es una herramienta genérica de un tercero, la misma que usan muchos negocios distintos con otro nombre encima. Al abrirla, antes de dejar reservar, aparecen avisos para instalar la aplicación, un aviso de que se usa "otro navegador" y hasta un mensaje de "Deuda". Para una clienta de siempre es un incordio menor. Para una clienta nueva es una puerta que cuesta abrir, y muchas se dan la vuelta. <code>[V]</code></p>
+<p>Además, la aplicación está infrautilizada. Tiene varios módulos (inicio, mis citas, reservar cita, perfil, empresa, notificaciones), pero hoy funcionan como poco más que una agenda de citas. Esos mismos módulos se pueden ampliar muchísimo, o sustituir por un sistema propio que trabaje para vosotras en vez de solo apuntar horas:</p>
+<ul>
+<li><strong>Reserva sin registro ni descargas</strong>, en dos toques desde Instagram o Google.</li>
+<li><strong>Ficha de clienta con su historial de color</strong> (fórmulas, tonos, fechas), para no empezar de cero cada vez y para vender continuidad.</li>
+<li><strong>Recordatorios automáticos</strong> el día antes, que reducen los plantones.</li>
+<li><strong>Avisos de "toca retoque"</strong> a las clientas de color pasadas unas semanas, que rellenan huecos de agenda.</li>
+<li><strong>Notificaciones y promociones</strong> a vuestra propia base de clientas, sin depender del alcance de Instagram.</li>
+</ul>
+<p>Dicho corto: no es que la herramienta sea mala, es que la estáis usando al diez por ciento y encima os pone trabas en el momento más importante, que es cuando alguien quiere reservar. <code>[I]</code></p>
+<h2>El mapa de la competencia</h2>
+<p>Una peluquería nueva no compite solo por manos, compite por aparecer. Al buscar "peluquería en El Prat", quien todavía no os conoce se encuentra con salones de la zona listados en Google, Booksy, Fresha o Treatwell, con fotos, reseñas y un botón de reservar. A Munay no la encuentra, porque no está en esos sitios. <code>[V]</code></p>
+<p>Esto significa que, a día de hoy, gran parte de la demanda local que decide por internet ni siquiera os llega a considerar. No porque seáis peores, sino porque no estáis donde esa gente mira. Es una carrera en la que aún no habéis salido a correr, y se puede corregir rápido. <code>[I]</code></p>
+<h2 class="nueva-pagina">Por qué pasa esto</h2>
+<p>El problema de Munay no es de talento ni de propuesta. Es de escaparate y de puerta. Hacéis un buen trabajo y lo contáis bien, pero ese valor se queda dentro de vuestro círculo porque falta lo que lo saca al mundo y lo que deja entrar a la gente nueva.</p>
+<div class="flow"><div class="flow__node flow__node--start">Vuestro trabajo y vuestro Instagram enamoran a quien ya os conoce</div><div class="flow__arrow"></div><div class="flow__node">No hay web propia ni ficha de Google que os haga encontrables</div><div class="flow__arrow"></div><div class="flow__node">Quien busca peluquería en El Prat y no os sigue, no os ve</div><div class="flow__arrow"></div><div class="flow__node">Y quien sí quiere reservar tropieza con una app con fricción</div><div class="flow__arrow"></div><div class="flow__node flow__node--end">El buen trabajo no se convierte en clientas nuevas al ritmo que podría</div></div>
+<div class="box box--insight">
+<h3>La idea de fondo</h3>
+<p>No es un problema de cómo trabajáis, es de cómo os encuentran y de cómo os reservan. Ya tenéis lo difícil. Falta el puente entre "me gustan" y "reservo".</p>
+</div>
+
+<h2>Dónde está la palanca</h2>
+<p>Si hubiera que tocar una sola cosa, sería esta: una página propia que salga en Google y que reciba las reservas sin fricción. Ese único movimiento resuelve tres cosas a la vez. Os vuelve encontrables para la demanda nueva, convierte la reputación que hoy está escondida en clientas, y da por fin un destino claro adonde llevar a la gente desde los reels. <code>[I]</code></p>
+<p>Lo bueno es que ninguna de estas piezas es cara ni lenta. Son semanas de trabajo, no años, y se apoyan en lo que ya tenéis: buen contenido, buen trabajo y una marca bonita.</p>
+<h2 class="nueva-pagina">Oportunidades y riesgos</h2>
+<div class="box box--oportunidad">
+<h3>Oportunidad</h3>
+<p>Una página propia, la ficha de Google y una reserva de un solo toque convertirían vuestra reputación en clientas nuevas de forma constante, no solo por recomendación.</p>
+</div>
+
+<div class="box box--oportunidad">
+<h3>Oportunidad</h3>
+<p>Los reels que ya hacéis pueden trabajar en más sitios a la vez: en la web y en la ficha de Google, no solo en Instagram.</p>
+</div>
+
+<div class="box box--oportunidad">
+<h3>Oportunidad</h3>
+<p>La ficha de clienta con historial de color y los avisos de retoque llenarían huecos de agenda con clientas que ya os conocen.</p>
+</div>
+
+<div class="box box--riesgo">
+<h3>Riesgo si sigue igual</h3>
+<p>La demanda local que hoy no os conoce se la quedan peluquerías menos buenas pero más visibles. Ser invisible en Google tiene un coste silencioso: clientas que nunca llegan a saber que existís.</p>
+</div>
+
+<h2>Próximos pasos recomendados</h2>
+<p>Los ordenamos por prioridad, no por fechas. El calendario lo decidís vosotras.</p>
+<p><strong>Prioridad 1: haceros encontrables y fáciles de reservar.</strong> Una página propia de una sola pantalla, con vuestra marca, servicios, un botón de reserva directo y el mapa. Algo que salga en Google y que podáis poner en la bio. Es la pieza que abre la puerta.</p>
+<p><strong>Prioridad 2: aparecer en Google y generar confianza.</strong> Reclamar y rellenar la ficha de Google del negocio (fotos, horario, servicios) y empezar a pedir reseñas de forma sistemática, con un pequeño gesto al terminar cada servicio. Es gratis y es lo primero que ve quien os busca.</p>
+<p><strong>Prioridad 3: que la reserva trabaje para vosotras.</strong> Simplificar la reserva para que no obligue a instalar nada, y sumarle poco a poco lo que hoy le falta: ficha de clienta con historial de color, recordatorios de cita y avisos de retoque. Menos plantones, agenda más llena y ninguna clienta esperando.</p>
+<p>Ojalá algo de esto os sirva, trabajéis con quien trabajéis. Lo hicimos con cariño y con la ilusión de veros crecer.</p>
+  </main>
+
+  <!-- Generador de índice: numera h2 y anida h3 -->
+  <script>
+    (function () {
+      var cont = document.getElementById('contenido');
+      var toc = document.getElementById('toc-list');
+      if (!cont || !toc) return;
+      var current = null, n = 0;
+      cont.querySelectorAll('h2, h3').forEach(function (h) {
+        if (!h.id) { h.id = 'sec-' + (++n); }
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + h.id; a.textContent = h.textContent;
+        li.appendChild(a);
+        if (h.tagName === 'H2') { toc.appendChild(li); current = null;
+          var sub = document.createElement('ol'); li.appendChild(sub); current = sub;
+        } else if (current) { current.appendChild(li); }
+        else { toc.appendChild(li); }
+      });
+    })();
+  </script>
+</body>
+</html>

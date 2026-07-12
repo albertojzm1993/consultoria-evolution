@@ -1,0 +1,78 @@
+<!-- Plantilla de artículo para la web estática. Hereda el sistema de diseño de
+     web/assets/css/styles.css (mismo look & feel). Rellena {{...}} y añade el
+     bloque <style> de prosa una sola vez en el CSS del sitio. -->
+<article class="container section" style="max-width: 760px;">
+  <nav class="small muted" aria-label="Migas">
+    <a href="/">Inicio</a> › <a href="/blog/">Blog</a> ›
+    <a href="/blog/{{categoria_slug}}/">{{categoria}}</a>
+  </nav>
+
+  <header class="mt-4">
+    <p class="eyebrow">{{categoria}}</p>
+    <h1>{{h1}}</h1>
+    <p class="small muted">Por {{autor}} · {{fecha_legible}} · {{tiempo_lectura}} min de lectura</p>
+  </header>
+
+  <figure class="mt-4">
+    <img src="/blog/img/{{imagen_destacada}}" alt="{{img_alt}}"
+         width="1200" height="630" style="border-radius: var(--radius-lg);">
+  </figure>
+
+  <div class="prose mt-4">
+    {{contenido_html}}
+  </div>
+
+  <!-- FAQ -->
+  <section class="section--tight" aria-labelledby="faq">
+    <h2 id="faq">Preguntas frecuentes</h2>
+    <div class="faq">
+      <div class="faq__item" aria-expanded="false">
+        <button class="faq__q" aria-expanded="false">{{faq_q1}}<span aria-hidden="true">+</span></button>
+        <div class="faq__a"><p>{{faq_a1}}</p></div>
+      </div>
+      <!-- repetir .faq__item -->
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band mt-4">
+    <h2>{{cta_titular}}</h2>
+    <p>{{cta_texto}}</p>
+    <a class="btn" href="{{cta_url}}">{{cta_boton}}</a>
+  </div>
+</article>
+
+<!-- Estilos de prosa: añádelos UNA vez a web/assets/css/styles.css -->
+<style>
+.prose { color: var(--body); font-size: 1.125rem; }
+.prose h2 { margin-top: var(--space-6); }
+.prose h3 { margin-top: var(--space-4); }
+.prose p, .prose ul, .prose ol { margin-bottom: var(--space-2); }
+.prose ul, .prose ol { padding-left: 1.25em; }
+.prose li { margin-bottom: 6px; }
+.prose img { border-radius: var(--radius-md); margin-block: var(--space-3); }
+.prose blockquote { border-left: 3px solid var(--color-primary);
+  padding-left: var(--space-2); color: var(--muted); font-style: italic; }
+.prose table { width: 100%; border-collapse: collapse; margin-block: var(--space-3); }
+.prose th, .prose td { border: var(--border); padding: 10px 12px; text-align: left; }
+.prose a { text-decoration: underline; }
+</style>
+
+<!-- SEO: en el <head> del post -->
+<!--
+<title>{{seo_title}}</title>
+<meta name="description" content="{{seo_meta}}">
+<link rel="canonical" href="{{url_canonica}}">
+<meta property="og:title" content="{{seo_title}}">
+<meta property="og:description" content="{{seo_meta}}">
+<meta property="og:image" content="{{og_image}}">
+<meta property="og:type" content="article">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BlogPosting",
+  "headline":"{{h1}}","image":"{{og_image}}","datePublished":"{{fecha_iso}}",
+  "author":{"@type":"Organization","name":"{{cliente}}"},
+  "publisher":{"@type":"Organization","name":"{{cliente}}"}
+}
+</script>
+-->
