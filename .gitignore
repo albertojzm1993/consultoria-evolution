@@ -1,7 +1,0 @@
-*.local
-.DS_Store
-Thumbs.db
-.env
-node_modules/
-clientes/m8/entregables/landings/clase-prueba/
-clientes/potential/munay/
