@@ -1,0 +1,1443 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evolution 360 — Descubre qué frena el crecimiento de tu negocio</title>
+<meta name="description" content="Consultoría para pymes y autónomos. Analizamos tu negocio punto por punto y te entregamos, en minutos, un diagnóstico claro y un plan de acción para crecer. Gratis y sin compromiso.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><!-- impeccable-disable-line overused-font -- Inter es fuente de marca Evolution (brand-tokens.json) -->
+<style>
+  :root{
+    --bg:#070A12; --bg2:#0B0F1A;
+    --card:rgba(255,255,255,.035); --card2:rgba(255,255,255,.06); --brd:rgba(255,255,255,.09); --brd2:rgba(255,255,255,.14);
+    --ink:#EAF0F8; --body:#A7B2C4; --muted:#727D93;
+    --green:#10B981; --green2:#34D399; --green3:#6EE7B7; --green-ink:#0A6E50; --green-soft:rgba(16,185,129,.13);
+    --warn:#F6B871; --warn-soft:rgba(240,119,78,.14);
+    --red:#E4573D; --red-soft:rgba(228,87,61,.16); --yellow:#E7C34B; --yellow-soft:rgba(234,179,8,.14); --blue:#5B8DEF; --blue-soft:rgba(91,141,239,.16);
+    --pill:9999px; --r:16px; --r-lg:22px; --max:1240px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--body);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+  body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:34px 34px;-webkit-mask-image:radial-gradient(circle at 50% -10%,#000,transparent 74%);mask-image:radial-gradient(circle at 50% -10%,#000,transparent 74%);z-index:0;pointer-events:none}
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(620px 440px at 8% 4%,rgba(16,185,129,.09),transparent 60%),radial-gradient(720px 520px at 92% 16%,rgba(52,211,153,.07),transparent 60%)}
+  h1,h2,h3,h4{font-family:Onest,system-ui,sans-serif;color:var(--ink);letter-spacing:-.02em;line-height:1.08;font-weight:700}
+  a{color:inherit;text-decoration:none}
+  p{color:var(--body)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;position:relative;z-index:2}
+  .ic{width:20px;height:20px;stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none}
+  .ic-lg{width:26px;height:26px}
+  .kw{color:var(--green2)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--green2);outline-offset:3px;border-radius:8px}
+
+  /* eyebrow (nuevo, sin mono) */
+  .eyebrow{font-family:Onest;font-weight:700;font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green2);display:inline-flex;align-items:center;gap:12px}
+  .eyebrow .num{font-family:Onest;font-weight:800;font-size:.82rem;color:#04231A;background:var(--green2);border-radius:7px;padding:2px 9px;letter-spacing:0}
+  .eyebrow .ln{width:26px;height:2px;background:var(--green2);border-radius:2px}
+
+  .logo{display:inline-flex;align-items:center;gap:9px}
+  .logo .iso{width:24px;height:24px;flex:none;overflow:visible;align-self:center;display:block;position:relative;top:1px}
+  .logo .wm{position:relative;font-family:Onest;font-weight:700;font-size:21px;letter-spacing:-.02em;color:#fff;line-height:1;display:inline-flex;align-items:center;height:24px}
+  .logo .wm b{color:var(--green2);font-weight:700}
+  .logo .wm .full{position:absolute;left:0;top:50%;transform:translateY(-50%) translateX(-3px);white-space:nowrap;opacity:0;transition:opacity .25s var(--ease),transform .25s var(--ease);pointer-events:none}
+  .logo .wm .short{transition:opacity .2s var(--ease)}
+  .logo:hover .wm .short,.logo:focus-within .wm .short{opacity:0}
+  .logo:hover .wm .full,.logo:focus-within .wm .full{opacity:1;transform:translateY(-50%)}
+
+  .btn{display:inline-flex;align-items:center;gap:.55em;font-family:Onest;font-weight:600;font-size:1rem;border-radius:var(--pill);padding:14px 26px;border:1px solid transparent;cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s,color .2s}
+  .btn .ic{width:18px;height:18px;stroke-width:2}
+  .btn-primary{background:linear-gradient(180deg,var(--green2),var(--green));color:#04231A;box-shadow:0 8px 30px rgba(16,185,129,.35)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 44px rgba(16,185,129,.55)}
+  .btn-glass,.btn-soft{background:var(--card2);border-color:var(--brd2);color:var(--ink);backdrop-filter:blur(8px)}
+  .btn-glass:hover,.btn-soft:hover{border-color:var(--green2);color:var(--green2)}
+  .btn-lg{font-size:1.06rem;padding:17px 32px}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(7,10,18,.72);backdrop-filter:blur(16px);border-bottom:1px solid var(--brd)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .nav .links{display:flex;gap:30px}
+  .nav .links a{color:var(--body);font-size:.94rem;font-weight:500}
+  .nav .links a:hover{color:#fff}
+  @media(max-width:960px){.nav .links{display:none}}
+
+  /* índice lateral (side nav) */
+  .sidenav{position:fixed;top:50%;right:24px;transform:translateY(-50%);z-index:60;display:flex;flex-direction:column;gap:28px}
+  .sidenav .grp{display:flex;flex-direction:column;gap:15px;position:relative}
+  .sidenav .grp:not(:last-child)::after{content:"";position:absolute;right:10px;bottom:-21px;width:2px;height:12px;background:var(--brd2);border-radius:2px}
+  .sidenav a{display:flex;align-items:center;gap:0;justify-content:flex-end;color:var(--muted);position:relative;height:22px}
+  .sidenav a .dot{width:13px;height:13px;border-radius:50%;background:currentColor;flex:none;margin-right:4.5px;transition:transform .2s var(--ease),background .2s,box-shadow .2s;opacity:.5}
+  .sidenav a.main .dot{margin-right:0}
+  .sidenav a.main .dot{width:22px;height:22px;opacity:.85;border:2.5px solid currentColor;background:transparent;position:relative}
+  .sidenav a.main .dot::after{content:"";position:absolute;inset:5px;border-radius:50%;background:currentColor;opacity:.9}
+  .sidenav a .lbl{font-family:Onest;font-weight:600;font-size:.86rem;white-space:nowrap;max-width:0;overflow:hidden;opacity:0;transition:max-width .28s var(--ease),opacity .2s var(--ease),padding .28s var(--ease);color:var(--ink)}
+  .sidenav a.main .lbl{font-weight:700;max-width:230px;opacity:1;padding-right:14px}
+  .sidenav a:hover .lbl,.sidenav a:focus-visible .lbl{max-width:230px;opacity:1;padding-right:16px}
+  .sidenav a:hover .dot{opacity:1;transform:scale(1.15)}
+  .sidenav a.on{color:var(--green2)}
+  .sidenav a.on .dot{opacity:1;background:var(--green2);box-shadow:0 0 0 6px rgba(52,211,153,.14)}
+  .sidenav a.on.main .dot{background:transparent;box-shadow:0 0 0 5px rgba(52,211,153,.14)}
+  .sidenav a.on.main .dot::after{background:var(--green2)}
+  .sidenav a.on .lbl{max-width:230px;opacity:1;padding-right:16px;color:var(--green2)}
+  @media(max-width:1180px){.sidenav{display:none}}
+
+  /* barra de progreso de lectura */
+  .readbar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:left;z-index:70;background:linear-gradient(90deg,var(--green),var(--green2));box-shadow:0 0 12px rgba(52,211,153,.6);transition:transform .08s linear;will-change:transform}
+  /* índice móvil: botón flotante + hoja inferior */
+  .toc-fab{position:fixed;right:16px;bottom:16px;z-index:75;display:none;align-items:center;gap:8px;padding:12px 18px;border-radius:var(--pill);border:none;cursor:pointer;font-family:Onest;font-weight:700;font-size:.95rem;color:#04120c;background:var(--green2);box-shadow:0 14px 34px rgba(16,185,129,.5)}
+  .toc-fab .ic{width:19px;height:19px;stroke-width:2}
+  .toc-sheet{position:fixed;inset:0;z-index:80;display:none;opacity:0;background:rgba(4,7,14,.62);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);transition:opacity .25s}
+  .toc-sheet.show{display:block}
+  .toc-sheet.open{opacity:1}
+  .toc-panel{position:absolute;left:0;right:0;bottom:0;max-height:82vh;overflow:auto;background:var(--bg2);border:1px solid var(--brd);border-bottom:none;border-radius:22px 22px 0 0;padding:0 20px calc(22px + env(safe-area-inset-bottom));transform:translateY(101%);transition:transform .32s var(--ease)}
+  .toc-sheet.open .toc-panel{transform:none}
+  .toc-grab{width:44px;height:4px;border-radius:9999px;background:var(--brd2);margin:12px auto 4px}
+  .toc-head{display:flex;align-items:center;justify-content:space-between;padding:6px 0 12px;border-bottom:1px solid var(--brd);margin-bottom:4px}
+  .toc-head b{font-family:Onest;font-size:1.08rem;color:var(--ink)}
+  .toc-close{background:var(--card2);border:1px solid var(--brd);color:var(--body);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;line-height:1}
+  .toc-panel a{display:flex;align-items:center;gap:12px;padding:13px 4px;color:var(--body);border-bottom:1px solid rgba(255,255,255,.05);font-family:Onest;font-weight:600;font-size:1rem}
+  .toc-panel a:last-child{border-bottom:none}
+  .toc-panel a .dot{width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.5;flex:none}
+  .toc-panel a.main{color:var(--ink);font-weight:700}
+  .toc-panel a.main .dot{width:10px;height:10px;opacity:.9;background:var(--green2)}
+  .toc-panel a.on{color:var(--green2)}
+  .toc-panel a.on .dot{background:var(--green2);opacity:1}
+  @media(max-width:1180px){.toc-fab{display:flex}}
+  @media(prefers-reduced-motion:reduce){.toc-panel,.readbar{transition:none}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-28%;left:50%;transform:translateX(-50%);width:1100px;height:700px;background:radial-gradient(circle,rgba(16,185,129,.2),transparent 62%);z-index:0;pointer-events:none}
+  .hero .aurora{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .hero .aurora span{position:absolute;border-radius:50%;filter:blur(75px);mix-blend-mode:screen}
+  .hero .aurora .a1{width:640px;height:640px;background:radial-gradient(circle,rgba(16,185,129,.42),transparent 66%);top:-180px;left:-100px;animation:drift1 26s ease-in-out infinite}
+  .hero .aurora .a2{width:540px;height:540px;background:radial-gradient(circle,rgba(52,211,153,.34),transparent 66%);top:-40px;right:-60px;animation:drift2 32s ease-in-out infinite}
+  .hero .aurora .a3{width:520px;height:520px;background:radial-gradient(circle,rgba(4,70,52,.65),transparent 66%);bottom:-220px;left:38%;animation:drift3 29s ease-in-out infinite}
+  @keyframes drift1{0%{transform:translate(0,0) scale(1)}33%{transform:translate(320px,120px) scale(1.2)}66%{transform:translate(180px,260px) scale(1.1)}100%{transform:translate(0,0) scale(1)}}
+  @keyframes drift2{0%{transform:translate(0,0) scale(1)}33%{transform:translate(-260px,140px) scale(1.15)}66%{transform:translate(-360px,-40px) scale(1.05)}100%{transform:translate(0,0) scale(1)}}
+  @keyframes drift3{0%{transform:translate(0,0) scale(1)}33%{transform:translate(-180px,-120px) scale(1.25)}66%{transform:translate(160px,-60px) scale(1.12)}100%{transform:translate(0,0) scale(1)}}
+  .hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:24px;align-items:start;padding:64px 24px 84px}
+  .hero .wrap>div:first-child{padding-top:0;transform:translateY(-15px)}
+  @media(max-width:960px){.hero .wrap{grid-template-columns:minmax(0,1fr);gap:32px;padding:40px 24px 56px;align-items:center}.hero .wrap>div{min-width:0}.hero .wrap>div:first-child{padding-top:0;transform:none}}
+  @media(max-width:960px){.hero .chip{height:auto;white-space:normal;line-height:1.3;padding:9px 16px}}
+  .chip{display:inline-flex;align-items:center;gap:10px;height:40px;background:var(--green-soft);border:1px solid rgba(52,211,153,.3);border-radius:var(--pill);padding:0 18px;line-height:1;font-family:Onest;font-weight:600;font-size:.86rem;color:var(--green2);margin-bottom:24px}
+  .chip .pd{width:7px;height:7px;border-radius:50%;background:var(--green2);box-shadow:0 0 0 4px rgba(52,211,153,.2);animation:pulse 2.5s var(--ease) infinite}
+  .hero h1{font-size:clamp(2.4rem,5.2vw,4rem);letter-spacing:-.035em}
+  .hero h1 .thin{display:block;font-weight:300;color:#8D99AD}
+  .hero h1 .hl{color:#fff;font-weight:700}
+  .hero h1 .bold{font-weight:700;color:#fff}
+  .hero p.lead{margin-top:24px;font-size:clamp(1.08rem,2vw,1.25rem);color:var(--body);max-width:46ch}
+  .hero .btns{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero .micro{margin-top:20px;color:var(--muted);font-size:.9rem;display:inline-flex;align-items:center;gap:9px}
+  .hero .micro .ic{color:var(--green2)}
+
+  /* ===== ORB (3 anillos) ===== */
+  .stage{position:relative;height:700px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px}
+  @media(max-width:960px){.stage{height:auto;transform:none;justify-content:center;padding-right:0;overflow:hidden;min-width:0}}
+  .orb{position:relative;width:560px;height:560px;flex:none;transform:scale(1.12) translateX(18px)}
+  @media(max-width:960px){.orb{transform:scale(.74);margin:-73px 0}}
+  @media(max-width:520px){.orb{transform:scale(.56);margin:-123px 0}}
+  .orb .halo{position:absolute;inset:180px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.34),transparent 62%);filter:blur(26px);animation:pulse 5s var(--ease) infinite}
+  .orb .ringsvg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .orb .spin{transform-origin:280px 280px;animation:spin 34s linear infinite}
+  .orb .spin2{transform-origin:280px 280px;animation:spin 90s linear infinite reverse}
+  .orb .caplbl{position:absolute;left:50%;transform:translateX(-50%);font-family:Onest;font-weight:700;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;background:var(--bg);padding:2px 12px;border-radius:var(--pill);border:1px solid var(--brd);z-index:5}
+  .orb .cap-out{top:-48px;display:inline-flex;align-items:center;gap:9px;height:40px;color:var(--green2);font-weight:600;font-size:.86rem;line-height:1;letter-spacing:0;text-transform:none;padding:0 18px;border-color:rgba(52,211,153,.3);background:var(--green-soft);transform:translateX(-50%) scale(.893);transform-origin:center top}
+  .orb .cap-out .pd{width:7px;height:7px;border-radius:50%;background:var(--green2);box-shadow:0 0 0 4px rgba(52,211,153,.2);animation:pulse 2.5s var(--ease) infinite;flex:none}
+  .orb .cap-mid{top:82px;color:var(--green2);border-color:rgba(52,211,153,.3)}
+  .orb .an{position:absolute;top:50%;left:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:15px;background:#0F1726;border:1px solid rgba(52,211,153,.35);display:flex;align-items:center;justify-content:center;color:var(--green2);box-shadow:0 10px 26px rgba(0,0,0,.55);z-index:3}
+  .orb .an::after{content:attr(data-l);position:absolute;top:calc(100% + 7px);left:50%;transform:translateX(-50%);font-family:Inter;font-weight:500;font-size:.66rem;color:var(--body);white-space:nowrap}
+  .orb .an2{position:absolute;top:50%;left:50%;width:42px;height:42px;margin:-21px 0 0 -21px;border-radius:12px;background:#141A26;border:1px solid var(--brd2);display:flex;align-items:center;justify-content:center;color:var(--ink);z-index:2;box-shadow:0 6px 18px rgba(0,0,0,.5)}
+  .orb .an2::after{content:attr(data-l);position:absolute;top:calc(100% + 5px);left:50%;transform:translateX(-50%);font-family:Inter;font-size:.58rem;color:var(--muted);white-space:nowrap}
+  .orb .core{position:absolute;inset:185px;border-radius:50%;background:radial-gradient(circle at 50% 36%,#111E30,#0A0F1A);border:1px solid var(--brd2);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset 0 0 46px rgba(16,185,129,.16);z-index:2}
+  .orb .core .sc{font-family:Onest;font-weight:800;font-size:3.4rem;color:#fff;line-height:1;text-shadow:0 0 26px rgba(52,211,153,.55)}
+  .orb .core .sl{font-family:Onest;font-weight:600;font-size:.72rem;letter-spacing:.02em;color:var(--green2);margin-top:7px}
+  .orb .core .st{font-size:.72rem;color:var(--muted);margin-top:3px}
+
+  /* ===== sections ===== */
+  .sec{padding:74px 0;position:relative}
+  @media(max-width:720px){.sec{padding:54px 0}}
+  .sec.glow::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:440px;background:radial-gradient(circle,rgba(16,185,129,.08),transparent 65%);pointer-events:none}
+  .head{max-width:62ch}
+  .head h2{font-size:clamp(2rem,4vw,3rem);margin-top:16px;color:#fff}
+  .head p{margin-top:14px;font-size:1.1rem}
+  .center{text-align:center;margin-left:auto;margin-right:auto}
+
+  .glass{background:var(--card);border:1px solid var(--brd);border-radius:var(--r);backdrop-filter:blur(6px);transition:transform .25s var(--ease),border-color .25s,box-shadow .25s}
+  .glass:hover{transform:translateY(-4px);border-color:rgba(52,211,153,.45);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+
+  /* fases (ladder) */
+  .ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px}
+  @media(max-width:820px){.ladder{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.ladder{grid-template-columns:1fr}}
+  .rung{padding:24px;position:relative}
+  .rung .k{font-family:Onest;font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--green2)}
+  .rung h3{font-size:1.16rem;margin:8px 0;color:#fff}
+  .rung p{font-size:.92rem}
+  .rung.free{background:linear-gradient(160deg,rgba(16,185,129,.16),var(--card));border-color:rgba(52,211,153,.4)}
+  .rung.build{background:linear-gradient(160deg,rgba(52,211,153,.09),var(--card));border-color:rgba(52,211,153,.32)}
+  .rung .badge{display:inline-block;margin-top:12px;background:var(--green);color:#04231A;font-family:Onest;font-weight:700;font-size:.72rem;padding:4px 11px;border-radius:var(--pill)}
+  .rung .badge.build{background:var(--green-soft);color:var(--green2);border:1px solid rgba(52,211,153,.4)}
+
+  /* ===== cómo funciona (diagrama grande + carrusel) ===== */
+  .hiw-stagebig{position:relative;margin-top:44px;background:linear-gradient(160deg,#0C1420,#0A0F19);border:1px solid var(--brd2);border-radius:22px;min-height:430px;overflow:hidden;box-shadow:inset 0 0 70px rgba(0,0,0,.45)}
+  .hiw-stagebig::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px;opacity:.45}
+  .hiw-panel{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:clamp(48px,7vw,104px);padding:48px 64px;opacity:0;transform:scale(.97);transition:opacity .5s var(--ease),transform .5s var(--ease);pointer-events:none}
+  .hiw-panel.on{opacity:1;transform:none;pointer-events:auto}
+  .hiw-panel .txt{max-width:420px;text-align:left;flex:0 1 auto}
+  .hiw-panel .txt .st{font-family:Onest;font-weight:700;color:var(--green2);font-size:.9rem;letter-spacing:.06em;text-transform:uppercase}
+  .hiw-panel .txt h3{font-size:2.3rem;color:#fff;margin:10px 0 16px}
+  .hiw-panel .txt p{font-size:1.18rem}
+  .hiw-panel .mk{transform:scale(1.26)}
+  .hiw-panel .scan,.hiw-panel .plan3{transform:scale(1.3)}
+  .hiw-panel .gaugebox{transform:scale(1.3)}
+  @media(max-width:720px){.hiw-panel{flex-direction:column;gap:20px;text-align:center;padding:28px 20px;justify-content:center;overflow-y:auto}.hiw-panel .txt{max-width:none}.hiw-panel .txt h3{font-size:1.6rem}.hiw-panel .txt p{font-size:1rem}.hiw-panel .mk,.hiw-panel .scan,.hiw-panel .plan3,.hiw-panel .gaugebox{transform:none;max-width:100%}.hiw-stagebig{min-height:540px}.plan3{width:auto;max-width:100%}.mk{width:auto;max-width:300px}.scan{width:auto;max-width:280px}}
+  /* mockups grandes */
+  .mk{background:rgba(14,20,32,.92);border:1px solid var(--brd2);border-radius:18px;padding:24px;width:340px;box-shadow:0 30px 70px rgba(0,0,0,.55)}
+  .mk .fld{height:42px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--brd2);margin-bottom:11px;display:flex;align-items:center;padding:0 14px;font-size:.86rem;color:var(--body)}
+  .mk .fld.act{border-color:var(--green2);box-shadow:0 0 0 3px rgba(16,185,129,.16);color:#fff}
+  .mk .mkbtn{margin-top:6px;height:44px;border-radius:10px;background:linear-gradient(180deg,var(--green2),var(--green));color:#04231A;font-family:Onest;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px}
+  .scan{width:320px;text-align:center}
+  .scan .nodes{display:flex;align-items:center;justify-content:center}
+  .scan .nd{width:60px;height:60px;border-radius:15px;background:#0F1726;border:1px solid var(--brd2);display:flex;align-items:center;justify-content:center;color:var(--green2)}
+  .scan .ln{width:44px;height:2px;background:rgba(255,255,255,.12);position:relative;overflow:hidden}
+  .scan .ln::after{content:"";position:absolute;top:0;left:-40%;width:40%;height:100%;background:var(--green2);box-shadow:0 0 10px var(--green2);animation:flow 1.5s linear infinite}
+  .scan .bar{margin-top:26px;height:9px;border-radius:9px;background:rgba(255,255,255,.08);overflow:hidden}
+  .scan .bar i{display:block;height:100%;width:40%;background:linear-gradient(90deg,var(--green),var(--green2));box-shadow:0 0 14px rgba(52,211,153,.5);animation:load 2.2s var(--ease) infinite}
+  .scan .cap{margin-top:14px;font-family:Onest;font-weight:600;font-size:.82rem;color:var(--muted)}
+  .gaugebox{display:flex;gap:22px;align-items:center;background:rgba(14,20,32,.92);border:1px solid var(--brd2);border-radius:18px;padding:24px}
+  .gaugebox .g{width:118px;height:118px;position:relative;flex:none}
+  .gaugebox .g .n{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .gaugebox .g .n b{font-family:Onest;font-weight:800;font-size:2rem;color:#fff}
+  .gaugebox .g .n s{font-size:.62rem;color:var(--muted);text-decoration:none}
+  .gaugebox .fnd{font-size:.86rem;color:var(--body);display:flex;gap:8px;margin-top:8px}
+  .gaugebox .fnd:first-child{margin-top:0}
+  .gaugebox .fnd svg{color:var(--green2);margin-top:2px;flex:none}
+  .plan3{display:flex;gap:14px;width:420px}
+  .plan3 .m{flex:1;background:rgba(14,20,32,.92);border:1px solid var(--brd2);border-radius:14px;padding:16px}
+  .plan3 .m .mm{font-family:Onest;font-weight:700;font-size:.68rem;color:var(--green2);letter-spacing:.06em;margin-bottom:12px}
+  .plan3 .m .it{height:10px;border-radius:5px;background:rgba(255,255,255,.08);margin-bottom:8px}
+  .plan3 .m .it.g{background:linear-gradient(90deg,var(--green),var(--green2))}
+  /* carrusel */
+  .hiw-track{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+  @media(max-width:720px){.hiw-track{grid-template-columns:1fr 1fr}}
+  .hiw-chip{text-align:left;display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--brd);border-radius:14px;padding:14px 16px;cursor:pointer;color:var(--body);font-family:inherit;position:relative;overflow:hidden}
+  .hiw-chip .ci{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;color:var(--muted);flex:none}
+  .hiw-chip b{font-family:Onest;font-weight:600;color:#fff;font-size:.92rem;display:block}
+  .hiw-chip span{font-size:.76rem;color:var(--muted)}
+  .hiw-chip.on{border-color:rgba(52,211,153,.5);background:linear-gradient(120deg,rgba(16,185,129,.12),var(--card))}
+  .hiw-chip.on .ci{background:var(--green-soft);border-color:rgba(52,211,153,.4);color:var(--green2)}
+  .hiw-chip .bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--green2)}
+  .hiw-chip.on .bar{width:100%;transition:width 4.5s linear}
+
+  /* ===== radiografía ===== */
+  .mat{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px;align-items:stretch}
+  @media(max-width:900px){.mat{grid-template-columns:1fr}}
+  .mat-list{display:flex;flex-direction:column;justify-content:space-between;gap:9px}
+  .mrowp{display:grid;grid-template-columns:1fr 96px 66px;gap:14px;align-items:center;background:var(--card);border:1px solid var(--brd);border-radius:11px;padding:11px 15px}
+  .mrowp .nm{display:flex;align-items:center;gap:10px;font-family:Onest;font-weight:600;color:#fff;font-size:.9rem}
+  .mrowp .nm .pi{width:28px;height:28px;border-radius:8px;background:var(--green-soft);color:var(--green2);display:flex;align-items:center;justify-content:center;flex:none}
+  .mrowp .lvbar{height:7px;border-radius:9px;background:rgba(255,255,255,.08);overflow:hidden}
+  .mrowp .lvbar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--green2))}
+  .mrowp.weak .nm .pi{background:var(--warn-soft);color:var(--warn)}
+  .mrowp.weak .lvbar i{background:linear-gradient(90deg,#E4573D,var(--warn))}
+  .mrowp .lvl{font-family:Onest;font-weight:700;font-size:.82rem;color:var(--muted);text-align:right}
+  @media(max-width:520px){.mrowp{grid-template-columns:minmax(0,1fr) 56px 34px;gap:10px;padding:11px 12px}.mrowp .nm{min-width:0;font-size:.82rem;gap:8px}.mrowp .nm .pi,.mrowp .nm .pi{width:24px;height:24px}}
+  .mrowp.weak .lvl{color:var(--warn)}
+  /* colores por nivel */
+  .mrowp.l1 .nm .pi{background:var(--red-soft);color:var(--red)}   .mrowp.l1 .lvbar i{background:linear-gradient(90deg,#B93A26,var(--red))}   .mrowp.l1 .lvl{color:var(--red)}
+  .mrowp.l2 .nm .pi{background:var(--warn-soft);color:var(--warn)} .mrowp.l2 .lvbar i{background:linear-gradient(90deg,#E4573D,var(--warn))} .mrowp.l2 .lvl{color:var(--warn)}
+  .mrowp.l3 .nm .pi{background:var(--yellow-soft);color:var(--yellow)} .mrowp.l3 .lvbar i{background:linear-gradient(90deg,#C9A62F,var(--yellow))} .mrowp.l3 .lvl{color:var(--yellow)}
+  .mrowp.l4 .nm .pi{background:var(--green-soft);color:var(--green2)} .mrowp.l4 .lvbar i{background:linear-gradient(90deg,var(--green),var(--green2))} .mrowp.l4 .lvl{color:var(--green2)}
+  .mrowp.l5 .nm .pi{background:var(--blue-soft);color:var(--blue)} .mrowp.l5 .lvbar i{background:linear-gradient(90deg,#3E6FD4,var(--blue))} .mrowp.l5 .lvl{color:var(--blue)}
+  .mat-side{background:linear-gradient(160deg,rgba(16,185,129,.12),var(--card));border:1px solid var(--brd2);border-radius:20px;padding:30px;display:flex;flex-direction:column}
+  .mat-side .g2{width:150px;height:150px;position:relative;margin:6px auto 4px}
+  .mat-side .g2 .n{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .mat-side .g2 .n b{font-family:Onest;font-weight:800;font-size:2.6rem;color:#fff;line-height:1}
+  .mat-side .g2 .n s{font-size:.7rem;color:var(--muted);text-decoration:none}
+  .mat-side .lv{text-align:center;font-family:Onest;font-weight:600;color:var(--green2);font-size:1.05rem}
+  .mat-side .weakcall{margin-top:20px;background:var(--warn-soft);border:1px solid rgba(240,119,78,.3);border-radius:12px;padding:14px 16px;font-size:.9rem;color:var(--warn)}
+  .mat-side .weakcall b{font-family:Onest;color:#fff;display:block;margin-bottom:2px}
+  .mat-side .scale{margin-top:auto;padding-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+  .mat-side .scale span{font-family:Onest;font-weight:700;font-size:.72rem;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--brd);border-radius:var(--pill);padding:4px 10px}
+
+  /* ===== motor (flujo clicable) ===== */
+  .flowcard{margin-top:44px;background:linear-gradient(160deg,#0C1420,#0A0F19);border:1px solid var(--brd2);border-radius:22px;padding:40px 26px 30px;position:relative;overflow:hidden}
+  .flowcard::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:24px 24px;opacity:.45}
+  .flow{position:relative;display:flex;align-items:flex-start;justify-content:center}
+  .fnode{background:none;border:none;font-family:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;width:132px;flex:none}
+  .fnode .fb{width:66px;height:66px;border-radius:17px;background:#0F1726;border:1px solid var(--brd2);display:flex;align-items:center;justify-content:center;color:var(--green2);box-shadow:0 10px 26px rgba(0,0,0,.5);transition:.2s}
+  .fnode.on .fb{border-color:var(--green2);box-shadow:0 0 0 4px rgba(16,185,129,.18),0 10px 26px rgba(0,0,0,.5)}
+  .fnode b{font-family:Onest;font-weight:600;font-size:.9rem;color:#fff}
+  .fnode span{font-size:.74rem;color:var(--muted)}
+  .fconn{flex:1;min-width:24px;height:2px;background:rgba(255,255,255,.12);position:relative;margin-top:32px}
+  .fconn::after{content:"";position:absolute;top:50%;left:0;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:var(--green2);box-shadow:0 0 8px var(--green2);animation:flowdot 2.6s ease-in-out infinite}
+  @media(max-width:820px){.flow{flex-direction:column;gap:10px;align-items:center}.fconn{width:2px;min-width:0;height:26px;flex:none;margin:0}.fconn::after{top:0;left:50%;margin:0 0 0 -3px;width:6px;height:6px;animation:flowdotv 2.6s ease-in-out infinite}}
+  .flowdesc{position:relative;margin-top:30px;padding:24px 4px 4px;border-top:1px solid var(--brd);min-height:120px;display:grid;grid-template-columns:1.5fr .92fr;gap:36px;align-items:start}
+  @media(max-width:820px){.flowdesc{grid-template-columns:1fr;gap:22px}}
+  .flowdesc .dd{font-size:1.05rem;color:var(--body)}
+  .fd-ex{position:relative}
+  .fd-ex .ex{display:none;background:linear-gradient(160deg,rgba(16,185,129,.09),var(--card));border:1px solid var(--brd2);border-radius:14px;padding:16px 18px}
+  .fd-ex .ex.on{display:block;animation:hmfade .3s var(--ease)}
+  .fd-ex .exh{display:inline-flex;align-items:center;gap:7px;font-family:Onest;font-weight:700;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--green2);margin-bottom:12px}
+  .fd-ex ul{list-style:none;display:grid;gap:8px}
+  .fd-ex li{font-family:Onest;font-weight:600;font-size:.92rem;color:#DCE8F2;padding-left:16px;position:relative}
+  .fd-ex li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--green2)}
+  .flowdesc .dd{display:none}
+  .flowdesc .dd.on{display:block;animation:hmfade .3s var(--ease)}
+  .flowdesc .dd b{font-family:Onest;color:var(--green2);font-weight:600}
+
+  /* ===== ejemplos (4 tarjetas) ===== */
+  .reports{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+  @media(max-width:1000px){.reports{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.reports{grid-template-columns:1fr}}
+  .rep{padding:22px;border-radius:var(--r-lg);cursor:pointer}
+  .rep .rh{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+  .rep .co{font-family:Onest;font-weight:600;color:#fff;font-size:1.02rem}
+  .rep .co s{display:block;font-size:.8rem;color:var(--muted);text-decoration:none;font-weight:500;margin-top:1px}
+  .rep .mini{font-family:Onest;font-weight:800;font-size:1.4rem;color:var(--green2);line-height:1}
+  .rep .pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .rep .pl{display:inline-flex;align-items:center;gap:6px;border-radius:var(--pill);padding:5px 11px;font-size:.78rem;font-weight:500}
+  .rep .pl.bad{background:var(--warn-soft);color:var(--warn)}
+  .rep .pl.good{background:var(--green-soft);color:var(--green2)}
+  .rep .more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
+  .rep.open .more{grid-template-rows:1fr}
+  .rep .more-in{overflow:hidden}
+  .rep .mrow{border-top:1px solid var(--brd);padding-top:12px;margin-top:16px;font-size:.86rem;color:var(--body)}
+  .rep .mrow .lab{font-family:Onest;font-size:.74rem;color:var(--muted);display:block;margin-bottom:2px;font-weight:600}
+  .rep .toggle{margin-top:16px;display:flex;justify-content:center;align-items:center;gap:6px;font-family:Onest;font-weight:600;font-size:.84rem;color:var(--green2)}
+  .rep .toggle .chev{transition:transform .3s var(--ease)}
+  .rep.open .toggle .chev{transform:rotate(180deg)}
+  .curio{margin-top:40px;text-align:center;font-family:Onest;font-weight:600;font-size:1.35rem;color:#fff}
+  .curio span{color:var(--green2)}
+  .curio-link{display:inline-flex;align-items:center;gap:8px;color:var(--green2);border-bottom:2px solid rgba(52,211,153,.4);padding-bottom:2px;transition:gap .2s var(--ease),border-color .2s}
+  .curio-link .ic{transition:transform .2s var(--ease)}
+  .curio-link:hover{border-color:var(--green2)}
+  .curio-link:hover .ic{transform:translateX(4px)}
+
+  /* pillars antiguos (no usados en radiografía, quedan por si) */
+  .pcard .pi{width:40px;height:40px;border-radius:11px;background:var(--green-soft);color:var(--green2);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+
+  /* docs */
+  .docs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px}
+  @media(max-width:800px){.docs{grid-template-columns:1fr}}
+  .doc{border-radius:16px;overflow:hidden;height:fit-content}
+  .doc[open]{border-color:rgba(52,211,153,.45)}
+  .doc summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:15px;padding:20px 22px}
+  .doc summary::-webkit-details-marker{display:none}
+  .doc summary .di{width:44px;height:44px;border-radius:12px;background:var(--green-soft);color:var(--green2);display:flex;align-items:center;justify-content:center;flex:none}
+  .doc summary .dt{flex:1;min-width:0}
+  .doc summary .dt b{font-family:Onest;font-size:1.02rem;color:#fff;display:block;line-height:1.2}
+  .doc summary .dt span{font-size:.84rem;color:var(--muted)}
+  .doc summary .chev{color:var(--muted);transition:transform .25s var(--ease);flex:none}
+  .doc[open] summary .chev{transform:rotate(180deg);color:var(--green2)}
+  .doc .body{padding:0 22px 22px 81px}
+  @media(max-width:480px){.doc .body{padding:0 22px 22px 22px}}
+  .doc .body ul{list-style:none;display:grid;gap:9px;border-top:1px dashed var(--brd);padding-top:16px}
+  .doc .body li{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:var(--body)}
+  .doc .body li .ic{color:var(--green2);margin-top:2px;width:17px;height:17px}
+  .docs-hint{margin-top:20px;color:var(--muted);font-size:.9rem;display:inline-flex;align-items:center;gap:8px}
+  .docs-hint .ic{color:var(--green2)}
+
+  /* FAQ */
+  .faq-list{max-width:820px;margin:44px auto 0;display:flex;flex-direction:column;gap:12px}
+  .faq{background:var(--card);border:1px solid var(--brd);border-radius:14px;overflow:hidden;transition:border-color .25s}
+  .faq[open]{border-color:rgba(52,211,153,.4)}
+  .faq summary{cursor:pointer;list-style:none;padding:20px 22px;font-family:Onest;font-weight:600;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:1.04rem}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .plus{width:22px;height:22px;flex:none;position:relative;transition:transform .25s var(--ease)}
+  .faq summary .plus::before,.faq summary .plus::after{content:"";position:absolute;background:var(--green2);border-radius:2px}
+  .faq summary .plus::before{top:10px;left:3px;right:3px;height:2px}
+  .faq summary .plus::after{left:10px;top:3px;bottom:3px;width:2px}
+  .faq[open] summary .plus{transform:rotate(135deg)}
+  .faq .answer{padding:0 22px 20px;color:var(--body);font-size:.96rem}
+
+  /* rápido */
+  .fast{display:grid;grid-template-columns:1fr 1.55fr;gap:48px;align-items:stretch}
+  @media(max-width:860px){.fast{grid-template-columns:1fr;gap:36px}}
+  .fast>.rv:first-child{display:flex;flex-direction:column;justify-content:center}
+  .fast .benefits{list-style:none;margin-top:24px;display:grid;gap:16px}
+  .fast .benefits li{display:flex;gap:12px;align-items:flex-start}
+  .fast .benefits .ic{color:var(--green2);margin-top:2px}
+  .fast .benefits b{font-family:Onest;color:#fff;display:block}
+  .fast .benefits span{font-size:.92rem;color:var(--body)}
+  .fastvis{position:relative;height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:20px;background:linear-gradient(160deg,#0C1420,#0A0F19);border:1px solid var(--brd2)}
+  .fastvis .circuit{position:absolute;inset:0;width:100%;height:100%}
+  .fastvis .core2{width:140px;height:140px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#14263a,#0A0F1A);border:1px solid rgba(52,211,153,.5);display:flex;align-items:center;justify-content:center;color:var(--green2);box-shadow:0 0 60px rgba(16,185,129,.4),inset 0 0 36px rgba(16,185,129,.2);position:relative;z-index:2}
+  .fastvis .core2 svg{width:50px;height:50px}
+  .fastvis .core2 .ic{fill:var(--green2);stroke:var(--green2);stroke-width:1.2;stroke-linejoin:round;filter:drop-shadow(0 0 10px rgba(52,211,153,.6))}
+  .fastvis .ping{position:absolute;width:140px;height:140px;border-radius:50%;border:1px solid rgba(52,211,153,.5);animation:ping 3s var(--ease) infinite;z-index:1}
+  .fastvis .dot{fill:var(--green2);filter:drop-shadow(0 0 5px var(--green2))}
+
+  /* antes/después */
+  .bawrap{margin-top:44px;position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--brd2);background:linear-gradient(160deg,#0C1420,#0A0F19)}
+  .bawrap .bg{position:absolute;inset:0;background:radial-gradient(520px 320px at 18% 22%,rgba(240,119,78,.1),transparent 60%),radial-gradient(520px 320px at 82% 82%,rgba(16,185,129,.13),transparent 60%)}
+  .bawrap .bg2{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(180deg,#000,transparent);mask-image:linear-gradient(180deg,#000,transparent)}
+  .ba{position:relative;display:grid;grid-template-columns:1fr 1fr}
+  @media(max-width:760px){.ba{grid-template-columns:1fr}}
+  .ba .col{padding:38px 34px}
+  .ba .col.no{border-right:1px solid var(--brd)}
+  @media(max-width:760px){.ba .col.no{border-right:none;border-bottom:1px solid var(--brd)}}
+  .ba .tag{font-family:Onest;font-weight:700;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;margin-bottom:16px}
+  .ba .no .tag{color:var(--warn)}
+  .ba .yes .tag{color:var(--green2)}
+  .ba h3{font-size:1.4rem;color:#fff;margin-bottom:18px}
+  .ba ul{list-style:none;display:grid;gap:13px}
+  .ba li{display:flex;gap:11px;align-items:flex-start;font-size:.95rem;color:var(--body)}
+  .ba .no li .ic{color:var(--warn);margin-top:2px}
+  .ba .yes li .ic{color:var(--green2);margin-top:2px}
+
+  /* offer */
+  .offer{position:relative;border-radius:26px;padding:clamp(32px,5vw,54px);background:linear-gradient(160deg,rgba(16,185,129,.14),rgba(14,20,32,.7));border:1px solid rgba(52,211,153,.3);overflow:hidden}
+  .offer::before{content:"";position:absolute;top:-40%;right:-10%;width:520px;height:520px;background:radial-gradient(circle,rgba(16,185,129,.28),transparent 62%);pointer-events:none}
+  .offer h2{font-size:clamp(1.9rem,3.6vw,2.7rem);color:#fff;position:relative}
+  .offer p,.offer ul,.offer .guar,.offer .eyebrow{position:relative}
+  .offer ul{list-style:none;margin:24px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:13px 26px}
+  @media(max-width:640px){.offer ul{grid-template-columns:1fr}}
+  .offer li{display:flex;gap:11px;align-items:flex-start;color:var(--body)}
+  .offer li .ic{color:var(--green2);margin-top:2px}
+  .offer .guar{margin-top:26px;display:flex;gap:13px;background:rgba(16,185,129,.1);border:1px solid rgba(52,211,153,.34);border-radius:16px;padding:20px 22px}
+  .offer .guar .ic{color:var(--green2);flex:none;margin-top:2px}
+  .offer .guar b{font-family:Onest;color:#fff}
+  /* voto de confianza (fuera de la caja) */
+  .guar-out{margin-top:22px;display:flex;gap:18px;align-items:center;background:rgba(16,185,129,.06);border:1px solid rgba(52,211,153,.28);border-radius:18px;padding:22px 26px}
+  .guar-out .gi{width:52px;height:52px;border-radius:14px;background:var(--green-soft);border:1px solid rgba(52,211,153,.35);color:var(--green2);display:flex;align-items:center;justify-content:center;flex:none}
+  .guar-out div:last-child{font-size:1.02rem;color:var(--body)}
+  .guar-out b{font-family:Onest;color:#fff}
+
+  /* final */
+  .final .head-c{max-width:680px;margin:0 auto;text-align:center}
+  .final h2{font-size:clamp(2.1rem,4.4vw,3.3rem);color:#fff}
+  .final h2 .kw{color:var(--green2)}
+  .final .lead-c{margin:14px auto 0;font-size:1.16rem;max-width:52ch}
+  .final .head-c .eyebrow{justify-content:center}
+
+  footer{border-top:1px solid var(--brd);padding:56px 0 32px;background:var(--bg2)}
+  footer .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}
+  @media(max-width:720px){footer .cols{grid-template-columns:1fr;gap:26px}}
+  footer h5{color:#fff;font-family:Onest;font-size:.95rem;margin-bottom:12px}
+  footer a{display:block;color:var(--muted);font-size:.92rem;padding:4px 0}
+  footer a:hover{color:var(--green2)}
+  footer .base{margin-top:36px;border-top:1px solid var(--brd);padding-top:20px;font-size:.82rem;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes pulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:.9;transform:scale(1.06)}}
+  @keyframes flow{to{left:120%}}
+  @keyframes flowv{to{top:120%}}
+  @keyframes flowdot{0%{left:0;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:calc(100% - 6px);opacity:0}}
+  @keyframes flowdotv{0%{top:0;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:calc(100% - 6px);opacity:0}}
+  @keyframes load{0%{width:8%}50%{width:84%}100%{width:8%}}
+  @keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.4);opacity:0}}
+  @keyframes hmfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;animation:none!important}.rv{opacity:1;transform:none;transition:none}.glass:hover,.btn:hover{transform:none}}
+
+  /* fases interactivas */
+  .rung{cursor:pointer}
+  .rung .fmore{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
+  .rung.open .fmore{grid-template-rows:1fr}
+  .rung .fmore-in{overflow:hidden}
+  .rung .fmore p{font-size:.88rem;color:var(--body);border-top:1px solid var(--brd);padding-top:12px;margin-top:14px}
+  .rung .ftoggle{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font-family:Onest;font-weight:600;font-size:.8rem;color:var(--green2)}
+  .rung .ftoggle .chev{transition:transform .3s var(--ease)}
+  .rung.open .ftoggle .chev{transform:rotate(180deg)}
+  /* radiografía: escala coloreada + fortalezas/oportunidades */
+  .mat-side .scale .s0{background:rgba(228,87,61,.18);border-color:rgba(228,87,61,.4);color:#F0967E}
+  .mat-side .scale .s1{background:rgba(240,140,80,.16);border-color:rgba(240,140,80,.4);color:#F6B871}
+  .mat-side .scale .s2{background:rgba(234,179,8,.14);border-color:rgba(234,179,8,.4);color:#E7C34B}
+  .mat-side .scale .s3{background:rgba(132,204,120,.14);border-color:rgba(132,204,120,.4);color:#9BD98C}
+  .mat-side .scale .s4{background:rgba(16,185,129,.16);border-color:rgba(52,211,153,.4);color:var(--green2)}
+  .mat-side .scale .s5{background:rgba(16,185,129,.26);border-color:rgba(52,211,153,.6);color:var(--green3)}
+  .mat-side .fyt{margin-top:18px;display:flex;gap:8px}
+  .mat-side .fyt .c{flex:1;background:rgba(255,255,255,.04);border:1px solid var(--brd);border-radius:11px;padding:12px 13px}
+  .mat-side .fyt .c .h{font-family:Onest;font-weight:700;font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+  .mat-side .fyt .c.g .h{color:var(--green2)}
+  .mat-side .fyt .c.w .h{color:var(--warn)}
+  .mat-side .fyt .c span{display:block;font-family:Onest;font-weight:600;font-size:.82rem;color:var(--body)}
+  /* muévete: sin caja */
+  .fastvis{height:auto;min-height:730px;background:none!important;border:none!important;box-shadow:none!important;border-radius:0!important;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  @media(max-width:860px){.fastvis{min-height:470px}}
+  .fastvis .circuit{transform:translateY(26px)}
+  .fastvis .circuit .spinc{transform-origin:230px 180px;animation:spin 55s linear infinite}
+  .fastvis .circuit .spinc2{transform-origin:230px 180px;animation:spin 40s linear infinite reverse}
+  .fastvis .circuit .pulsec{transform-origin:230px 180px;animation:vibe 3s var(--ease) infinite}
+  @keyframes vibe{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.14);opacity:.95}}
+  .fastvis .circuit .pingsvg{transform-origin:230px 180px;animation:pingsvg 4.2s var(--ease) infinite}
+  .fastvis .circuit .pingsvg2{animation-delay:1.4s}
+  .fastvis .circuit .pingsvg3{animation-delay:2.8s}
+  @keyframes pingsvg{0%{transform:scale(1);opacity:.6}80%{opacity:.12}100%{transform:scale(3.42);opacity:0}}
+  .fastvis .circuit .bolt{fill:var(--green2);filter:drop-shadow(0 0 8px rgba(52,211,153,.55))}
+  .fastvis .cl{font-family:Inter;font-weight:500;font-size:12px;fill:#fff;text-decoration:none}
+  /* quién soy */
+  .who{display:grid;grid-template-columns:1.12fr .88fr;gap:40px;align-items:stretch;margin-top:8px}
+  .who>.rv:first-child{display:flex;flex-direction:column;justify-content:center}
+  .who .whocard{display:flex;flex-direction:column}
+  .whocard .rl{margin-bottom:6px}
+  .who .whocard .cr{margin-top:28px}
+  .who .whocard .cr{margin-bottom:26px}
+  .who .whocard .wholink{margin-top:auto}
+  @media(max-width:860px){.who{grid-template-columns:1fr;gap:32px}}
+  .who h2{font-size:clamp(2rem,4vw,2.9rem);margin-top:16px;color:#fff}
+  .who .lead2{font-size:1.14rem;color:var(--body);margin-top:16px}
+  .who .why{margin-top:20px;padding:20px 22px;background:linear-gradient(160deg,rgba(16,185,129,.1),var(--card));border:1px solid rgba(52,211,153,.3);border-radius:14px;font-size:1.02rem;color:#DCE8F2}
+  .who .why b{font-family:Onest;color:#fff}
+  .whocard{background:var(--card);border:1px solid var(--brd2);border-radius:20px;padding:30px}
+  .whocard .nm{font-family:Onest;font-weight:700;font-size:1.3rem;color:#fff}
+  .whocard .rl{color:var(--green2);font-family:Onest;font-weight:600;font-size:.92rem;margin-top:2px}
+  .whocard .cr{list-style:none;margin-top:22px;display:grid;gap:16px}
+  .whocard .cr li{display:flex;gap:12px;align-items:flex-start}
+  .whocard .cr .ci{width:38px;height:38px;border-radius:10px;background:var(--green-soft);color:var(--green2);display:flex;align-items:center;justify-content:center;flex:none}
+  .whocard .cr b{font-family:Onest;color:#fff;display:block;font-size:.98rem}
+  .whocard .cr span{font-size:.85rem;color:var(--muted)}
+  .whocard .wholink{margin-top:24px;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:Onest;font-weight:600;font-size:.92rem;color:var(--green2);background:var(--green-soft);border:1px solid rgba(52,211,153,.3);border-radius:var(--pill);padding:11px 18px;transition:border-color .2s,background .2s}
+  .whocard .wholink:hover{border-color:var(--green2);background:rgba(16,185,129,.18)}
+  .whocard .wholink .li{width:19px;height:19px;fill:currentColor;flex:none}
+
+  /* ===== diagnóstico interactivo (Horse Magnet · dark) ===== */
+  .hm{max-width:760px;margin:40px auto 0;text-align:left}
+  .hm-card{background:rgba(14,20,32,.72);border:1px solid var(--brd2);border-radius:var(--r-lg);box-shadow:0 40px 90px rgba(0,0,0,.5);padding:clamp(24px,4vw,40px);position:relative;overflow:hidden;backdrop-filter:blur(10px)}
+  .hm-prog{display:flex;gap:8px;margin-bottom:26px}
+  .hm-prog span{flex:1;height:5px;border-radius:var(--pill);background:rgba(255,255,255,.1);transition:background .3s var(--ease)}
+  .hm-prog span.on{background:var(--green)}
+  .hm-step{display:none}
+  .hm-step.on{display:block;animation:hmfade .35s var(--ease)}
+  .hm-step .st{font-family:Onest;font-weight:700;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--green2)}
+  .hm-step h3{font-size:1.5rem;margin:6px 0 4px;color:#fff}
+  .hm-step .sub{font-size:.96rem;color:var(--muted);margin-bottom:22px}
+  .hm-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.hm-grid{grid-template-columns:1fr}}
+  .hm-f{display:flex;flex-direction:column;gap:7px}
+  .hm-f.full{grid-column:1/-1}
+  .hm-f label{font-family:Onest;font-weight:600;font-size:.9rem;color:var(--ink)}
+  .hm-f label .opt{color:var(--muted);font-weight:500}
+  .hm-note{font-size:.78rem;color:var(--muted);line-height:1.35}
+  .hm-f input,.hm-f select,.hm-f textarea{font-family:Inter;font-size:1rem;color:var(--ink);background:rgba(255,255,255,.04);border:1px solid var(--brd2);border-radius:12px;padding:13px 14px;width:100%;transition:border-color .2s,box-shadow .2s}
+  .hm-f select{appearance:none;-webkit-appearance:none;-moz-appearance:none;padding-right:44px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='%23A7B2C4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;background-size:17px}
+  .hm-f select:focus{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='%2334D399' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")}
+  .hm-f select option{color:#0B1220}
+  .hm-f textarea{min-height:92px;resize:vertical;line-height:1.5}
+  .hm-f input::placeholder,.hm-f textarea::placeholder{color:var(--muted)}
+  .hm-f input:focus,.hm-f select:focus,.hm-f textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 0 0 4px rgba(16,185,129,.16)}
+  .hm-f.err input,.hm-f.err select,.hm-f.err textarea{border-color:#F0774E;box-shadow:0 0 0 4px rgba(240,119,78,.14)}
+  .hm-opts{display:flex;flex-direction:column;gap:22px}
+  .hm-opt .q{font-family:Onest;font-weight:600;font-size:1.02rem;color:#fff;margin-bottom:11px}
+  .hm-pills{display:flex;gap:10px;flex-wrap:wrap}
+  .hm-pills label{cursor:pointer;position:relative}
+  .hm-pills input{position:absolute;opacity:0;width:0;height:0}
+  .hm-pills span{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--brd2);background:rgba(255,255,255,.03);border-radius:var(--pill);padding:11px 18px;font-size:.94rem;color:var(--body);transition:border-color .18s var(--ease),background .18s,color .18s}
+  .hm-pills label:hover span{border-color:var(--green2)}
+  .hm-pills input:checked+span{background:var(--green-soft);border-color:var(--green2);color:var(--green2);font-weight:600}
+  .hm-pills input:focus-visible+span{outline:2px solid var(--green2);outline-offset:2px}
+  .hm-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .hm-nav{display:flex;justify-content:space-between;gap:12px;margin-top:26px}
+  .hm-nav .sp{flex:1}
+  .hm-err-msg{color:#F0774E;font-size:.9rem;margin-top:14px;display:none}
+  .hm-err-msg.on{display:block}
+  .hm-consent{display:flex;gap:11px;align-items:flex-start;margin-top:22px;font-size:.9rem;color:var(--body);cursor:pointer}
+  .hm-consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--green2)}
+  .hm-consent a{color:var(--green2);text-decoration:underline}
+  .hm-consent.err span{color:#F0774E}
+  .hm-load{display:none;flex-direction:column;align-items:center;text-align:center;padding:36px 10px}
+  .hm-load.on{display:flex}
+  .hm-spin{width:52px;height:52px;border-radius:50%;border:4px solid rgba(16,185,129,.18);border-top-color:var(--green2);animation:spin 1s linear infinite;margin-bottom:20px}
+  .hm-load p{font-family:Onest;font-weight:600;color:#fff;font-size:1.1rem}
+  .hm-load small{color:var(--muted);margin-top:6px}
+  .hm-result{display:none;text-align:left}
+  .hm-result.on{display:block;animation:hmfade .4s var(--ease)}
+  .hm-result .rtag{display:inline-flex;align-items:center;gap:8px;background:var(--green-soft);color:var(--green2);font-family:Onest;font-weight:600;font-size:.82rem;padding:7px 14px;border-radius:var(--pill)}
+  .hm-md{margin-top:18px}
+  .hm-md h1,.hm-md h2,.hm-md h3{font-family:Onest;color:#fff;margin:18px 0 8px;line-height:1.2}
+  .hm-md h1{font-size:1.4rem}.hm-md h2{font-size:1.2rem}.hm-md h3{font-size:1.05rem}
+  .hm-md p{color:var(--body);margin:8px 0}
+  .hm-md ul{margin:8px 0;padding-left:20px;color:var(--body)}
+  .hm-md li{margin:5px 0}
+  .hm-md strong{color:#fff}
+  .hm-cta{margin-top:26px;border-top:1px solid var(--brd);padding-top:22px;text-align:center}
+  .hm-cta p{color:var(--body);margin-bottom:14px}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8a2 2 0 0 0-3 0z"/><path d="M12 15 9 12a11 11 0 0 1 6-8 11 11 0 0 1 6 0 11 11 0 0 1 0 6 11 11 0 0 1-8 6z"/><circle cx="15" cy="9" r="1.5"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V4s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22V4"/></symbol>
+  <symbol id="i-mega" viewBox="0 0 24 24"><path d="m3 11 15-6v14L3 13z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.3 3-5.5A3.5 3.5 0 0 0 12 6a3.5 3.5 0 0 0-10 2.5C2 12 6 15 12 19c2-1.3 3.7-2.6 5-3.7"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8 2 2 0 1 1-2.7 2.7 1.6 1.6 0 0 0-2.7 1.1 2 2 0 1 1-4 0 1.6 1.6 0 0 0-2.7-1.1 2 2 0 1 1-2.7-2.7 1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1 2 2 0 1 1 0-4 1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8 2 2 0 1 1 2.7-2.7 1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5 2 2 0 1 1 4 0 1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3 2 2 0 1 1 2.7 2.7 1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1 2 2 0 1 1 0 4 1.6 1.6 0 0 0-1.5 1z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-cycle" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9 4.5 4h15L21 9M4 9v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9M4 9h16M9 20v-6h6v6"/></symbol>
+  <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.5 15.5M14.5 12.5 20 20M8.5 8.5 12 12"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M2 3h2l2.6 12.4a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 2-1.6L23 7H6"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6.94 5a2 2 0 1 1-4.001-.001A2 2 0 0 1 6.94 5zM7 8.48H3V21h4zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91z"/></symbol>
+</svg>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Evolution 360 inicio" tabindex="0">
+      <svg class="iso" viewBox="-10 -10 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="g1" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#34D399"/><stop offset="1" stop-color="#10B981"/></linearGradient></defs><path d="M34 22.3 A32 32 0 1 1 60.9 19.9" fill="none" stroke="url(#g1)" stroke-width="10" stroke-linecap="round"/><circle cx="60.9" cy="19.9" r="5.4" fill="#34D399"/></svg>
+      <span class="wm"><span class="short">E<b>360</b></span><span class="full">Evolution<b> 360</b></span></span>
+    </a>
+    <nav class="links">
+      <a href="#fases">Las 4 fases</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#analiza">Qué miramos</a>
+      <a href="#programa">Programa Fundadores</a>
+    </nav>
+    <a class="btn btn-primary" href="#empezar">Analizar mi negocio <svg class="ic"><use href="#i-arrow"/></svg></a>
+  </div>
+</header>
+
+<!-- ÍNDICE LATERAL -->
+<nav class="sidenav" id="sidenav" aria-label="Índice de la página">
+  <div class="grp">
+    <a href="#top" data-t="top" class="main"><span class="lbl">Inicio</span><span class="dot"></span></a>
+    <a href="#ejemplos" data-t="ejemplos"><span class="lbl">¿Te suena? · Ejemplos</span><span class="dot"></span></a>
+  </div>
+  <div class="grp">
+    <a href="#fases" data-t="fases" class="main"><span class="lbl">Qué hacemos · Las 4 fases</span><span class="dot"></span></a>
+    <a href="#como" data-t="como"><span class="lbl">Cómo funciona</span><span class="dot"></span></a>
+    <a href="#analiza" data-t="analiza"><span class="lbl">Qué miramos</span><span class="dot"></span></a>
+    <a href="#documentos" data-t="documentos"><span class="lbl">Qué entregamos</span><span class="dot"></span></a>
+  </div>
+  <div class="grp">
+    <a href="#cambio" data-t="cambio" class="main"><span class="lbl">Por qué · Antes / después</span><span class="dot"></span></a>
+    <a href="#quien" data-t="quien"><span class="lbl">Quién está detrás</span><span class="dot"></span></a>
+    <a href="#rapido" data-t="rapido"><span class="lbl">Sin riesgo</span><span class="dot"></span></a>
+  </div>
+  <div class="grp">
+    <a href="#programa" data-t="programa" class="main"><span class="lbl">Programa Fundadores</span><span class="dot"></span></a>
+    <a href="#empezar" data-t="empezar"><span class="lbl">Empezar gratis</span><span class="dot"></span></a>
+    <a href="#faq" data-t="faq"><span class="lbl">Preguntas frecuentes</span><span class="dot"></span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+  <div class="wrap">
+    <div>
+      <div class="chip"><span class="pd"></span> Consultoría para pymes y pequeños negocios</div>
+      <h1><span class="thin">Descubrimos cómo <span class="hl">acelerar</span>, y qué <span class="hl">frena</span> tu negocio</span><span class="bold">— y luego lo <span class="kw">construimos contigo</span>.</span></h1>
+      <p class="lead">Una consultoría para pymes y autónomos: primero encontramos qué te frena —gratis y en minutos— y después ponemos en marcha contigo lo que lo arregla, sea web, automatización, IA o el sistema que tu negocio necesite.</p>
+      <div class="btns">
+        <a class="btn btn-primary btn-lg" href="#empezar">Analizar mi negocio gratis <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-glass btn-lg" href="#como">Ver cómo funciona</a>
+      </div>
+      <div class="micro"><svg class="ic"><use href="#i-check"/></svg> Sin coste, sin llamadas y sin compromiso. Tienes tu diagnóstico en 5 minutos.</div>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <div class="orb">
+        <div class="halo"></div>
+        <span class="caplbl cap-out"><span class="pd"></span>Implementación 360°</span>
+        <svg class="ringsvg" viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="og" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#10B981"/><stop offset="1" stop-color="#6EE7B7"/></linearGradient></defs>
+          <g stroke="rgba(52,211,153,.14)" stroke-width="1">
+            <line x1="280" y1="280" x2="364" y2="134.5"/><line x1="280" y1="280" x2="448" y2="280"/><line x1="280" y1="280" x2="364" y2="425.5"/><line x1="280" y1="280" x2="196" y2="425.5"/><line x1="280" y1="280" x2="112" y2="280"/><line x1="280" y1="280" x2="196" y2="134.5"/>
+          </g>
+          <circle cx="280" cy="280" r="238" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="2.5"/>
+          <circle class="spin2" cx="280" cy="280" r="238" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="2" stroke-dasharray="3 17" stroke-linecap="round"/>
+          <circle cx="280" cy="280" r="168" fill="none" stroke="rgba(52,211,153,.4)" stroke-width="2.5"/>
+          <circle cx="280" cy="280" r="96" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+          <g class="spin"><circle cx="280" cy="280" r="96" fill="none" stroke="url(#og)" stroke-width="6" stroke-linecap="round" stroke-dasharray="410 200"/></g>
+        </svg>
+        <div class="an" data-l="Marketing" style="transform:rotate(30deg) translateY(-168px) rotate(-30deg)"><svg class="ic"><use href="#i-mega"/></svg></div>
+        <div class="an" data-l="Ventas" style="transform:rotate(90deg) translateY(-168px) rotate(-90deg)"><svg class="ic"><use href="#i-trend"/></svg></div>
+        <div class="an" data-l="Datos" style="transform:rotate(150deg) translateY(-168px) rotate(-150deg)"><svg class="ic"><use href="#i-chart"/></svg></div>
+        <div class="an" data-l="IA" style="transform:rotate(210deg) translateY(-168px) rotate(-210deg)"><svg class="ic"><use href="#i-cpu"/></svg></div>
+        <div class="an" data-l="Procesos" style="transform:rotate(270deg) translateY(-168px) rotate(-270deg)"><svg class="ic"><use href="#i-gear"/></svg></div>
+        <div class="an" data-l="Web" style="transform:rotate(330deg) translateY(-168px) rotate(-330deg)"><svg class="ic"><use href="#i-globe"/></svg></div>
+        <div class="an2" data-l="CRM" style="transform:rotate(0deg) translateY(-238px) rotate(0deg)"><svg class="ic" style="width:17px;height:17px"><use href="#i-briefcase"/></svg></div>
+        <div class="an2" data-l="Automatización" style="transform:rotate(60deg) translateY(-238px) rotate(-60deg)"><svg class="ic" style="width:17px;height:17px"><use href="#i-cycle"/></svg></div>
+        <div class="an2" data-l="Chatbot" style="transform:rotate(120deg) translateY(-238px) rotate(-120deg)"><svg class="ic" style="width:17px;height:17px"><use href="#i-msg"/></svg></div>
+        <div class="an2" data-l="E-commerce" style="transform:rotate(180deg) translateY(-238px) rotate(-180deg)"><svg class="ic" style="width:17px;height:17px"><use href="#i-cart"/></svg></div>
+        <div class="an2" data-l="Contenido" style="transform:rotate(240deg) translateY(-238px) rotate(-240deg)"><svg class="ic" style="width:17px;height:17px"><use href="#i-doc"/></svg></div>
+        <div class="an2" data-l="Dashboard" style="transform:rotate(300deg) translateY(-238px) rotate(-300deg)"><svg class="ic" style="width:17px;height:17px"><use href="#i-chart"/></svg></div>
+        <div class="core">
+          <div class="sc">72</div>
+          <div class="sl">Índice de Evolución</div>
+          <div class="st">Empresa en crecimiento</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 1 · EJEMPLOS (4 tarjetas) -->
+<section class="sec" id="ejemplos">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="eyebrow"><span class="num">1</span> Cada negocio, un freno distinto</div>
+      <h2>¿Te suena alguno de estos?</h2>
+      <p>Cuatro negocios reales, cuatro frenos distintos. Haz clic en cada uno y mira su diagnóstico.</p>
+    </div>
+    <div class="reports">
+      <div class="rep glass rv">
+        <div class="rh"><span class="co">Empresa A<s>Restaurante</s></span><span class="mini">61</span></div>
+        <div class="pills"><span class="pl bad">Pocas reservas</span><span class="pl bad">Comisiones de las plataformas</span><span class="pl good">Buena comida</span><span class="pl good">Buenas reseñas</span></div>
+        <div class="more"><div class="more-in"><div class="mrow"><span class="lab">El freno</span>No capta reservas directas: paga comisión en cada mesa.</div><div class="mrow"><span class="lab">Primer paso</span>Web con reserva propia + ficha de Google optimizada.</div></div></div>
+        <div class="toggle">Ver detalle <svg class="ic chev" style="width:16px;height:16px"><use href="#i-chevron"/></svg></div>
+      </div>
+      <div class="rep glass rv">
+        <div class="rh"><span class="co">Empresa B<s>Peluquería</s></span><span class="mini">54</span></div>
+        <div class="pills"><span class="pl bad">Huecos sin llenar</span><span class="pl bad">Agenda a mano</span><span class="pl good">Clientela fiel</span><span class="pl good">Buen equipo</span></div>
+        <div class="more"><div class="more-in"><div class="mrow"><span class="lab">El freno</span>Todo manual: recordatorios y reservas comen tiempo y dejan huecos.</div><div class="mrow"><span class="lab">Primer paso</span>Reservas online + recordatorios automáticos por WhatsApp.</div></div></div>
+        <div class="toggle">Ver detalle <svg class="ic chev" style="width:16px;height:16px"><use href="#i-chevron"/></svg></div>
+      </div>
+      <div class="rep glass rv">
+        <div class="rh"><span class="co">Empresa C<s>Tienda online</s></span><span class="mini">48</span></div>
+        <div class="pills"><span class="pl bad">Mucho tráfico, pocas ventas</span><span class="pl bad">Carrito abandonado</span><span class="pl good">Buen producto</span></div>
+        <div class="more"><div class="more-in"><div class="mrow"><span class="lab">El freno</span>La web no convierte: visitas que se van sin comprar.</div><div class="mrow"><span class="lab">Primer paso</span>Rehacer la ficha de producto y el checkout con foco en conversión.</div></div></div>
+        <div class="toggle">Ver detalle <svg class="ic chev" style="width:16px;height:16px"><use href="#i-chevron"/></svg></div>
+      </div>
+      <div class="rep glass rv">
+        <div class="rh"><span class="co">Empresa D<s>Despacho</s></span><span class="mini">57</span></div>
+        <div class="pills"><span class="pl bad">Solo boca a boca</span><span class="pl bad">Sin marca</span><span class="pl good">Gran servicio</span><span class="pl good">Clientes que repiten</span></div>
+        <div class="more"><div class="more-in"><div class="mrow"><span class="lab">El freno</span>Captación inexistente: si el boca a boca baja, no entran clientes.</div><div class="mrow"><span class="lab">Primer paso</span>Marca + web que genere confianza y capte online.</div></div></div>
+        <div class="toggle">Ver detalle <svg class="ic chev" style="width:16px;height:16px"><use href="#i-chevron"/></svg></div>
+      </div>
+    </div>
+    <div class="curio rv">¿Y el tuyo? <a href="#empezar" class="curio-link"><span>Descúbrelo en 5 minutos</span> <svg class="ic" style="width:20px;height:20px"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- 2 · LAS 4 FASES -->
+<section class="sec" id="fases">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="eyebrow"><span class="num">2</span> Lo que hacemos</div>
+      <h2>Empiezas gratis y avanzas solo si te compensa.</h2>
+      <p>Un diagnóstico inicial gratis y, si te compensa, cuatro fases: del análisis profundo a crecer con método y acompañamiento.</p>
+    </div>
+    <div class="ladder">
+      <div class="rung fase free glass rv"><div class="k">Paso 0 · Gratis</div><h3>Diagnóstico inicial</h3><p>La primera foto de tu negocio. Sin coste.</p><span class="badge">Gratis</span><div class="fmore"><div class="fmore-in"><p>En unos minutos te damos tu Índice de Evolución, tu mayor cuello de botella y las primeras mejoras con las que empezar ya. Gratis, sin compromiso y sin llamadas.</p></div></div><div class="ftoggle">Ver el paso <svg class="ic chev" style="width:15px;height:15px"><use href="#i-chevron"/></svg></div></div>
+      <div class="rung fase glass rv"><div class="k">Fase 1 · Análisis</div><h3>Diagnóstico 360° profundo</h3><p>El análisis a fondo, punto por punto.</p><div class="fmore"><div class="fmore-in"><p>Vamos mucho más allá de la primera foto: auditamos a fondo las 10 áreas de tu negocio (más de 150 puntos), con datos de tu sector y de tu competencia, y te entregamos el diagnóstico completo con el detalle de cada palanca de crecimiento.</p></div></div><div class="ftoggle">Ver la fase <svg class="ic chev" style="width:15px;height:15px"><use href="#i-chevron"/></svg></div></div>
+      <div class="rung fase glass rv"><div class="k">Fase 2 · Plan</div><h3>Plan de Evolución</h3><p>La hoja de ruta priorizada por impacto.</p><div class="fmore"><div class="fmore-in"><p>Convertimos el diagnóstico en iniciativas ordenadas por impacto y esfuerzo, con una hoja de ruta por fases, objetivos y métricas claras. Sabes exactamente qué hacer y en qué orden.</p></div></div><div class="ftoggle">Ver la fase <svg class="ic chev" style="width:15px;height:15px"><use href="#i-chevron"/></svg></div></div>
+      <div class="rung fase build glass rv"><div class="k">Fase 3 · Aquí se construye</div><h3>Implementación 360°</h3><p>Salimos del papel: montamos lo que tu negocio necesita.</p><span class="badge build">Lo construimos contigo</span><div class="fmore"><div class="fmore-in"><p>Web, tienda online, CRM, automatizaciones, chatbots, dashboards, contenido, SEO, integraciones con IA… y casi cualquier sistema que mueva de verdad la aguja de tu negocio. Muchas veces lo que lo dispara no es lo que creías necesitar, sino algo que ni te habías planteado que se podía montar: eso es justo lo que encontramos y construimos.</p></div></div><div class="ftoggle">Ver la fase <svg class="ic chev" style="width:15px;height:15px"><use href="#i-chevron"/></svg></div></div>
+      <div class="rung fase glass rv"><div class="k">Fase 4 · Acompañamiento</div><h3>Evolución Continua</h3><p>Medimos, ajustamos y seguimos creciendo.</p><div class="fmore"><div class="fmore-in"><p>Revisamos resultados, reevaluamos tu Índice de Evolución y detectamos nuevas oportunidades. Un partner que te acompaña, no un proveedor que desaparece.</p></div></div><div class="ftoggle">Ver la fase <svg class="ic chev" style="width:15px;height:15px"><use href="#i-chevron"/></svg></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · CÓMO FUNCIONA (diagrama grande + carrusel) -->
+<section class="sec glow" id="como">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="eyebrow"><span class="num">3</span> Cómo funciona</div>
+      <h2>Cómo trabajamos, paso a paso.</h2>
+      <p>Nos apoyamos en un <b>algoritmo</b> que analiza miles de variables de negocio, criterios universales y datos locales, y lo supervisamos con un proceso de consultoría transformador.</p>
+    </div>
+    <div class="rv">
+      <div class="hiw-stagebig">
+        <div class="hiw-panel on" data-i="0">
+          <div class="txt"><div class="st">Paso 1</div><h3>Contactamos y recogemos tu información</h3><p>Hablamos contigo y reunimos lo importante de tu negocio: tus retos, cómo captas clientes y tu día a día.</p></div>
+          <div class="mk"><div class="fld act">Peluquería Ana · El Prat</div><div class="fld">Servicios · 2–5 empleados</div><div class="fld">Boca a boca, sin marketing</div><div class="mkbtn">Analizar <svg class="ic"><use href="#i-arrow"/></svg></div></div>
+        </div>
+        <div class="hiw-panel" data-i="1">
+          <div class="txt"><div class="st">Paso 2</div><h3>Lo analizamos</h3><p>Cruzamos tu información con datos de tu sector y tu competencia. Nuestro motor de análisis hace el trabajo pesado; nosotros lo supervisamos y le damos criterio.</p></div>
+          <div class="scan"><div class="nodes"><span class="nd"><svg class="ic ic-lg"><use href="#i-globe"/></svg></span><span class="ln"></span><span class="nd"><svg class="ic ic-lg"><use href="#i-cpu"/></svg></span><span class="ln"></span><span class="nd"><svg class="ic ic-lg"><use href="#i-chart"/></svg></span></div><div class="bar"><i></i></div><div class="cap">Analizando · con supervisión humana</div></div>
+        </div>
+        <div class="hiw-panel" data-i="2">
+          <div class="txt"><div class="st">Paso 3</div><h3>Recibes tu diagnóstico</h3><p>Tu Índice de Evolución, qué te frena y tu plan de acción paso a paso.</p></div>
+          <div class="gaugebox"><div class="g"><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10B981"/><stop offset="1" stop-color="#34D399"/></linearGradient></defs><circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="11"/><circle cx="60" cy="60" r="48" fill="none" stroke="url(#pg)" stroke-width="11" stroke-linecap="round" stroke-dasharray="301" stroke-dashoffset="84" transform="rotate(-90 60 60)"/></svg><div class="n"><b>72</b><s>/100</s></div></div><div><div class="fnd"><svg class="ic" style="width:15px;height:15px"><use href="#i-alert"/></svg> Procesos manuales: ~8 h/sem</div><div class="fnd"><svg class="ic" style="width:15px;height:15px"><use href="#i-alert"/></svg> Captación: solo boca a boca</div><div class="fnd"><svg class="ic" style="width:15px;height:15px"><use href="#i-check"/></svg> Marca: transmite confianza</div></div></div>
+        </div>
+        <div class="hiw-panel" data-i="3">
+          <div class="txt"><div class="st">Paso 4</div><h3>Implementamos contigo</h3><p>Ponemos en marcha las mejoras de mayor impacto, contigo y paso a paso.</p></div>
+          <div class="plan3"><div class="m"><div class="mm">MES 1</div><div class="it g"></div><div class="it g"></div><div class="it"></div></div><div class="m"><div class="mm">MES 2</div><div class="it g"></div><div class="it"></div><div class="it"></div></div><div class="m"><div class="mm">MES 3</div><div class="it g"></div><div class="it g"></div><div class="it g"></div></div></div>
+        </div>
+      </div>
+      <div class="hiw-track">
+        <button class="hiw-chip on" data-i="0"><span class="ci"><svg class="ic"><use href="#i-msg"/></svg></span><div><b>Paso 1</b><span>Contactamos</span></div><span class="bar"></span></button>
+        <button class="hiw-chip" data-i="1"><span class="ci"><svg class="ic"><use href="#i-cpu"/></svg></span><div><b>Paso 2</b><span>Analizamos</span></div><span class="bar"></span></button>
+        <button class="hiw-chip" data-i="2"><span class="ci"><svg class="ic"><use href="#i-doc"/></svg></span><div><b>Paso 3</b><span>Recibes diagnóstico</span></div><span class="bar"></span></button>
+        <button class="hiw-chip" data-i="3"><span class="ci"><svg class="ic"><use href="#i-rocket"/></svg></span><div><b>Paso 4</b><span>Implementamos</span></div><span class="bar"></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3b · EL MOTOR (flujo clicable) -->
+<section class="sec glow" id="motor">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="eyebrow"><span class="ln"></span> Cómo lo procesa</div>
+      <h2>Un motor, no un informe suelto.</h2>
+      <p>Haz clic en cada paso para ver qué ocurre por dentro.</p>
+    </div>
+    <div class="flowcard rv">
+      <div class="flow" id="flow">
+        <button class="fnode on" data-i="0"><span class="fb"><svg class="ic ic-lg"><use href="#i-doc"/></svg></span><b>Tus datos</b><span>respuestas + web</span></button>
+        <span class="fconn"></span>
+        <button class="fnode" data-i="1"><span class="fb"><svg class="ic ic-lg"><use href="#i-cpu"/></svg></span><b>Analizamos</b><span>+150 variables</span></button>
+        <span class="fconn"></span>
+        <button class="fnode" data-i="2"><span class="fb"><svg class="ic ic-lg"><use href="#i-target"/></svg></span><b>Detecta el freno</b><span>cuello de botella</span></button>
+        <span class="fconn"></span>
+        <button class="fnode" data-i="3"><span class="fb"><svg class="ic ic-lg"><use href="#i-chart"/></svg></span><b>Puntúa tu Índice</b><span>10 áreas</span></button>
+        <span class="fconn"></span>
+        <button class="fnode" data-i="4"><span class="fb"><svg class="ic ic-lg"><use href="#i-rocket"/></svg></span><b>Plan de acción</b><span>paso a paso</span></button>
+      </div>
+      <div class="flowdesc" id="flowdesc">
+        <div class="fd-text">
+        <div class="dd on"><b>Tus datos.</b> Partimos de lo que nos cuentas —tus retos, en qué se te va el tiempo y a dónde quieres llegar— y lo cruzamos con lo que cualquiera ve de tu negocio desde fuera: tu web, tu ficha de Google, tus redes y tus reseñas, y también con miles de datos y con conocimiento del sector y de negocios como el tuyo. Sin auditorías eternas ni pedirte mil documentos: en unos minutos tenemos una foto real de tu punto de partida, por dentro y por fuera.</div>
+        <div class="dd"><b>Analizamos.</b> Nuestro algoritmo revisa más de 150 variables repartidas en las 10 áreas clave de tu empresa y las compara con criterios universales y con datos reales de tu sector. Un consultor supervisa y da criterio a cada resultado: la profundidad de una gran consultora, al instante y a una fracción del coste.</div>
+        <div class="dd"><b>Detecta el freno.</b> No todas las mejoras valen lo mismo. El motor localiza tu cuello de botella real: el área que hoy está limitando de verdad tu crecimiento y que, si la desatascas, arrastra a todas las demás. Así dejas de repartir esfuerzo a ciegas y sabes exactamente dónde concentrar la energía primero.</div>
+        <div class="dd"><b>Puntúa tu Índice.</b> Cada una de las 10 áreas recibe un nivel de madurez de 0 a 5, ponderado según lo que más pesa en tu sector. De ahí sale tu Índice de Evolución: un número claro del 0 al 100 que resume cómo estás hoy, te dice en qué liga juegas y te sirve de referencia para medir tu evolución con el tiempo.</div>
+        <div class="dd"><b>Plan de acción.</b> Todo se traduce en un plan ordenado por impacto: qué atacar primero, qué automatizar para recuperar horas, qué dejar de hacer y qué puede esperar. Nada de teoría: acciones concretas y priorizadas, organizadas por pasos para que empieces a ver resultados desde el primero.</div>
+        </div>
+        <div class="fd-ex" id="flowex">
+          <div class="ex on"><span class="exh"><svg class="ic" style="width:14px;height:14px"><use href="#i-doc"/></svg> Ejemplo real</span><ul><li>Peluquería · 3 empleados</li><li>Capta por boca a boca</li><li>Web antigua, sin reservas</li></ul></div>
+          <div class="ex"><span class="exh"><svg class="ic" style="width:14px;height:14px"><use href="#i-cpu"/></svg> En marcha</span><ul><li>+150 variables cruzadas</li><li>10 áreas de negocio</li><li>Comparativa con tu sector</li></ul></div>
+          <div class="ex"><span class="exh"><svg class="ic" style="width:14px;height:14px"><use href="#i-target"/></svg> Lo que sale</span><ul><li>Freno: Operaciones · N1</li><li>También: Datos · N1</li></ul></div>
+          <div class="ex"><span class="exh"><svg class="ic" style="width:14px;height:14px"><use href="#i-chart"/></svg> Tu puntuación</span><ul><li>Índice 72 / 100</li><li>En crecimiento · N3</li></ul></div>
+          <div class="ex"><span class="exh"><svg class="ic" style="width:14px;height:14px"><use href="#i-rocket"/></svg> Tu plan</span><ul><li>12 acciones priorizadas</li><li>Hoja de ruta por fases</li><li>Empiezas por el primer paso</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  (function(){
+    const nodes=[...document.querySelectorAll('#flow .fnode')];
+    const dds=[...document.querySelectorAll('#flowdesc .dd')];
+    const exs=[...document.querySelectorAll('#flowex .ex')];
+    if(!nodes.length) return;
+    nodes.forEach((n,k)=>n.addEventListener('click',()=>{
+      nodes.forEach((x,m)=>x.classList.toggle('on',m===k));
+      dds.forEach((d,m)=>d.classList.toggle('on',m===k));
+      exs.forEach((e,m)=>e.classList.toggle('on',m===k));
+    }));
+  })();
+</script>
+
+<!-- 4 · QUÉ ANALIZA (radiografía) -->
+<section class="sec" id="analiza">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="eyebrow"><span class="num">4</span> Qué miramos</div>
+      <h2>Tu negocio solo crece al ritmo de su área más débil.</h2>
+      <p>Por eso hacemos una radiografía completa: las 10 áreas de tu negocio, para encontrar la que te está frenando.</p>
+    </div>
+    <div class="mat">
+      <div class="mat-list rv">
+        <div class="mrowp l4"><div class="nm"><span class="pi"><svg class="ic" style="width:15px;height:15px"><use href="#i-target"/></svg></span>Estrategia y dirección</div><div class="lvbar"><i style="width:80%"></i></div><div class="lvl">N4</div></div>
+        <div class="mrowp l5"><div class="nm"><span class="pi"><svg class="ic" style="width:15px;height:15px"><use href="#i-flag"/></svg></span>Marca y posicionamiento</div><div class="lvbar"><i style="width:100%"></i></div><div class="lvl">N5</div></div>
+        <div class="mrowp l2"><div class="nm"><span class="pi"><svg class="ic" style="width:15px;height:15px"><use href="#i-mega"/></svg></span>Captación y marketing</div><div class="lvbar"><i style="width:40%"></i></div><div class="lvl">N2</div></div>
+        <div class="mrowp l4"><div class="nm"><span class="pi"><svg class="ic" style="width:15px;height:15px"><use href="#i-trend"/></svg></span>Ventas y conversión</div><div class="lvbar"><i style="width:80%"></i></div><div class="lvl">N4</div></div>
+        <div class="mrowp l3"><div class="nm"><span class="pi"><svg class="ic" style="width:15px;height:15px"><use href="#i-heart"/></svg></span>Experiencia del cliente</div><div class="lvbar"><i style="width:60%"></i></div><div class="lvl">N3</div></div>
+        <div class="mrowp l1"><div class="nm"><span class="pi"><svg class="ic" style="width:15px;height:15px"><use href="#i-gear"/></svg></span>Operaciones y procesos</div><div class="lvbar"><i style="width:20%"></i></div><div class="lvl">N1</div></div>
+        <div class="mrowp l2"><div class="nm"><span class="pi"><svg class="ic" style="width:15px;height:15px"><use href="#i-cpu"/></svg></span>Tecnología e IA</div><div class="lvbar"><i style="width:40%"></i></div><div class="lvl">N2</div></div>
+        <div class="mrowp l1"><div class="nm"><span class="pi"><svg class="ic" style="width:15px;height:15px"><use href="#i-chart"/></svg></span>Datos y métricas</div><div class="lvbar"><i style="width:20%"></i></div><div class="lvl">N1</div></div>
+        <div class="mrowp l5"><div class="nm"><span class="pi"><svg class="ic" style="width:15px;height:15px"><use href="#i-users"/></svg></span>Personas y organización</div><div class="lvbar"><i style="width:100%"></i></div><div class="lvl">N5</div></div>
+        <div class="mrowp l3"><div class="nm"><span class="pi"><svg class="ic" style="width:15px;height:15px"><use href="#i-rocket"/></svg></span>Crecimiento y escalabilidad</div><div class="lvbar"><i style="width:60%"></i></div><div class="lvl">N3</div></div>
+      </div>
+      <div class="mat-side rv">
+        <div class="eyebrow" style="font-size:.78rem"><span class="ln"></span> La foto de tu negocio</div>
+        <div class="g2"><svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10B981"/><stop offset="1" stop-color="#34D399"/></linearGradient></defs><circle cx="75" cy="75" r="62" fill="none" stroke="rgba(255,255,255,.09)" stroke-width="12"/><circle cx="75" cy="75" r="62" fill="none" stroke="url(#rg)" stroke-width="12" stroke-linecap="round" stroke-dasharray="389" stroke-dashoffset="109" transform="rotate(-90 75 75)"/></svg><div class="n"><b>72</b><s>/ 100</s></div></div>
+        <div class="lv">Empresa en crecimiento · N3</div>
+        <div class="fyt">
+          <div class="c g"><div class="h">Fortalezas</div><span>Marca</span><span>Personas</span></div>
+          <div class="c w"><div class="h">A mejorar</div><span>Operaciones</span><span>Datos e IA</span></div>
+        </div>
+        <div class="weakcall"><b>Tu cuello de botella</b>Operaciones y Datos (N1) son hoy tus áreas más débiles y las que están frenando al resto: por muy bien que vendas o comuniques, el negocio no escala si por dentro todo es manual y decides sin datos. Es justo ahí donde una sola mejora arrastra a todas las demás y donde está tu mayor oportunidad de crecer.</div>
+        <div class="scale"><span class="s1">N1 Reactivo</span><span class="s2">N2 Básico</span><span class="s3">N3 Estructurado</span><span class="s4">N4 Optimizado</span><span class="s5">N5 Escalable</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · QUÉ ENTREGAMOS -->
+<section class="sec" id="documentos">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="eyebrow"><span class="num">5</span> Qué entregamos</div>
+      <h2>Documentos de verdad, que puedes usar desde el día uno.</h2>
+      <p>Cada fase deja un entregable claro y profesional. Despliega cada uno para ver qué contiene.</p>
+    </div>
+    <div class="docs">
+      <details class="doc glass rv" open>
+        <summary><span class="di"><svg class="ic ic-lg"><use href="#i-target"/></svg></span><span class="dt"><b>Diagnóstico 360°</b><span>La radiografía de tu negocio</span></span><svg class="ic chev"><use href="#i-chevron"/></svg></summary>
+        <div class="body"><ul>
+          <li><svg class="ic"><use href="#i-check"/></svg> Tu Índice de Evolución (0–100) y tu nivel.</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Los 10 pilares puntuados, con lo que te frena en cada uno.</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Mejoras rápidas: qué puedes aplicar esta misma semana.</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Comparativa con tu sector.</li>
+        </ul></div>
+      </details>
+      <details class="doc glass rv">
+        <summary><span class="di"><svg class="ic ic-lg"><use href="#i-doc"/></svg></span><span class="dt"><b>Plan de Evolución</b><span>Tu hoja de ruta priorizada</span></span><svg class="ic chev"><use href="#i-chevron"/></svg></summary>
+        <div class="body"><ul>
+          <li><svg class="ic"><use href="#i-check"/></svg> Iniciativas ordenadas por impacto y esfuerzo.</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Hoja de ruta por fases, paso a paso.</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Objetivos y métricas claras a seguir.</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Estimación de inversión orientativa.</li>
+        </ul></div>
+      </details>
+      <details class="doc glass rv">
+        <summary><span class="di"><svg class="ic ic-lg"><use href="#i-globe"/></svg></span><span class="dt"><b>Auditoría digital</b><span>Tu presencia, vista por fuera</span></span><svg class="ic chev"><use href="#i-chevron"/></svg></summary>
+        <div class="body"><ul>
+          <li><svg class="ic"><use href="#i-check"/></svg> Web, UX y velocidad, con nota por área.</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> SEO y Google Business.</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Redes, reputación y reseñas.</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Análisis de competencia real de tu sector.</li>
+        </ul></div>
+      </details>
+      <details class="doc glass rv">
+        <summary><span class="di"><svg class="ic ic-lg"><use href="#i-cycle"/></svg></span><span class="dt"><b>Informe de Evolución</b><span>Resultados y siguiente paso</span></span><svg class="ic chev"><use href="#i-chevron"/></svg></summary>
+        <div class="body"><ul>
+          <li><svg class="ic"><use href="#i-check"/></svg> Qué se implementó y el antes / después.</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Progreso de tu Índice de Evolución.</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Resultados medibles, con datos.</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Nuevas oportunidades para la siguiente fase.</li>
+        </ul></div>
+      </details>
+    </div>
+    <div class="docs-hint"><svg class="ic"><use href="#i-spark"/></svg> Todo se genera a tu medida tras el diagnóstico. Nada de plantillas.</div>
+  </div>
+</section>
+
+<!-- 6 · ANTES / DESPUÉS -->
+<section class="sec" id="cambio">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="eyebrow"><span class="num">6</span> El cambio</div>
+      <h2>Tu negocio, antes y después.</h2>
+      <p>La diferencia no es tener más herramientas. Es saber exactamente dónde actuar.</p>
+    </div>
+    <div class="bawrap rv">
+      <div class="bg"></div><div class="bg2"></div>
+      <div class="ba">
+        <div class="col no">
+          <div class="tag"><svg class="ic" style="width:15px;height:15px"><use href="#i-alert"/></svg> Tu negocio sin nosotros</div>
+          <h3>Avanzas a ciegas</h3>
+          <ul>
+            <li><svg class="ic"><use href="#i-alert"/></svg> Decides a ojo, sin saber qué te está frenando.</li>
+            <li><svg class="ic"><use href="#i-alert"/></svg> Inviertes en lo que no mueve la aguja.</li>
+            <li><svg class="ic"><use href="#i-alert"/></svg> Tareas manuales que te comen el día.</li>
+            <li><svg class="ic"><use href="#i-alert"/></svg> Dependes del boca a boca: si baja, no entran clientes.</li>
+            <li><svg class="ic"><use href="#i-alert"/></svg> Tomas decisiones sin datos, guiándote por intuición.</li>
+            <li><svg class="ic"><use href="#i-alert"/></svg> La tecnología y la IA te suenan, pero no sabes por dónde empezar.</li>
+            <li><svg class="ic"><use href="#i-alert"/></svg> Creces despacio, apagando fuegos.</li>
+          </ul>
+        </div>
+        <div class="col yes">
+          <div class="tag"><svg class="ic" style="width:15px;height:15px"><use href="#i-check"/></svg> Tu negocio con nosotros</div>
+          <h3>Sabes dónde actuar</h3>
+          <ul>
+            <li><svg class="ic"><use href="#i-check"/></svg> Un diagnóstico claro de qué te frena.</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> Un plan priorizado por impacto real.</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> Automatizas lo repetitivo y recuperas tiempo.</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> Un canal de captación que no depende solo del boca a boca.</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> Decides con datos claros, no por intuición.</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> La IA trabajando a tu favor en tareas reales del negocio.</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> Creces con método y acompañamiento.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIÉN ESTÁ DETRÁS -->
+<section class="sec glow" id="quien">
+  <div class="wrap who">
+    <div class="rv">
+      <div class="eyebrow"><span class="ln"></span> Quién está detrás</div>
+      <h2>Consultoría de primer nivel, al alcance de tu pyme.</h2>
+      <p class="lead2">Soy Alberto. Llevo años dirigiendo proyectos tecnológicos y equipos en una consultora IT: gestiono un equipo de 60 personas como responsable de entrega y director.</p>
+      <div class="why"><b>Por qué lo hago.</b> He visto de cerca que las pequeñas y medianas empresas tienen enormes oportunidades de mejora, pero no pueden permitirse —ni dedicarse a— una consultoría integral: bastante tienen con sacar su negocio adelante. Con la IA he construido una forma de darles ese mismo nivel de análisis y transformación, ahora a su alcance.</div>
+    </div>
+    <div class="whocard rv">
+      <div class="nm">Alberto Jiménez Molina</div>
+      <div class="rl">Delivery Manager | Agente de Transformación</div>
+      <ul class="cr">
+        <li><span class="ci"><svg class="ic"><use href="#i-users"/></svg></span><div><b>Equipo de 60 personas</b><span>Dirección y entrega de proyectos tecnológicos.</span></div></li>
+        <li><span class="ci"><svg class="ic"><use href="#i-briefcase"/></svg></span><div><b>Consultora IT internacional</b><span>Años entregando transformación a grandes empresas.</span></div></li>
+        <li><span class="ci"><svg class="ic"><use href="#i-cpu"/></svg></span><div><b>Responsable de transformación con IA</b><span>Llevo la IA a procesos reales de negocio.</span></div></li>
+        <li><span class="ci"><svg class="ic"><use href="#i-heart"/></svg></span><div><b>Ahora, para tu pyme</b><span>Ese mismo nivel, a un coste que puedes permitirte.</span></div></li>
+      </ul>
+      <a class="wholink" href="https://www.linkedin.com/in/albertojimenezmolina/" target="_blank" rel="noopener"><svg class="li"><use href="#i-linkedin"/></svg> Ver mi perfil en LinkedIn <svg class="ic" style="width:15px;height:15px"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · MUÉVETE RÁPIDO -->
+<section class="sec glow" id="rapido">
+  <div class="wrap fast">
+    <div class="rv">
+      <div class="eyebrow"><span class="num">7</span> Sin fricción</div>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);margin-top:14px;color:#fff">Muévete rápido, <span class="kw">sin romper nada.</span></h2>
+      <p style="margin-top:14px">Sin reuniones eternas ni compromisos. Avanzamos por pasos cortos: implementamos una mejora, la validamos y seguimos con la siguiente.</p>
+      <ul class="benefits">
+        <li><svg class="ic"><use href="#i-check"/></svg><div><b>Empiezas gratis</b><span>El diagnóstico no cuesta nada.</span></div></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><div><b>Avances desde el primer paso</b><span>Empezamos por lo que más mueve la aguja.</span></div></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><div><b>Sin permanencia</b><span>Avanzas solo si ves valor.</span></div></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><div><b>Si no aporto valor, no cobro</b><span>El riesgo lo asumo yo.</span></div></li>
+      </ul>
+    </div>
+    <div class="fastvis rv">
+      <svg class="circuit" viewBox="15 -30 430 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <radialGradient id="coreFill" cx="50%" cy="38%" r="62%"><stop offset="0" stop-color="#16283c"/><stop offset="1" stop-color="#0A0F1A"/></radialGradient>
+          <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#10b981" stop-opacity=".38"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></radialGradient>
+        </defs>
+        <!-- anillo de puntos exterior -->
+        <circle cx="230" cy="180" r="205" fill="none" stroke="rgba(52,211,153,.10)" stroke-width="1"/>
+        <circle class="spinc" cx="230" cy="180" r="205" fill="none" stroke="rgba(52,211,153,.36)" stroke-width="1.9" stroke-dasharray="2 16" stroke-linecap="round"/>
+        <!-- anillos intermedios -->
+        <circle class="spinc2" cx="230" cy="180" r="152" fill="none" stroke="rgba(52,211,153,.16)" stroke-width="1" stroke-dasharray="1 11" stroke-linecap="round"/>
+        <circle cx="230" cy="180" r="120" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+        <circle class="pulsec" cx="230" cy="180" r="92" fill="none" stroke="rgba(52,211,153,.32)" stroke-width="1.3"/>
+        <!-- conexiones -->
+        <g stroke="rgba(52,211,153,.22)" stroke-width="1.3" fill="none">
+          <path d="M230 180 H122" id="p1"/><path d="M230 180 H338" id="p2"/><path d="M230 180 V72" id="p3"/><path d="M230 180 V288" id="p4"/>
+          <path d="M230 180 L154 104" id="p5"/><path d="M230 180 L306 104" id="p6"/><path d="M230 180 L154 256" id="p7"/><path d="M230 180 L306 256" id="p8"/>
+        </g>
+        <!-- nodos -->
+        <g fill="#0F1726" stroke="rgba(52,211,153,.45)" stroke-width="1.3">
+          <rect x="113" y="171" width="18" height="18" rx="5"/><rect x="329" y="171" width="18" height="18" rx="5"/><rect x="221" y="63" width="18" height="18" rx="5"/><rect x="221" y="279" width="18" height="18" rx="5"/>
+          <rect x="145" y="95" width="18" height="18" rx="5"/><rect x="297" y="95" width="18" height="18" rx="5"/><rect x="145" y="247" width="18" height="18" rx="5"/><rect x="297" y="247" width="18" height="18" rx="5"/>
+        </g>
+        <g fill="var(--green2)" opacity=".9">
+          <circle cx="122" cy="180" r="2"/><circle cx="338" cy="180" r="2"/><circle cx="230" cy="72" r="2"/><circle cx="230" cy="288" r="2"/>
+          <circle cx="154" cy="104" r="2"/><circle cx="306" cy="104" r="2"/><circle cx="154" cy="256" r="2"/><circle cx="306" cy="256" r="2"/>
+        </g>
+        <!-- pulsos que viajan por las conexiones -->
+        <circle r="3.5" class="dot"><animateMotion dur="2.4s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#p1"/></animateMotion></circle>
+        <circle r="3.5" class="dot"><animateMotion dur="2.8s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#p2"/></animateMotion></circle>
+        <circle r="3.5" class="dot"><animateMotion dur="2.2s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#p3"/></animateMotion></circle>
+        <circle r="3.5" class="dot"><animateMotion dur="3.2s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#p4"/></animateMotion></circle>
+        <circle r="3.5" class="dot"><animateMotion dur="2.7s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#p5"/></animateMotion></circle>
+        <circle r="3.5" class="dot"><animateMotion dur="3s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#p6"/></animateMotion></circle>
+        <circle r="3.5" class="dot"><animateMotion dur="2.6s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#p7"/></animateMotion></circle>
+        <circle r="3.5" class="dot"><animateMotion dur="2.5s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#p8"/></animateMotion></circle>
+        <!-- ondas expansivas que llegan al anillo -->
+        <circle class="pingsvg" cx="230" cy="180" r="60" fill="none" stroke="rgba(52,211,153,.5)" stroke-width="1.5"/>
+        <circle class="pingsvg pingsvg2" cx="230" cy="180" r="60" fill="none" stroke="rgba(52,211,153,.42)" stroke-width="1.5"/>
+        <circle class="pingsvg pingsvg3" cx="230" cy="180" r="60" fill="none" stroke="rgba(52,211,153,.34)" stroke-width="1.5"/>
+        <!-- núcleo -->
+        <circle cx="230" cy="180" r="88" fill="url(#coreGlow)"/>
+        <circle cx="230" cy="180" r="54" fill="url(#coreFill)" stroke="rgba(52,211,153,.55)" stroke-width="1.6"/>
+        <use class="bolt" href="#i-bolt" x="206" y="156" width="48" height="48"/>
+        <!-- etiquetas (por dentro del anillo, con hueco) -->
+        <g class="cl">
+          <text x="107" y="184" text-anchor="end">Web</text>
+          <text x="353" y="184" text-anchor="start">Clientes</text>
+          <text x="230" y="54" text-anchor="middle">Visibilidad</text>
+          <text x="230" y="314" text-anchor="middle">Visitas</text>
+          <text x="140" y="100" text-anchor="end">SEO</text>
+          <text x="320" y="100" text-anchor="start">Ventas</text>
+          <text x="140" y="262" text-anchor="end">Contenido</text>
+          <text x="320" y="262" text-anchor="start">Redes</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · PROGRAMA -->
+<section class="sec" id="programa">
+  <div class="wrap">
+    <div class="offer rv">
+      <div class="eyebrow"><span class="num">8</span> Programa Fundadores · plazas limitadas</div>
+      <h2 style="margin-top:12px">Trabajo contigo en tu negocio. Cero riesgo.</h2>
+      <p style="margin-top:16px;max-width:58ch">Tras el diagnóstico, entro en tu negocio para implementar contigo, paso a paso, las mejoras de mayor impacto. Se llama Programa Fundadores porque tú eres de los primeros: estas condiciones no se repetirán.</p>
+      <ul>
+        <li><svg class="ic"><use href="#i-check"/></svg> Diagnóstico 360° completo</li>
+        <li><svg class="ic"><use href="#i-check"/></svg> Plan de Evolución priorizado</li>
+        <li><svg class="ic"><use href="#i-check"/></svg> Implementación de las mejoras clave</li>
+        <li><svg class="ic"><use href="#i-check"/></svg> Seguimiento continuo</li>
+        <li><svg class="ic"><use href="#i-check"/></svg> Reunión final + siguiente paso</li>
+        <li><svg class="ic"><use href="#i-check"/></svg> Plazas muy limitadas</li>
+      </ul>
+    </div>
+    <div class="guar-out rv">
+      <div class="gi"><svg class="ic ic-lg"><use href="#i-heart"/></svg></div>
+      <div><b>El voto de confianza.</b> Si al terminar crees que no te he aportado valor, no me pagas nada. Si sí, decides tú entre 100 € y 500 €, según el impacto que hayas notado. El riesgo lo asumo yo, no tú.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL · DIAGNÓSTICO INTERACTIVO (Horse Magnet) -->
+<section class="sec final glow" id="empezar">
+  <div class="wrap">
+    <div class="head-c rv">
+      <div class="eyebrow">Empieza por saberlo</div>
+      <h2 style="margin-top:16px">Descubre cómo acelerar y qué frena tu negocio. <span class="kw">Gratis.</span></h2>
+      <p class="lead-c">Responde unas preguntas y nuestro algoritmo te devuelve, al momento, un diagnóstico inicial: tu mayor cuello de botella y por dónde empezar.</p>
+    </div>
+
+    <div class="hm rv">
+      <form class="hm-card" id="hm-form" novalidate>
+        <div class="hm-prog" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span></div>
+
+        <div class="hm-hp" aria-hidden="true"><label>No rellenar este campo<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+        <div class="hm-step on" data-step="0">
+          <div class="st">Paso 1 de 4</div>
+          <h3>Tu negocio</h3>
+          <div class="sub">Lo básico para situarnos.</div>
+          <div class="hm-grid">
+            <div class="hm-f"><label for="hm-nombre">Nombre</label><input id="hm-nombre" name="nombre" maxlength="100" required></div>
+            <div class="hm-f"><label for="hm-email">Email</label><input id="hm-email" type="email" name="email" maxlength="150" required><span class="hm-note">Solo lo usamos para enviarte tu diagnóstico por email. Nada de spam.</span></div>
+            <div class="hm-f"><label for="hm-empresa">Empresa</label><input id="hm-empresa" name="empresa" maxlength="150" required></div>
+            <div class="hm-f"><label for="hm-web">Web <span class="opt">(opcional)</span></label><input id="hm-web" name="web" maxlength="200" placeholder="tunegocio.com"></div>
+            <div class="hm-f"><label for="hm-sector">Sector</label>
+              <select id="hm-sector" name="sector" required>
+                <option value="" disabled selected>Elige tu sector…</option>
+                <option>Servicios profesionales</option>
+                <option>Comercio y retail</option>
+                <option>Hostelería y restauración</option>
+                <option>Salud y bienestar</option>
+                <option>Construcción y reformas</option>
+                <option>Educación y formación</option>
+                <option>Tecnología y software</option>
+                <option>Industria y fabricación</option>
+                <option>Inmobiliario</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="hm-f"><label for="hm-empleados">Empleados</label>
+              <select id="hm-empleados" name="empleados" required>
+                <option value="" disabled selected>Tamaño del equipo…</option>
+                <option>Solo yo</option>
+                <option>2–5</option>
+                <option>6–10</option>
+                <option>11–25</option>
+                <option>26–50</option>
+                <option>Más de 50</option>
+              </select>
+            </div>
+            <div class="hm-f full"><label for="hm-fact">Facturación aproximada <span class="opt">(opcional)</span></label>
+              <select id="hm-fact" name="facturacion">
+                <option value="" selected>Prefiero no decirlo</option>
+                <option>Menos de 50.000 €</option>
+                <option>50.000 – 150.000 €</option>
+                <option>150.000 – 500.000 €</option>
+                <option>500.000 € – 1M</option>
+                <option>Más de 1M</option>
+              </select>
+            </div>
+          </div>
+          <div class="hm-nav"><span class="sp"></span><button type="button" class="btn btn-primary" data-next>Siguiente <svg class="ic"><use href="#i-arrow"/></svg></button></div>
+        </div>
+
+        <div class="hm-step" data-step="1">
+          <div class="st">Paso 2 de 4</div>
+          <h3>Tu presencia digital</h3>
+          <div class="sub">Un clic en cada una.</div>
+          <div class="hm-opts">
+            <div class="hm-opt"><div class="q">¿Tienes web o landing?</div>
+              <div class="hm-pills">
+                <label><input type="radio" name="presencia_web" value="No tengo" required><span>No tengo</span></label>
+                <label><input type="radio" name="presencia_web" value="Sí, pero anticuada o floja"><span>Sí, pero floja</span></label>
+                <label><input type="radio" name="presencia_web" value="Sí y funciona bien"><span>Sí y funciona bien</span></label>
+              </div>
+            </div>
+            <div class="hm-opt"><div class="q">¿Tienes redes sociales?</div>
+              <div class="hm-pills">
+                <label><input type="radio" name="presencia_redes" value="No" required><span>No</span></label>
+                <label><input type="radio" name="presencia_redes" value="Sí, pero casi no las actualizo"><span>Sí, pero casi no las actualizo</span></label>
+                <label><input type="radio" name="presencia_redes" value="Sí, las actualizo con regularidad"><span>Sí, con regularidad</span></label>
+              </div>
+            </div>
+            <div class="hm-opt"><div class="q">¿Generas contenido? <span class="opt" style="font-weight:500;color:var(--muted);font-size:.9rem">(posts, vídeos, newsletter, blog)</span></div>
+              <div class="hm-pills">
+                <label><input type="radio" name="presencia_contenido" value="No" required><span>No</span></label>
+                <label><input type="radio" name="presencia_contenido" value="De vez en cuando"><span>De vez en cuando</span></label>
+                <label><input type="radio" name="presencia_contenido" value="Sí, con constancia"><span>Sí, con constancia</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="hm-nav"><button type="button" class="btn btn-soft" data-back>Atrás</button><span class="sp"></span><button type="button" class="btn btn-primary" data-next>Siguiente <svg class="ic"><use href="#i-arrow"/></svg></button></div>
+        </div>
+
+        <div class="hm-step" data-step="2">
+          <div class="st">Paso 3 de 4</div>
+          <h3>Lo que de verdad importa</h3>
+          <div class="sub">Cuanto más concreto seas, más afinado será tu análisis.</div>
+          <div class="hm-grid">
+            <div class="hm-f full"><label for="hm-capt">¿Cómo consigues clientes hoy?</label><textarea id="hm-capt" name="captacion" maxlength="1000" required placeholder="p. ej.: boca a boca y algo de Google; no hacemos marketing activo"></textarea></div>
+            <div class="hm-f full"><label for="hm-dolor">¿Cuál es tu mayor quebradero de cabeza ahora mismo?</label><textarea id="hm-dolor" name="dolor" maxlength="1000" required placeholder="p. ej.: estamos saturados y no llegamos a todo"></textarea></div>
+            <div class="hm-f full"><label for="hm-rep">¿Qué parte del día a día es más repetitiva o manual?</label><textarea id="hm-rep" name="repetitivo" maxlength="1000" required placeholder="p. ej.: meter datos a mano, reclamar documentos, responder las mismas dudas"></textarea></div>
+            <div class="hm-f full"><label for="hm-obj">¿Qué te gustaría haber conseguido dentro de un año?</label><textarea id="hm-obj" name="objetivo" maxlength="1000" required placeholder="p. ej.: crecer sin contratar más gente y trabajar con menos agobio"></textarea></div>
+          </div>
+          <div class="hm-nav"><button type="button" class="btn btn-soft" data-back>Atrás</button><span class="sp"></span><button type="button" class="btn btn-primary" data-next>Siguiente <svg class="ic"><use href="#i-arrow"/></svg></button></div>
+        </div>
+
+        <div class="hm-step" data-step="3">
+          <div class="st">Paso 4 de 4</div>
+          <h3>Tus prioridades</h3>
+          <div class="sub">Lo último. Así ajustamos el plan a lo que de verdad necesitas.</div>
+          <div class="hm-opts">
+            <div class="hm-opt"><div class="q">¿Qué es lo más importante para ti ahora mismo?</div>
+              <div class="hm-pills">
+                <label><input type="radio" name="prioridad" value="Captar más clientes" required><span>Captar más clientes</span></label>
+                <label><input type="radio" name="prioridad" value="Ahorrar tiempo y ordenar el negocio"><span>Ahorrar tiempo</span></label>
+                <label><input type="radio" name="prioridad" value="Vender más a mis clientes actuales"><span>Vender más</span></label>
+                <label><input type="radio" name="prioridad" value="Aprovechar la IA y la tecnología"><span>Aprovechar la IA</span></label>
+              </div>
+            </div>
+            <div class="hm-opt"><div class="q">¿Cuándo te gustaría empezar a mejorar?</div>
+              <div class="hm-pills">
+                <label><input type="radio" name="urgencia" value="Cuanto antes" required><span>Cuanto antes</span></label>
+                <label><input type="radio" name="urgencia" value="Este trimestre"><span>Este trimestre</span></label>
+                <label><input type="radio" name="urgencia" value="Solo estoy explorando"><span>Solo estoy explorando</span></label>
+              </div>
+            </div>
+            <div class="hm-opt"><div class="q">¿Cuánto podrías invertir al mes en mejorar tu negocio? <span class="opt" style="font-weight:500;color:var(--muted);font-size:.9rem">(orientativo, para dimensionar el plan)</span></div>
+              <div class="hm-pills">
+                <label><input type="radio" name="presupuesto" value="Menos de 300 €"><span>Menos de 300 €</span></label>
+                <label><input type="radio" name="presupuesto" value="300 – 800 €"><span>300 – 800 €</span></label>
+                <label><input type="radio" name="presupuesto" value="800 – 2.000 €"><span>800 – 2.000 €</span></label>
+                <label><input type="radio" name="presupuesto" value="Más de 2.000 €"><span>Más de 2.000 €</span></label>
+                <label><input type="radio" name="presupuesto" value="Aún no lo sé"><span>Aún no lo sé</span></label>
+              </div>
+            </div>
+            <div class="hm-f full"><label for="hm-herr">¿Qué herramientas usas hoy? <span class="opt">(opcional)</span></label><textarea id="hm-herr" name="herramientas" maxlength="500" placeholder="p. ej.: WhatsApp, Excel, Instagram, una web, un CRM…"></textarea></div>
+          </div>
+          <label class="hm-consent"><input type="checkbox" name="consent" required><span>He leído y acepto la <a href="politica-privacidad.html" target="_blank" rel="noopener noreferrer">política de privacidad</a> y el tratamiento de mis datos para recibir mi diagnóstico y el contacto de Evolution 360.</span></label>
+          <div class="hm-err-msg" id="hm-err">Revisa los campos marcados y acepta la política de privacidad para continuar.</div>
+          <div class="hm-nav"><button type="button" class="btn btn-soft" data-back>Atrás</button><span class="sp"></span><button type="submit" class="btn btn-primary btn-lg">Analizar mi negocio <svg class="ic"><use href="#i-arrow"/></svg></button></div>
+        </div>
+
+        <div class="hm-load" id="hm-load"><div class="hm-spin"></div><p>Analizando tu negocio…</p><small>Nuestro algoritmo está cruzando tus respuestas. Unos segundos.</small></div>
+
+        <div class="hm-result" id="hm-result">
+          <span class="rtag"><svg class="ic" style="width:16px;height:16px"><use href="#i-check"/></svg> Tu diagnóstico inicial</span>
+          <div class="hm-md" id="hm-md"></div>
+          <div class="hm-cta">
+            <p>Esto es tu <b>diagnóstico inicial</b>: una primera foto real de tu negocio, con valor desde hoy. El <b>análisis profundo</b> lo multiplica: lo hacemos juntos, a fondo, en la consultoría. ¿Damos el siguiente paso?</p>
+            <a class="btn btn-primary btn-lg" href="#programa">Ver el Programa Fundadores <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </form>
+      <div class="micro" style="margin-top:18px;color:var(--muted);font-size:.9rem;display:flex;flex-direction:column;align-items:center;gap:4px;width:100%;text-align:center"><span style="display:inline-flex;align-items:center;gap:8px;color:var(--body);font-weight:600"><svg class="ic" style="color:var(--green2)"><use href="#i-check"/></svg> Gratis y sin compromiso.</span><span>No necesitas preparar informes ni aportar datos de tu negocio: solo tus respuestas.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="head center rv">
+      <div class="eyebrow" style="justify-content:center"><span class="ln"></span> Antes de empezar</div>
+      <h2>Preguntas frecuentes.</h2>
+      <p>Lo que suelen preguntarnos antes de pedir su diagnóstico.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq rv"><summary>¿El diagnóstico inicial es de verdad gratis?<span class="plus"></span></summary><div class="answer">Sí, 100% gratis, sin compromiso y lo tienes en unos 5 minutos. Es un diagnóstico <b>inicial</b>: una primera lectura real de tu situación con la información que nos das, útil para orientarte y saber por dónde empezar. No es el análisis profundo —ese llega después—, pero sí información de verdad, no humo.</div></details>
+      <details class="faq rv"><summary>¿Qué diferencia hay entre el diagnóstico inicial y el análisis profundo?<span class="plus"></span></summary><div class="answer">El <b>inicial</b> (el del formulario) es gratis y ya te da valor real: una primera foto de tu negocio y tu mayor freno. El <b>análisis profundo</b> lo multiplica: entramos a fondo en tu negocio, tus datos y tu competencia, y de ahí sale el plan que genera resultados. El inicial te orienta; el profundo te transforma.</div></details>
+      <details class="faq rv"><summary>¿Cómo se hace el análisis?<span class="plus"></span></summary><div class="answer">Con un método propio cruzo datos de miles de negocios y de tu competencia, analizo tu nicho, tu mercado y decenas de variables, y produzco un análisis multifactorial que mira tu negocio desde distintos ángulos. No es una opinión: son datos reales.</div></details>
+      <details class="faq rv"><summary>¿Sirve para mi sector y mi tamaño de negocio?<span class="plus"></span></summary><div class="answer">Sí. Está pensado para pymes y autónomos de cualquier sector: servicios, comercio, hostelería, salud, construcción… Nuestro método compara tu negocio con los de tu sector y con tu competencia para que el análisis sea relevante para ti.</div></details>
+      <details class="faq rv"><summary>¿Tengo que contratar algo después?<span class="plus"></span></summary><div class="answer">No. El diagnóstico inicial te lo llevas y decides con calma. El análisis profundo y la implementación de las mejoras son un paso opcional que damos solo si tú lo ves claro.</div></details>
+      <details class="faq rv"><summary>¿En qué se diferencia de una consultora tradicional?<span class="plus"></span></summary><div class="answer">En velocidad y coste. Una consultora tradicional supondría un proceso largo y miles de euros. Aquí obtienes un análisis de ese nivel apoyado en un método propio y en la experiencia de proyectos reales.</div></details>
+      <details class="faq rv"><summary>¿Qué recibo exactamente?<span class="plus"></span></summary><div class="answer">En el diagnóstico inicial: tu Índice de Evolución (0–100), tu mayor cuello de botella y los primeros pasos por los que empezar. Si das el paso al análisis profundo, se convierte en un plan de acción completo, a tu medida y priorizado por impacto.</div></details>
+      <details class="faq rv"><summary>¿Qué pasa con mis datos?<span class="plus"></span></summary><div class="answer">Solo usamos lo que nos cuentas para generar tu diagnóstico y enviarte el informe; no lo vendemos ni lo compartimos con terceros. Y salvo que tú quieras ir más allá, nuestro proceso no necesita que nos entregues datos internos de tu negocio: basta con tus respuestas, tus problemas, tu punto de vista, tu hoja de ruta, tus preferencias…</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="#top" aria-label="Evolution 360">
+          <svg class="iso" viewBox="-10 -10 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="gf" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#34D399"/><stop offset="1" stop-color="#10B981"/></linearGradient></defs><path d="M34 22.3 A32 32 0 1 1 60.9 19.9" fill="none" stroke="url(#gf)" stroke-width="10" stroke-linecap="round"/><circle cx="60.9" cy="19.9" r="5.4" fill="#34D399"/></svg>
+          <span class="wm"><span class="full" style="position:static;opacity:1;transform:none">Evolution<b> 360</b></span></span>
+        </a>
+        <p style="margin-top:16px;font-size:.92rem;max-width:34ch">Descubre el potencial oculto de tu negocio. El diagnóstico primero; la evolución, después.</p>
+      </div>
+      <div><h5>La consultoría</h5><a href="#fases">Las 4 fases</a><a href="#como">Cómo funciona</a><a href="#analiza">Qué miramos</a></div>
+      <div><h5>Empezar</h5><a href="#empezar">Analizar mi negocio</a><a href="#programa">Programa Fundadores</a></div>
+    </div>
+    <div class="base"><span>© 2026 Evolution 360 · <a href="politica-privacidad.html" style="display:inline;padding:0">Política de privacidad</a></span><span>Consultoría de evolución para pymes.</span></div>
+  </div>
+</footer>
+
+<script>
+  const rvAll=document.querySelectorAll('.rv');
+  const reveal=()=>rvAll.forEach(el=>el.classList.add('in'));
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -6% 0px'});
+    rvAll.forEach(el=>io.observe(el));
+    setTimeout(reveal,2600);
+  } else reveal();
+
+  /* índice: scroll-spy (lateral) + progreso de lectura + hoja móvil */
+  (function(){
+    const sidenav=document.getElementById('sidenav');
+    if(!sidenav) return;
+
+    /* barra de progreso de lectura */
+    const bar=document.createElement('div'); bar.className='readbar'; document.body.appendChild(bar);
+
+    /* botón flotante + hoja inferior (clona el índice lateral -> fuente única) */
+    const fab=document.createElement('button');
+    fab.className='toc-fab'; fab.type='button'; fab.setAttribute('aria-label','Abrir índice de secciones');
+    fab.innerHTML='<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>Índice';
+    const sheet=document.createElement('div'); sheet.className='toc-sheet';
+    const panel=document.createElement('div'); panel.className='toc-panel';
+    panel.innerHTML='<div class="toc-grab"></div><div class="toc-head"><b>Índice</b><button class="toc-close" type="button" aria-label="Cerrar índice">&#10005;</button></div>';
+    sidenav.querySelectorAll('a').forEach(a=>{
+      const c=document.createElement('a');
+      c.href=a.getAttribute('href'); c.dataset.t=a.dataset.t;
+      if(a.classList.contains('main')) c.classList.add('main');
+      c.innerHTML='<span class="dot"></span><span class="lbl">'+a.querySelector('.lbl').textContent+'</span>';
+      panel.appendChild(c);
+    });
+    sheet.appendChild(panel); document.body.appendChild(sheet); document.body.appendChild(fab);
+
+    const open=()=>{sheet.classList.add('show');requestAnimationFrame(()=>sheet.classList.add('open'));};
+    const close=()=>{sheet.classList.remove('open');setTimeout(()=>sheet.classList.remove('show'),320);};
+    fab.addEventListener('click',open);
+    sheet.addEventListener('click',e=>{if(e.target===sheet||e.target.closest('.toc-close')||e.target.closest('a')) close();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&sheet.classList.contains('open')) close();});
+
+    /* scroll-spy sobre índice lateral + hoja */
+    const all=[...document.querySelectorAll('.sidenav a, .toc-panel a')];
+    const byId=new Map();
+    all.forEach(a=>{const k=a.dataset.t; if(!byId.has(k)) byId.set(k,[]); byId.get(k).push(a);});
+    const secs=[...byId.keys()].map(id=>document.getElementById(id)).filter(Boolean);
+    const spy=new IntersectionObserver((es)=>{
+      es.forEach(e=>{if(e.isIntersecting){
+        all.forEach(l=>l.classList.remove('on'));
+        (byId.get(e.target.id)||[]).forEach(l=>l.classList.add('on'));
+      }});
+    },{rootMargin:'-45% 0px -50% 0px',threshold:0});
+    secs.forEach(s=>spy.observe(s));
+
+    /* progreso de lectura */
+    const doc=document.documentElement;
+    const onScroll=()=>{const max=doc.scrollHeight-doc.clientHeight; bar.style.transform='scaleX('+(max>0?Math.min(doc.scrollTop/max,1):0)+')';};
+    document.addEventListener('scroll',onScroll,{passive:true});
+    window.addEventListener('resize',onScroll,{passive:true});
+    onScroll();
+  })();
+
+  /* cómo funciona (carrusel) */
+  (function(){
+    const chips=[...document.querySelectorAll('.hiw-chip')];
+    const panels=[...document.querySelectorAll('.hiw-panel')];
+    if(!chips.length) return;
+    let i=0,timer;
+    const set=k=>{i=k;chips.forEach((t,n)=>t.classList.toggle('on',n===k));panels.forEach((p,n)=>p.classList.toggle('on',n===k));};
+    const rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const auto=()=>{if(rm)return;clearInterval(timer);timer=setInterval(()=>set((i+1)%chips.length),4500);};
+    chips.forEach((t,k)=>t.addEventListener('click',()=>{set(k);auto();}));
+    auto();
+  })();
+
+  /* ejemplos clicables */
+  document.querySelectorAll('.rep').forEach(c=>{
+    c.setAttribute('role','button'); c.tabIndex=0;
+    const t=()=>c.classList.toggle('open');
+    c.addEventListener('click',t);
+    c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});
+  });
+
+  /* fases clicables */
+  document.querySelectorAll('.fase').forEach(c=>{
+    c.setAttribute('role','button'); c.tabIndex=0;
+    const t=()=>c.classList.toggle('open');
+    c.addEventListener('click',t);
+    c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});
+  });
+</script>
+
+<!-- ===== Horse Magnet · lógica del formulario ===== -->
+<script>
+(function(){
+  const WEBHOOK_URL = 'https://TU-N8N.example.com/webhook/horse-magnet';
+  const form=document.getElementById('hm-form');
+  if(!form) return;
+  const steps=[...form.querySelectorAll('.hm-step')];
+  const progBar=form.querySelector('.hm-prog');
+  const prog=[...form.querySelectorAll('.hm-prog span')];
+  const load=document.getElementById('hm-load');
+  const result=document.getElementById('hm-result');
+  const md=document.getElementById('hm-md');
+  const errMsg=document.getElementById('hm-err');
+  let cur=0;
+  function show(i){
+    steps.forEach((s,k)=>s.classList.toggle('on',k===i));
+    prog.forEach((p,k)=>p.classList.toggle('on',k<=i));
+    cur=i; errMsg.classList.remove('on');
+    form.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  function validate(i){
+    let ok=true;
+    steps[i].querySelectorAll('[required]').forEach(el=>{
+      const wrap=el.closest('.hm-f')||el.closest('.hm-consent');
+      let bad;
+      if(el.type==='radio') bad=!form.querySelector('input[name="'+el.name+'"]:checked');
+      else if(el.type==='checkbox') bad=!el.checked;
+      else bad=!el.value.trim();
+      if(wrap) wrap.classList.toggle('err',bad);
+      if(bad) ok=false;
+    });
+    return ok;
+  }
+  form.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>{ if(validate(cur)) show(cur+1); else errMsg.classList.add('on'); }));
+  form.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>show(cur-1)));
+  form.querySelectorAll('input,select,textarea').forEach(el=>el.addEventListener('input',()=>{ const w=el.closest('.hm-f')||el.closest('.hm-consent'); if(w) w.classList.remove('err'); }));
+  form.querySelectorAll('input[type=checkbox]').forEach(el=>el.addEventListener('change',()=>{ const w=el.closest('.hm-consent'); if(w) w.classList.remove('err'); }));
+  function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+  function inline(s){return s.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');}
+  function renderMd(t){
+    const lines=esc(t).split(/\r?\n/); let html=''; let inList=false;
+    for(const raw of lines){
+      const l=raw.trim();
+      if(/^#{1,6}\s/.test(l)){ if(inList){html+='</ul>';inList=false;} const lvl=Math.min(l.match(/^#+/)[0].length,3); html+='<h'+lvl+'>'+inline(l.replace(/^#+\s/,''))+'</h'+lvl+'>'; continue; }
+      if(/^[-*]\s/.test(l)){ if(!inList){html+='<ul>';inList=true;} html+='<li>'+inline(l.replace(/^[-*]\s/,''))+'</li>'; continue; }
+      if(l===''){ if(inList){html+='</ul>';inList=false;} continue; }
+      if(inList){html+='</ul>';inList=false;}
+      html+='<p>'+inline(l)+'</p>';
+    }
+    if(inList) html+='</ul>';
+    return html;
+  }
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(!validate(cur)){ errMsg.classList.add('on'); return; }
+    if(form.website && form.website.value.trim()!==''){ return; }
+    const data=Object.fromEntries(new FormData(form).entries());
+    steps.forEach(s=>s.classList.remove('on'));
+    if(progBar) progBar.style.display='none';
+    load.classList.add('on');
+    try{
+      const r=await fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      const j=await r.json();
+      const text=(j&&(j.analisis||j.output))||(typeof j==='string'?j:'');
+      load.classList.remove('on');
+      md.innerHTML=renderMd(text||'Estamos generando tu análisis. Te lo enviamos por email en unos minutos.');
+      result.classList.add('on');
+    }catch(err){
+      load.classList.remove('on');
+      md.innerHTML='<p>Ha habido un problema al generar tu análisis en directo, pero <strong>tus datos se han enviado</strong>. Te mandamos el informe completo por email en unos minutos.</p>';
+      result.classList.add('on');
+    }
+  });
+})();
+</script>
+</body>
+</html>
