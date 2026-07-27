@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Me interesa · Evolution 360</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0E2A47; --navy2:#0A1E35; --green:#10B981; --green2:#34D399;
+    --greenText:#0A6E50; --greenSoft:#E7F7F1; --navySoft:#EAF0F7;
+    --ink:#0B1220; --body:#3F4652; --muted:#71767F; --line:#E5E8EC; --bg:#F6F8FB;
+    --H:"Poppins","Segoe UI",Arial,sans-serif; --B:"Inter","Segoe UI",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--B);color:var(--body);background:var(--bg);
+    background-image:radial-gradient(1100px 480px at 15% -8%, #E7F7F1 0%, rgba(231,247,241,0) 60%),
+      radial-gradient(900px 460px at 100% 0%, #EAF0F7 0%, rgba(234,240,247,0) 55%);
+    background-repeat:no-repeat;min-height:100vh;}
+  .shell{max-width:600px;margin:0 auto;padding:28px 14px 48px}
+  .card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(10,30,53,.10)}
+  .head{background:linear-gradient(120deg,var(--navy2),var(--navy));padding:26px 34px;display:flex;justify-content:space-between;align-items:center}
+  .brand{font-family:var(--H);font-weight:700;font-size:21px;letter-spacing:-.02em;color:#fff}
+  .brand span{color:var(--green2)}
+  .eyebrowTop{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8FB0CE}
+  .band{height:4px;background:linear-gradient(90deg,var(--green),var(--green2))}
+  .pad{padding:34px 34px 8px}
+  .eyebrow{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--greenText);font-weight:600;margin:0 0 8px}
+  h1{font-family:var(--H);font-size:26px;line-height:1.2;letter-spacing:-.02em;color:var(--ink);font-weight:700;margin:0 0 12px}
+  .lead{font-size:15px;line-height:1.6;color:var(--body);margin:0 0 6px}
+  form{padding:8px 34px 8px}
+  .field{margin:16px 0}
+  label{display:block;font-family:var(--B);font-size:13px;font-weight:600;color:var(--navy);margin:0 0 6px}
+  .opt{color:var(--muted);font-weight:400}
+  input[type=text],input[type=email],input[type=tel],textarea{
+    width:100%;font-family:var(--B);font-size:15px;color:var(--ink);background:#fff;
+    border:1px solid var(--line);border-radius:12px;padding:12px 14px;outline:none;transition:border-color .15s,box-shadow .15s}
+  input:focus,textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(16,185,129,.15)}
+  textarea{resize:vertical;min-height:78px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{position:relative}
+  .chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+  .chip span{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:9999px;
+    font-size:14px;color:var(--body);cursor:pointer;transition:.15s;user-select:none}
+  .chip input:checked + span{background:var(--greenSoft);border-color:var(--green);color:var(--greenText);font-weight:600}
+  .actions{padding:12px 34px 30px}
+  .btn{display:inline-block;width:100%;border:0;border-radius:9999px;background:var(--green);
+    color:#04231A;font-family:var(--H);font-size:16px;font-weight:600;padding:15px 22px;cursor:pointer;transition:transform .06s, background .15s}
+  .btn:hover{background:#0EA976}
+  .btn:active{transform:translateY(1px)}
+  .fine{font-size:12.5px;line-height:1.5;color:var(--muted);margin:12px 2px 0}
+  .foot{background:var(--navy2);padding:22px 34px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  .foot .brand{font-size:16px}
+  .foot a{color:#8FB0CE;text-decoration:none;font-size:13px}
+  .tag{color:#C7D2DD;font-size:12.5px;margin:10px 34px 0}
+  /* Estado de exito */
+  .done{display:none;padding:44px 34px 40px;text-align:center}
+  .done.show{display:block}
+  .tick{width:64px;height:64px;border-radius:9999px;background:var(--greenSoft);display:inline-flex;align-items:center;justify-content:center;margin:0 0 16px}
+  .tick svg{width:30px;height:30px}
+  .done h2{font-family:var(--H);font-size:23px;color:var(--ink);margin:0 0 10px;letter-spacing:-.01em}
+  .done p{font-size:15px;line-height:1.6;color:var(--body);margin:0 auto;max-width:400px}
+  .hide{display:none!important}
+  @media(max-width:520px){.pad,form,.actions{padding-left:22px;padding-right:22px}.head,.foot{padding-left:22px;padding-right:22px}h1{font-size:23px}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="card">
+    <div class="head">
+      <div class="brand">Evolution<span>360</span></div>
+      <div class="eyebrowTop">Análisis inicial</div>
+    </div>
+    <div class="band"></div>
+
+    <!-- FORMULARIO -->
+    <div id="formView">
+      <div class="pad">
+        <p class="eyebrow">Me interesa dar el paso</p>
+        <h1>Perfecto, hablemos de tu negocio</h1>
+        <p class="lead">Ya tenemos tus respuestas del análisis, así que con esto nos sobra para contactarte. Si quieres, añade un par de cosas y llegamos mejor preparados. <strong style="color:var(--navy)">Con darle a Enviar es suficiente.</strong></p>
+      </div>
+
+      <form id="interesForm">
+        <div class="field">
+          <label>Nombre</label>
+          <input type="text" name="nombre" id="f_nombre" autocomplete="name" placeholder="Tu nombre">
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" name="email" id="f_email" autocomplete="email" placeholder="tucorreo@ejemplo.com">
+        </div>
+        <div class="field">
+          <label>Teléfono o WhatsApp <span class="opt">(opcional, por si es más cómodo)</span></label>
+          <input type="tel" name="telefono" id="f_telefono" autocomplete="tel" placeholder="+34 ...">
+        </div>
+        <div class="field">
+          <label>¿Cómo prefieres que te contactemos? <span class="opt">(opcional)</span></label>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="canal" value="Email"><span>Email</span></label>
+            <label class="chip"><input type="radio" name="canal" value="Teléfono"><span>Teléfono</span></label>
+            <label class="chip"><input type="radio" name="canal" value="WhatsApp"><span>WhatsApp</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label>¿Qué es lo que más te gustaría resolver? <span class="opt">(opcional)</span></label>
+          <textarea name="reto" id="f_reto" placeholder="Un par de líneas nos ayudan a ir al grano"></textarea>
+        </div>
+        <div class="field">
+          <label>¿Para cuándo? <span class="opt">(opcional)</span></label>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="plazo" value="Cuanto antes"><span>Cuanto antes</span></label>
+            <label class="chip"><input type="radio" name="plazo" value="Este mes"><span>Este mes</span></label>
+            <label class="chip"><input type="radio" name="plazo" value="Explorando"><span>Solo explorando</span></label>
+          </div>
+        </div>
+      </form>
+
+      <div class="actions">
+        <button class="btn" id="sendBtn" type="button">Enviar &rarr;</button>
+        <p class="fine">Usaremos tus datos solo para contactarte sobre tu análisis. Nada de spam.</p>
+      </div>
+    </div>
+
+    <!-- EXITO -->
+    <div class="done" id="doneView">
+      <div class="tick">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0A6E50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h2>¡Recibido! Te contactamos pronto</h2>
+      <p>Gracias por el interés. Revisaremos tu análisis y nos pondremos en contacto contigo muy pronto para verlo juntos.</p>
+    </div>
+
+    <div class="foot">
+      <div class="brand">Evolution<span>360</span></div>
+      <a href="mailto:evolution360.ai@gmail.com">evolution360.ai@gmail.com</a>
+    </div>
+  </div>
+  <p class="tag" style="text-align:center;color:#9AA4B2;font-size:11.5px;margin-top:16px">Entendemos tu negocio. Diseñamos su evolución.</p>
+</div>
+
+<script>
+/* ===== CONFIG: rellenar cuando tengamos el backend (Google Form) =====
+   formAction: URL que termina en /formResponse
+   fields: el ID "entry.NNN" de cada pregunta del Google Form               */
+const CONFIG = {
+  formAction: 'https://docs.google.com/forms/d/e/1FAIpQLSfNaE7V93ts-yjpiQopKtyKw0ur-7Wh2ZT1jhRU7FsvJUmoEA/formResponse',
+  fields: { nombre:'entry.1252148556', email:'entry.1388524948', telefono:'entry.1923178992', canal:'entry.1743443123', reto:'entry.553060738', plazo:'entry.2081636187' },
+  autoCapture: true   // envia el interes en cuanto abren la pagina, con los datos del enlace (no dependen de rellenar)
+};
+
+// Prefill desde el enlace del email (?n=&e=&c=)
+const qs = new URLSearchParams(location.search);
+if (qs.get('n')) document.getElementById('f_nombre').value = qs.get('n');
+if (qs.get('e')) document.getElementById('f_email').value = qs.get('e');
+
+function collect(){
+  const f = document.getElementById('interesForm');
+  const g = (n)=> (f.elements[n] ? f.elements[n].value : '') || '';
+  return { nombre:g('nombre'), email:g('email'), telefono:g('telefono'), canal:g('canal'), reto:g('reto'), plazo:g('plazo') };
+}
+function sendToBackend(data){
+  if(!CONFIG.formAction || CONFIG.formAction.indexOf('REEMPLAZAR')===0) return; // aun sin backend
+  const body = new URLSearchParams();
+  for(const k in CONFIG.fields){ if(data[k]) body.append(CONFIG.fields[k], data[k]); }
+  fetch(CONFIG.formAction, { method:'POST', mode:'no-cors', body });
+}
+// Captura automatica del interes al abrir (independiente del formulario)
+if (CONFIG.autoCapture && (qs.get('e') || qs.get('n'))) {
+  sendToBackend({ nombre:qs.get('n')||'', email:qs.get('e')||'', reto:'[Interes desde el informe]' });
+}
+document.getElementById('sendBtn').addEventListener('click', function(){
+  sendToBackend(collect());
+  document.getElementById('formView').classList.add('hide');
+  document.getElementById('doneView').classList.add('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+</script>
+</body>
+</html>
