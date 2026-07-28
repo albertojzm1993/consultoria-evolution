@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evolution 360 · Cómo funciona · Presentación</title>
+<meta name="description" content="Presentación de cliente: qué es Evolution 360 y cómo funciona, paso a paso. Construida desde la web y el proceso real.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0E2A47; --navy-deep:#0A1E35; --navy-line:#21456b;
+    --green:#10B981; --green2:#34D399; --green-ink:#0A6E50;
+    --ink:#EAF0F7; --body:#C5D3E4; --muted:#8FA6C0;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#05101d;
+    overflow:hidden;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:Poppins,system-ui,sans-serif;letter-spacing:-.025em;line-height:1.06;font-weight:700}
+
+  /* ---- Deck frame ---- */
+  .deck{position:fixed;inset:0}
+  .slide{
+    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+    padding:clamp(2rem,5vw,4.2rem) clamp(2rem,7vw,7rem) clamp(4.2rem,7vw,5.4rem);
+    background:
+      radial-gradient(1200px 700px at 80% -14%, rgba(16,185,129,.15), transparent 58%),
+      radial-gradient(900px 600px at 6% 114%, rgba(52,211,153,.09), transparent 60%),
+      linear-gradient(160deg, #0d233c 0%, #0a1c31 55%, #081627 100%);
+    opacity:0;visibility:hidden;transform:translateY(14px) scale(.995);
+    transition:opacity .5s var(--ease), transform .5s var(--ease), visibility .5s;
+  }
+  .slide.on{opacity:1;visibility:visible;transform:none;z-index:2}
+  .slide.prev{transform:translateY(-14px) scale(.995)}
+  .slide.cover{justify-content:flex-start;padding-top:clamp(3.4rem,13vh,9rem)}
+  .slide.top{justify-content:flex-start;padding-top:clamp(2.4rem,7vh,4.4rem)}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:.55rem;align-self:flex-start;
+    font-family:Poppins;font-weight:600;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--green2);background:rgba(16,185,129,.10);border:1px solid rgba(52,211,153,.34);
+    border-radius:999px;padding:.42rem .9rem;margin-bottom:1.1rem}
+
+  h1.title{font-size:clamp(2.7rem,6.6vw,5.6rem);font-weight:800;letter-spacing:-.04em;line-height:1}
+  h1.title .thin{display:block;font-weight:300;color:#8fa0b6;font-size:.36em;letter-spacing:.02em;margin-bottom:.9rem}
+  h1.title .g{color:var(--green2)}
+  h2{font-size:clamp(1.75rem,3.9vw,3rem);color:#fff}
+  h2 .g{color:var(--green2)}
+  .lead{margin-top:1rem;font-size:clamp(1rem,1.7vw,1.32rem);color:var(--body);max-width:62ch;line-height:1.5}
+  .kicker{font-family:Poppins;font-weight:500;color:var(--muted);font-size:clamp(1rem,1.55vw,1.22rem);margin-top:1.3rem}
+  .kicker b{color:#fff;font-weight:600}
+
+  /* portada */
+  .cover-sub{margin-top:1.8rem;max-width:30ch;font-family:Poppins;font-weight:600;line-height:1.18;
+    color:#fff;font-size:clamp(1.5rem,3.1vw,2.5rem);letter-spacing:-.02em}
+  .cover-sub .g{color:var(--green2)}
+  .cover-note{margin-top:1.1rem;color:var(--muted);font-size:1.05rem}
+
+  /* situación: dos tarjetas de igual altura */
+  .sit{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 1.6rem;margin-top:1.4rem;align-items:stretch}
+  .grp{background:rgba(255,255,255,.03);border:1px solid var(--navy-line);border-radius:16px;padding:1.35rem 1.45rem;display:flex;flex-direction:column}
+  .grp.b{background:linear-gradient(180deg,rgba(16,185,129,.08),rgba(16,185,129,.02));border-color:rgba(52,211,153,.34)}
+  .grp .h{font-family:Poppins;font-weight:700;font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;color:var(--green2);
+    margin-bottom:1rem;display:flex;align-items:center;gap:.55rem}
+  .grp .h::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--green2)}
+  .q2{font-family:Poppins;font-weight:500;font-size:clamp(.96rem,1.45vw,1.16rem);color:var(--ink);line-height:1.28;
+    padding-left:.9rem;border-left:2px solid var(--green2);margin-bottom:.72rem}
+  .q2:last-child{margin-bottom:0}
+  @media(max-width:820px){.sit{grid-template-columns:1fr}}
+
+  /* camino: DOS EJES — lo que ves tú (arriba) / lo que ocurre por dentro (abajo) */
+  .journey{margin-top:1.8rem}
+  .lane-cap{font-family:Poppins;font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--green2);display:flex;align-items:center;gap:.5rem;margin:0 0 .85rem}
+  .lane-cap.low{margin:2.1rem 0 .85rem;color:var(--muted)}
+  .lane-cap::after{content:"";flex:1;height:1px;background:var(--navy-line)}
+  .jgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem}
+  .jcard{border:1px solid var(--navy-line);border-radius:12px;padding:.72rem .82rem;cursor:pointer;
+    font-size:.85rem;line-height:1.3;transition:border-color .25s var(--ease),background-color .25s var(--ease),transform .25s var(--ease)}
+  .jcard:hover{transform:translateY(-2px);border-color:rgba(52,211,153,.55)}
+  .jcard.you{background:rgba(255,255,255,.04);color:#fff;font-family:Poppins;font-weight:500}
+  .jcard.ins{background:rgba(16,185,129,.05);color:var(--body)}
+  .jcard.sel{border-color:var(--green2)}
+  .jcard.you.sel{background:rgba(16,185,129,.14)}
+  .jcard.ins.sel{background:rgba(16,185,129,.12);color:#fff}
+  .jnodes{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;margin:.3rem 0 2.3rem}
+  .jnodes::before{content:"";position:absolute;left:10%;right:10%;top:17px;height:2px;background:var(--navy-line)}
+  .jnode{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:.3rem;cursor:pointer;background:none;border:0;font-family:inherit}
+  .jnode .dot{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:Poppins;font-weight:700;font-size:1rem;color:var(--green2);background:#0a1c31;border:2px solid var(--navy-line);transition:all .25s var(--ease)}
+  .jnode .nm{font-family:Poppins;font-weight:600;font-size:.82rem;color:var(--muted);transition:color .25s var(--ease)}
+  .jnode.sel .dot{color:#05101d;background:var(--green2);border-color:var(--green2);box-shadow:0 0 0 5px rgba(16,185,129,.18)}
+  .jnode.sel .nm{color:#fff}
+  .jdetail{margin-top:1.6rem;background:rgba(255,255,255,.025);border:1px solid var(--navy-line);border-left:3px solid var(--green2);
+    border-radius:12px;padding:.75rem 1.05rem;min-height:62px}
+  .jdetail p{color:var(--body);font-size:.85rem;line-height:1.4;max-width:88ch}
+  .jdetail .get{display:inline-flex;gap:.5rem;margin-top:.45rem;font-size:.85rem}
+  .jdetail .get b{color:var(--green2);font-family:Poppins;font-weight:600;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;align-self:center}
+  .jdetail .get span{color:#fff}
+
+  /* dos formas */
+  .fork{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:2rem}
+  .path{border:1px solid var(--navy-line);border-radius:18px;padding:1.7rem 1.8rem;background:rgba(255,255,255,.03)}
+  .path.b{background:linear-gradient(180deg,rgba(16,185,129,.12),rgba(16,185,129,.02));border-color:rgba(52,211,153,.4)}
+  .path .tag{font-family:Poppins;font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green2)}
+  .path h3{color:#fff;font-size:1.5rem;margin:.6rem 0 .6rem}
+  .path p{color:var(--body);font-size:1.05rem;line-height:1.5}
+  @media(max-width:820px){.fork{grid-template-columns:1fr}}
+
+  /* qué te construimos — 6 bloques + cajitas */
+  .build{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.3rem}
+  .build .col{background:rgba(255,255,255,.025);border:1px solid var(--navy-line);border-radius:15px;padding:1rem 1.05rem 1.1rem;position:relative;overflow:hidden}
+  .build .col::before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:linear-gradient(90deg,var(--green),var(--green2))}
+  .build .col .k{font-family:Poppins;font-weight:700;color:#fff;font-size:1.05rem}
+  .build .col .s{color:var(--green2);font-size:.68rem;font-family:Poppins;font-weight:600;letter-spacing:.03em;margin:.12rem 0 .7rem}
+  .chips{display:flex;flex-wrap:wrap;gap:.38rem}
+  .chip{font-size:.78rem;color:var(--body);background:rgba(255,255,255,.05);border:1px solid var(--navy-line);border-radius:8px;padding:.3rem .55rem;line-height:1.1}
+  @media(max-width:820px){.build{grid-template-columns:1fr 1fr}}
+
+  /* comparación */
+  .cmp{margin-top:1.7rem;border:1px solid var(--navy-line);border-radius:18px;overflow:hidden}
+  .cmp .row{display:grid;grid-template-columns:.85fr 1.25fr 1.25fr}
+  .cmp .row+.row{border-top:1px solid var(--navy-line)}
+  .cmp .row>div{padding:.9rem 1.3rem}
+  .cmp .lab{color:var(--muted);font-family:Poppins;font-weight:600;font-size:.95rem}
+  .cmp .trad{color:var(--body);font-size:1rem;border-left:1px solid var(--navy-line)}
+  .cmp .evo{color:#fff;font-size:1rem;border-left:1px solid rgba(52,211,153,.35);background:rgba(16,185,129,.06)}
+  .cmp .head .lab{color:transparent}
+  .cmp .head .trad{color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;font-family:Poppins}
+  .cmp .head .evo{color:var(--green2);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;font-family:Poppins}
+  @media(max-width:820px){.cmp .row{grid-template-columns:1fr}.cmp .trad,.cmp .evo{border-left:0}}
+
+  /* cómo trabajamos + valores (mismo estilo y letra) */
+  .work{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:1.1rem}
+  .work.three{grid-template-columns:repeat(3,1fr)}
+  .w{background:rgba(255,255,255,.03);border:1px solid var(--navy-line);border-radius:14px;padding:1.05rem 1.1rem}
+  .w b{color:#fff;font-family:Poppins;font-weight:600;font-size:1rem;display:flex;gap:.5rem;align-items:baseline}
+  .w b::before{content:"✓";color:var(--green2);font-weight:700}
+  .w p{color:var(--muted);font-size:.85rem;margin-top:.35rem;line-height:1.35}
+  .subhead{margin-top:1.5rem;font-family:Poppins;font-weight:700;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green2);display:flex;align-items:center;gap:.6rem}
+  .subhead::after{content:"";flex:1;height:1px;background:var(--navy-line)}
+  @media(max-width:820px){.work{grid-template-columns:1fr 1fr}.work.three{grid-template-columns:1fr}}
+
+  /* cierre — qué ganas */
+  .wins{margin-top:4rem;display:flex;flex-direction:column;gap:1.05rem;max-width:66ch}
+  .win{display:flex;gap:.95rem;align-items:flex-start}
+  .win .t{flex:0 0 auto;width:32px;height:32px;border-radius:9px;background:rgba(16,185,129,.16);border:1px solid rgba(52,211,153,.4);display:grid;place-items:center;color:var(--green2);font-weight:700;margin-top:.1rem}
+  .win b{color:#fff;font-family:Poppins;font-weight:600;font-size:clamp(1.15rem,1.9vw,1.42rem);display:block}
+  .win p{color:var(--body);font-size:clamp(.98rem,1.5vw,1.1rem);line-height:1.45;margin-top:.25rem}
+
+  /* ---- Bottom chrome ---- */
+  .brandline{position:fixed;left:clamp(1.6rem,4vw,2.4rem);bottom:clamp(1.1rem,2.4vw,1.6rem);display:flex;align-items:center;gap:.6rem;
+    font-family:Poppins;font-weight:600;letter-spacing:-.01em;color:#fff;font-size:1rem;z-index:22}
+  .brandline .ring{width:22px;height:22px;border-radius:50%;border:3px solid var(--green2);border-right-color:transparent;transform:rotate(-45deg)}
+  .brandline .three{color:var(--green2)}
+
+  .dots{position:fixed;right:clamp(1.2rem,3vw,2rem);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.5rem;z-index:22}
+  .dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.22);cursor:pointer;padding:0;transition:background-color .25s var(--ease),border-radius .25s var(--ease)}
+  .dots button.on{background:var(--green2);height:22px;border-radius:6px}
+
+  .ctrl{position:fixed;right:clamp(1.6rem,4vw,2.4rem);bottom:clamp(1rem,2.4vw,1.5rem);display:flex;align-items:center;gap:.85rem;z-index:22}
+  .counter{font-family:Poppins;font-weight:600;color:var(--muted);font-size:.85rem}
+  .counter b{color:#fff}
+  .ctrl .arrows{display:flex;gap:.4rem}
+  .ctrl button{background:rgba(255,255,255,.06);border:1px solid var(--navy-line);color:var(--ink);width:42px;height:42px;border-radius:11px;font-size:1.1rem;cursor:pointer;transition:all .2s var(--ease)}
+  .ctrl button:hover{background:rgba(16,185,129,.16);border-color:var(--green2)}
+  .progress{position:fixed;left:0;top:0;height:3px;background:linear-gradient(90deg,var(--green),var(--green2));z-index:30;transition:width .5s var(--ease)}
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+<div class="deck" id="deck">
+
+  <!-- 1 · PORTADA -->
+  <section class="slide cover on">
+    <span class="eyebrow">Consultoría para pymes y autónomos</span>
+    <h1 class="title"><span class="thin">Evolution 360</span>Descubrimos qué <span class="g">frena</span> tu negocio<br>— y lo <span class="g">construimos contigo.</span></h1>
+    <p class="cover-sub">Qué hacemos y <span class="g">cómo funciona</span>, paso a paso.</p>
+    <p class="cover-note">Te lo analizamos, te damos la hoja de ruta y lo ponemos en marcha contigo.</p>
+  </section>
+
+  <!-- 2 · PUNTO DE PARTIDA (pequeña vs mediana, igual altura) -->
+  <section class="slide">
+    <span class="eyebrow">El punto de partida · Escuchamos</span>
+    <h2>¿En qué <span class="g">situación</span> te encuentras?</h2>
+    <p class="lead" style="margin-top:.85rem">No es lo mismo una estructura pequeña que una mediana: los procesos y los problemas son distintos. Escuchamos los dos.</p>
+    <div class="sit">
+      <div class="grp">
+        <div class="h">Estructura pequeña · autónomo</div>
+        <p class="q2">«Trabajo más que nunca y el negocio no despega.»</p>
+        <p class="q2">«Si paro yo, se para todo: depende de mí.»</p>
+        <p class="q2">«Capto clientes a pulso, sin un sistema detrás.»</p>
+        <p class="q2">«Tareas repetitivas me comen el día.»</p>
+        <p class="q2">«Oigo "IA" por todas partes y no sé cómo aplicarla.»</p>
+      </div>
+      <div class="grp b">
+        <div class="h">Estructura mediana</div>
+        <p class="q2">«Quiero entrar en nuevos sectores o clientes y no sé por dónde.»</p>
+        <p class="q2">«Tengo equipos y procesos, pero no terminan de escalar.»</p>
+        <p class="q2">«Herramientas y datos sueltos, sin una foto clara.»</p>
+        <p class="q2">«Dependo de personas clave; si se van, tiemblo.»</p>
+        <p class="q2">«Sé que puedo optimizar mucho, pero no por dónde empezar.»</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · EL CAMINO, PASO A PASO (dos ejes, interactiva) -->
+  <section class="slide top">
+    <span class="eyebrow">Qué hacemos · cómo funciona</span>
+    <h2>El camino, <span class="g">paso a paso.</span> <span style="font-size:.5em;font-weight:400;color:var(--muted)">Pulsa cada etapa.</span></h2>
+    <p class="lead" style="margin-top:.55rem;max-width:78ch">Arriba, lo que <b style="color:#fff">ves tú</b>. Abajo, lo que <b style="color:#fff">ocurre por dentro</b> en cada etapa. De la primera charla al acompañamiento continuo — y empiezas gratis.</p>
+    <div class="journey">
+      <div class="jnodes" id="jNodes"></div>
+      <div class="lane-cap">Lo que ves tú</div>
+      <div class="jgrid" id="jTop"></div>
+      <div class="lane-cap low">Lo que ocurre por dentro</div>
+      <div class="jgrid" id="jBot"></div>
+    </div>
+    <div class="jdetail" id="stepDetail"></div>
+  </section>
+
+  <!-- 5 · DOS FORMAS -->
+  <section class="slide">
+    <span class="eyebrow">Tú eliges</span>
+    <h2>Dos formas de <span class="g">trabajar contigo.</span></h2>
+    <p class="lead">Lo que decidamos hacer se puede montar de dos maneras. Eliges tú —o una mezcla de las dos.</p>
+    <div class="fork">
+      <div class="path">
+        <span class="tag">Opción A · Codo con codo</span>
+        <h3>Lo construimos juntos</h3>
+        <p>Lo montamos nosotros, mano a mano contigo y tu equipo. Tú decides y validas, nosotros ejecutamos: lo recibes funcionando y sabiendo cómo va.</p>
+      </div>
+      <div class="path b">
+        <span class="tag">Opción B · Autonomía</span>
+        <h3>Te formamos y lo llevas tú</h3>
+        <p>Te enseñamos a ti y a tu equipo a trabajar con estas herramientas y montáis vosotros los procesos. Autonomía total, sin depender de nadie.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · QUÉ TE CONSTRUIMOS (6 bloques + cajitas) -->
+  <section class="slide">
+    <span class="eyebrow">Lo que se ejecuta</span>
+    <h2>Qué te <span class="g">construimos.</span></h2>
+    <div class="build">
+      <div class="col">
+        <div class="k">Presencia</div><div class="s">Que te encuentren y te elijan</div>
+        <div class="chips"><span class="chip">Web y landing pages</span><span class="chip">Captación / leads</span><span class="chip">SEO y contenido</span><span class="chip">Redes y marca</span><span class="chip">Reseñas</span></div>
+      </div>
+      <div class="col">
+        <div class="k">Eficiencia</div><div class="s">Hacer más en menos tiempo</div>
+        <div class="chips"><span class="chip">Automatización</span><span class="chip">Integrar herramientas</span><span class="chip">Tareas repetitivas</span><span class="chip">Plantillas</span><span class="chip">Reporting</span></div>
+      </div>
+      <div class="col">
+        <div class="k">Capacidad</div><div class="s">Que no dependa de ti</div>
+        <div class="chips"><span class="chip">Empresa agéntica</span><span class="chip">Agentes propios</span><span class="chip">Atención automática</span><span class="chip">Procesos solos</span><span class="chip">Formación</span></div>
+      </div>
+      <div class="col">
+        <div class="k">Datos</div><div class="s">Decidir con información</div>
+        <div class="chips"><span class="chip">CRM / ERP</span><span class="chip">Panel de métricas</span><span class="chip">Índice de Evolución</span><span class="chip">Datos unificados</span><span class="chip">Analítica</span></div>
+      </div>
+      <div class="col">
+        <div class="k">Ventas</div><div class="s">Cerrar más y mejor</div>
+        <div class="chips"><span class="chip">Embudo comercial</span><span class="chip">Seguimiento de leads</span><span class="chip">Propuestas</span><span class="chip">Postventa</span><span class="chip">Fidelización</span></div>
+      </div>
+      <div class="col">
+        <div class="k">Estrategia</div><div class="s">Hacia dónde crecer</div>
+        <div class="chips"><span class="chip">Nuevos mercados</span><span class="chip">Nuevos sectores</span><span class="chip">Pricing</span><span class="chip">Posicionamiento</span><span class="chip">Plan de crecimiento</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · POR QUÉ EVOLUTION (comparación) -->
+  <section class="slide">
+    <span class="eyebrow">Por qué Evolution</span>
+    <h2>Lo que antes solo tenían <span class="g">las grandes.</span></h2>
+    <div class="cmp">
+      <div class="row head"><div class="lab">·</div><div class="trad">Consultora tradicional</div><div class="evo">Evolution 360</div></div>
+      <div class="row"><div class="lab">Coste</div><div class="trad">Miles al mes, contratos largos</div><div class="evo">A precio de pyme</div></div>
+      <div class="row"><div class="lab">Arranque</div><div class="trad">Meses de análisis</div><div class="evo">Diagnóstico gratis, en minutos</div></div>
+      <div class="row"><div class="lab">Entrega</div><div class="trad">Un informe y se van</div><div class="evo">Lo construimos y nos quedamos</div></div>
+      <div class="row"><div class="lab">Método</div><div class="trad">Plantilla estándar</div><div class="evo">A medida de tu negocio</div></div>
+      <div class="row"><div class="lab">Cómo</div><div class="trad">Horas de un equipo caro</div><div class="evo">Un motor propio hace el trabajo pesado</div></div>
+    </div>
+  </section>
+
+  <!-- 8 · CÓMO TRABAJAMOS + NUESTROS VALORES -->
+  <section class="slide">
+    <span class="eyebrow">Cómo trabajamos · nuestros valores</span>
+    <h2>Cómo <span class="g">trabajamos.</span></h2>
+    <div class="work">
+      <div class="w"><b>Nunca vendemos humo</b><p>Solo lo que de verdad mueve tu negocio, medible.</p></div>
+      <div class="w"><b>Trato cercano</b><p>Personas, no tickets. Mano a mano contigo.</p></div>
+      <div class="w"><b>La tecnología no te sustituye</b><p>Es tu herramienta; las decisiones son tuyas.</p></div>
+      <div class="w"><b>Cero riesgo</b><p>Empiezas gratis y avanzas solo si te compensa.</p></div>
+    </div>
+    <div class="subhead">Nuestros valores</div>
+    <div class="work">
+      <div class="w"><b>Comprender antes de proponer</b><p>Primero entendemos tu negocio. Nunca soluciones de catálogo.</p></div>
+      <div class="w"><b>Impacto real y medible</b><p>Transformación, no herramientas. Si no mueve el negocio, no entra.</p></div>
+      <div class="w"><b>Visión de negocio</b><p>Pensamos en tu rentabilidad, no en la tecnología por la tecnología.</p></div>
+      <div class="w"><b>Evolución continua</b><p>No es un proyecto que se cierra: acompañamos tu crecimiento.</p></div>
+    </div>
+  </section>
+
+  <!-- 8 · CIERRE -->
+  <section class="slide cover">
+    <span class="eyebrow">Lo que ganas</span>
+    <h1 class="title" style="font-size:clamp(2.2rem,5.2vw,4.3rem)">Descubre qué <span class="g">frena</span> tu negocio<br>y cómo <span class="g">acelerarlo.</span></h1>
+    <div class="wins">
+      <div class="win"><span class="t">✓</span><div><b>Tú ganas claridad desde el primer día.</b><p>Recibes un diagnóstico y una hoja de ruta casi gratis. El primer mes no va de dinero: va de demostrarte valor antes de hablar de ningún cobro.</p></div></div>
+      <div class="win"><span class="t">✓</span><div><b>Tú ganas tiempo y foco.</b><p>Sabes qué mover primero y lo ponemos en marcha contigo. Dejas de apagar fuegos.</p></div></div>
+      <div class="win"><span class="t">✓</span><div><b>Ganamos los dos.</b><p>Solo seguimos si te compensa: si tú creces, nosotros crecemos contigo. Cero riesgo.</p></div></div>
+    </div>
+  </section>
+
+</div>
+
+<div class="brandline" id="brand"><span class="ring"></span>Evolution <span class="three">360</span></div>
+
+<div class="dots" id="dots"></div>
+<div class="ctrl">
+  <div class="counter" id="counter"><b>1</b> / 8</div>
+  <div class="arrows"><button id="prev" aria-label="Anterior">‹</button><button id="next" aria-label="Siguiente">›</button></div>
+</div>
+
+<script>
+(function(){
+  var STEPS=[
+    {k:'1',t:'Contacto',
+      you:'Una charla y un diagnóstico exprés — gratis.',
+      ins:'Escuchamos tu caso y vemos si encajamos.',
+      d:'Una primera toma de contacto y un diagnóstico exprés, gratis y sin compromiso. Escuchamos tu situación y valoramos si podemos ayudarte de verdad.',
+      get:'Saber si te podemos ayudar, antes de gastar un euro.'},
+    {k:'2',t:'Descubrimiento',
+      you:'Nos sentamos contigo a entender tu negocio.',
+      ins:'Levantamos el Perfil Maestro: procesos y números.',
+      d:'Nos sentamos contigo y levantamos el Perfil Maestro de tu negocio: cómo funciona por dentro, tus números y la persona que hay detrás. No proponemos nada hasta entenderte.',
+      get:'Una foto real de dónde estás y a dónde quieres llegar.'},
+    {k:'3',t:'Consultoría',
+      you:'Te presentamos la hoja de ruta. Decides tú.',
+      ins:'Auditoría 360°, causa raíz e Índice de Evolución.',
+      d:'Auditoría 360° de tus áreas, diagnóstico de la causa raíz y tu Índice de Evolución. Te lo presentamos con la hoja de ruta priorizada: nosotros aconsejamos, la última palabra la tienes tú.',
+      get:'Saber qué falla, cuánto pesa y qué mover primero.'},
+    {k:'4',t:'Implementación',
+      you:'Lo construimos contigo: web, procesos, IA.',
+      ins:'Convertimos el plan en entregables verificados.',
+      d:'Convertimos el plan en entregables reales: web, automatizaciones, procesos y empresa agéntica. Te lo montamos juntos o te formamos para que lo lleves tú. Con calendario y verificado.',
+      get:'Cosas hechas y funcionando, no un informe que se archiva.'},
+    {k:'5',t:'Seguimiento',
+      you:'Te mantenemos y seguimos mejorando.',
+      ins:'Medimos resultados y ajustamos en continuo.',
+      d:'Medimos lo que se implanta, revisamos resultados y ajustamos. Evolution es un acompañamiento de mejora continua, no un proyecto que se cierra y ya.',
+      get:'Un negocio que sigue evolucionando, contigo al mando.'}
+  ];
+  var jTop=document.getElementById('jTop');
+  var jBot=document.getElementById('jBot');
+  var jNodes=document.getElementById('jNodes');
+  var detail=document.getElementById('stepDetail');
+  var curStep=0;
+  STEPS.forEach(function(s,idx){
+    var top=document.createElement('div');
+    top.className='jcard you'+(idx===0?' sel':'');
+    top.textContent=s.you;
+    top.addEventListener('click',function(){selectStep(idx)});
+    jTop.appendChild(top);
+
+    var node=document.createElement('button');
+    node.className='jnode'+(idx===0?' sel':'');
+    node.innerHTML='<span class="dot">'+s.k+'</span><span class="nm">'+s.t+'</span>';
+    node.addEventListener('click',function(){selectStep(idx)});
+    jNodes.appendChild(node);
+
+    var bot=document.createElement('div');
+    bot.className='jcard ins'+(idx===0?' sel':'');
+    bot.textContent=s.ins;
+    bot.addEventListener('click',function(){selectStep(idx)});
+    jBot.appendChild(bot);
+  });
+  var tops=Array.prototype.slice.call(jTop.children);
+  var nodes=Array.prototype.slice.call(jNodes.children);
+  var bots=Array.prototype.slice.call(jBot.children);
+  function renderStep(){
+    var s=STEPS[curStep];
+    detail.innerHTML='<p><b style="color:#fff;font-family:Poppins;font-weight:600">'+s.k+'. '+s.t+' — </b>'+s.d+'</p>'+
+      '<div class="get"><b>Obtienes</b><span>'+s.get+'</span></div>';
+  }
+  function selectStep(idx){
+    curStep=idx;
+    tops.forEach(function(t,k){t.classList.toggle('sel',k===idx)});
+    bots.forEach(function(t,k){t.classList.toggle('sel',k===idx)});
+    nodes.forEach(function(t,k){t.classList.toggle('sel',k===idx)});
+    renderStep();
+  }
+  renderStep();
+
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var n = slides.length, i = 0;
+  var dotsWrap = document.getElementById('dots');
+  var counter = document.getElementById('counter');
+  var prog = document.getElementById('prog');
+  var brand = document.getElementById('brand');
+  slides.forEach(function(s,idx){
+    var b=document.createElement('button'); b.setAttribute('aria-label','Ir a '+(idx+1));
+    b.addEventListener('click',function(){go(idx)}); dotsWrap.appendChild(b);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+  function go(idx){
+    if(idx<0||idx>=n) return;
+    slides[i].classList.remove('on'); slides[i].classList.add('prev');
+    i=idx;
+    slides[i].classList.remove('prev'); slides[i].classList.add('on');
+    dots.forEach(function(d,k){d.classList.toggle('on',k===i)});
+    counter.innerHTML='<b>'+(i+1)+'</b> / '+n;
+    prog.style.width=((i)/(n-1)*100)+'%';
+    brand.style.display = slides[i].classList.contains('cover') ? 'none':'flex';
+  }
+  document.getElementById('next').addEventListener('click',function(){go(i+1)});
+  document.getElementById('prev').addEventListener('click',function(){go(i-1)});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1)}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1)}
+    if(e.key==='Home')go(0); if(e.key==='End')go(n-1);
+  });
+  var x0=null;
+  document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(x0===null)return; var dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>50){dx<0?go(i+1):go(i-1)} x0=null;
+  },{passive:true});
+  go(0);
+})();
+</script>
+</body>
+</html>
