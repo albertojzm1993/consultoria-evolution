@@ -486,6 +486,7 @@ body.embed .poster{display:grid}
     <span class="lbl" id="lblScene">1 / 15</span>
     <span class="time" id="lblTime">0:00 / 1:42</span>
     <button id="replay" title="Reiniciar">↻</button>
+    <button id="mute" title="Sonido">🔊</button>
   </div>
   <div class="music">
     <span>🎵 Música</span>
@@ -694,6 +695,10 @@ if(musicSel)musicSel.onchange=()=>{const v=musicSel.value;
   if(!v){bgm.pause();bgm.removeAttribute('src');bgm.load();return;}
   bgm.src=v;bgm.load();bgm.addEventListener('loadedmetadata',syncAudio,{once:true});};
 if(musicVol)musicVol.oninput=()=>{if(bgm)bgm.volume=musicVol.value/100;};
+// botón de sonido (visible también en modo embed): red de seguridad si el navegador bloquea el audio
+const muteBtn=document.getElementById('mute');
+function setMute(on){if(!bgm)return;bgm.muted=on;muteBtn.textContent=on?'🔇':'🔊';muteBtn.title=on?'Activar sonido':'Silenciar';}
+if(muteBtn)muteBtn.onclick=()=>{setMute(!bgm.muted);if(!bgm.muted){bgm.volume=Math.max(bgm.volume,0.4);bgm.play().catch(()=>{});}};
 // el navegador bloquea el autoplay de audio: arrancamos la música al primer clic/toque
 addEventListener('pointerdown',function startBgm(){syncAudio();removeEventListener('pointerdown',startBgm);});
 // modo EMBED (?embed): arranca en pausa con póster; el clic (gesto del usuario) lanza vídeo + música
@@ -705,7 +710,9 @@ if(EMBED){
   poster.hidden=false;
   poster.addEventListener('click',function go(){
     poster.classList.add('hide');
+    if(bgm){bgm.muted=false;bgm.volume=0.6;}
     seek(0,false);
+    if(bgm)bgm.play().catch(()=>{});   // fuerza el play dentro del gesto del clic
   },{once:true});
 }
 requestAnimationFrame(loop);
