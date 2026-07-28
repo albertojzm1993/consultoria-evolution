@@ -471,7 +471,7 @@ body.embed .poster{display:grid}
 
     <div class="poster" id="poster" hidden>
       <div class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-      <div class="ptag"><span class="pd"></span> Evolution 360 · en 90&nbsp;segundos</div>
+      <div class="ptag"><span class="pd"></span> Pulsa para reproducir con sonido · 90&nbsp;s</div>
     </div>
 
   </div>
@@ -495,7 +495,7 @@ body.embed .poster{display:grid}
       <option value="musica/aylex-seller.mp3">Aylex Seller · más suave (112)</option>
       <option value="">Sin música</option>
     </select>
-    <span>Vol</span><input type="range" id="musicVol" min="0" max="100" value="42">
+    <span>Vol</span><input type="range" id="musicVol" min="0" max="100" value="60">
   </div>
   <div class="chips" id="chips"></div>
 </div>
@@ -517,7 +517,7 @@ const pp=document.getElementById('pp'), lblScene=document.getElementById('lblSce
 const chipsBox=document.getElementById('chips');
 // --- música de fondo, sincronizada con la línea de tiempo del reproductor ---
 const bgm=document.getElementById('bgm');
-if(bgm)bgm.volume=0.42;
+if(bgm)bgm.volume=0.6;
 function syncAudio(){
   if(!bgm)return;
   if(playing && cur<DUR){
