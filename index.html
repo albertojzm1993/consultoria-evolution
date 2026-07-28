@@ -106,6 +106,23 @@
   @media(max-width:1180px){.toc-fab{display:flex}}
   @media(prefers-reduced-motion:reduce){.toc-panel,.readbar{transition:none}}
 
+  /* banda de vídeo: tarjeta que abre el visualizador en otra pestaña */
+  .videoband .wrap{max-width:920px;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .videoband .head{max-width:640px}
+  .vcard{position:relative;display:block;width:min(100%,560px);margin-top:26px;aspect-ratio:16/9;
+    border-radius:18px;overflow:hidden;text-decoration:none;border:1px solid var(--brd);background:#0A1424;
+    box-shadow:0 24px 60px rgba(0,0,0,.42);transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s}
+  .vcard:hover,.vcard:focus-visible{transform:translateY(-4px);border-color:var(--green2);box-shadow:0 34px 84px rgba(16,185,129,.24)}
+  .vposter{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .vscrim{position:absolute;inset:0;background:radial-gradient(circle at 50% 47%,rgba(6,12,22,.10),rgba(6,12,22,.42));transition:background .25s}
+  .vcard:hover .vscrim{background:radial-gradient(circle at 50% 47%,rgba(6,12,22,0),rgba(6,12,22,.30))}
+  .vdur{position:absolute;top:12px;right:12px;background:rgba(6,12,22,.6);color:#eaf3fb;font-weight:600;
+    font-size:.8rem;padding:4px 10px;border-radius:999px;letter-spacing:.02em;backdrop-filter:blur(4px)}
+  .vplay{position:absolute;top:47%;left:50%;transform:translate(-50%,-50%);width:clamp(58px,8vw,76px);height:clamp(58px,8vw,76px);
+    border-radius:50%;background:linear-gradient(120deg,#0E2A47,#10B981);display:grid;place-items:center;box-shadow:0 12px 34px rgba(16,185,129,.45)}
+  .vcard:hover .vplay{transform:translate(-50%,-50%) scale(1.08)}
+  .vplay svg{width:40%;height:40%;fill:#fff;margin-left:6%}
+
   /* hero */
   .hero{position:relative;overflow:hidden}
   .hero::before{content:"";position:absolute;top:-28%;left:50%;transform:translateX(-50%);width:1100px;height:700px;background:radial-gradient(circle,rgba(16,185,129,.2),transparent 62%);z-index:0;pointer-events:none}
@@ -610,6 +627,7 @@
 <nav class="sidenav" id="sidenav" aria-label="Índice de la página">
   <div class="grp">
     <a href="#top" data-t="top" class="main"><span class="lbl">Inicio</span><span class="dot"></span></a>
+    <a href="#video" data-t="video"><span class="lbl">Vídeo · en 90 s</span><span class="dot"></span></a>
     <a href="#ejemplos" data-t="ejemplos"><span class="lbl">¿Te suena? · Ejemplos</span><span class="dot"></span></a>
   </div>
   <div class="grp">
@@ -682,6 +700,23 @@
 </section>
 
 <!-- 1 · EJEMPLOS (4 tarjetas) -->
+<!-- VÍDEO · en 90 segundos -->
+<section class="sec videoband glow" id="video">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="eyebrow">En 90 segundos</div>
+      <h2>Mira quiénes somos y cómo pensamos.</h2>
+      <p>Los mismos frenos que vemos en cientos de negocios, y cómo los resolvemos contigo. Dale al play.</p>
+    </div>
+    <a class="vcard rv" href="video/evolution-video.html?embed" target="_blank" rel="noopener" aria-label="Ver el vídeo de Evolution 360, 90 segundos">
+      <img class="vposter" src="video/poster.jpg" alt="Vídeo de Evolution 360" width="1920" height="1080">
+      <span class="vscrim" aria-hidden="true"></span>
+      <span class="vdur">90 s</span>
+      <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+    </a>
+  </div>
+</section>
+
 <section class="sec" id="ejemplos">
   <div class="wrap">
     <div class="head rv">
@@ -769,6 +804,9 @@
         <button class="hiw-chip" data-i="1"><span class="ci"><svg class="ic"><use href="#i-cpu"/></svg></span><div><b>Paso 2</b><span>Analizamos</span></div><span class="bar"></span></button>
         <button class="hiw-chip" data-i="2"><span class="ci"><svg class="ic"><use href="#i-doc"/></svg></span><div><b>Paso 3</b><span>Recibes diagnóstico</span></div><span class="bar"></span></button>
         <button class="hiw-chip" data-i="3"><span class="ci"><svg class="ic"><use href="#i-rocket"/></svg></span><div><b>Paso 4</b><span>Implementamos</span></div><span class="bar"></span></button>
+      </div>
+      <div style="text-align:center;margin-top:36px">
+        <a class="btn btn-soft" href="como-funciona.html" target="_blank" rel="noopener">Ver la presentación completa <svg class="ic"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
   </div>
@@ -1266,7 +1304,7 @@
         </a>
         <p style="margin-top:16px;font-size:.92rem;max-width:34ch">Descubre el potencial oculto de tu negocio. El diagnóstico primero; la evolución, después.</p>
       </div>
-      <div><h5>La consultoría</h5><a href="#fases">Las 4 fases</a><a href="#como">Cómo funciona</a><a href="#analiza">Qué miramos</a></div>
+      <div><h5>La consultoría</h5><a href="#fases">Las 4 fases</a><a href="#como">Cómo funciona</a><a href="#analiza">Qué miramos</a><a href="como-funciona.html" target="_blank" rel="noopener">Presentación completa</a></div>
       <div><h5>Empezar</h5><a href="#empezar">Analizar mi negocio</a><a href="#programa">Programa Fundadores</a></div>
     </div>
     <div class="base"><span>© 2026 Evolution 360 · <a href="politica-privacidad.html" style="display:inline;padding:0">Política de privacidad</a></span><span>Consultoría de evolución para pymes.</span></div>
