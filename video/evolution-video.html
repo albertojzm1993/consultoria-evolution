@@ -16,7 +16,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#0b0f17;font-family:var(--sans);display:flex;flex-direction:column;
   align-items:center;justify-content:center;min-height:100vh;gap:14px;padding:18px}
-.stage-wrap{width:min(94vw,960px);max-width:100%}
+.stage-wrap{width:min(96vw,calc((100vh - 120px) * 16 / 9));max-width:100%}
 .stage{position:relative;width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;
   background:var(--bg);box-shadow:0 24px 60px rgba(0,0,0,.5);isolation:isolate}
 .scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
@@ -249,7 +249,7 @@ h1{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-height:1.1
 .tagline{color:#C7D2DD;font-size:clamp(12px,1.8vw,17px);margin-top:8px;letter-spacing:.02em}
 
 /* player */
-.player{width:min(94vw,960px);display:flex;flex-direction:column;gap:12px}
+.player{width:min(96vw,calc((100vh - 120px) * 16 / 9));display:flex;flex-direction:column;gap:12px}
 .bar{position:relative;height:9px;background:#1b2130;border-radius:5px;cursor:pointer}
 .bar>i{position:absolute;left:0;top:0;height:100%;width:0;background:var(--grad);border-radius:5px;pointer-events:none}
 .bar .mk{position:absolute;top:50%;transform:translate(-50%,-50%);width:2px;height:13px;background:#39445a;pointer-events:none}
@@ -701,19 +701,30 @@ function setMute(on){if(!bgm)return;bgm.muted=on;muteBtn.textContent=on?'🔇':'
 if(muteBtn)muteBtn.onclick=()=>{setMute(!bgm.muted);if(!bgm.muted){bgm.volume=Math.max(bgm.volume,0.4);bgm.play().catch(()=>{});}};
 // el navegador bloquea el autoplay de audio: arrancamos la música al primer clic/toque
 addEventListener('pointerdown',function startBgm(){syncAudio();removeEventListener('pointerdown',startBgm);});
-// modo EMBED (?embed): arranca en pausa con póster; el clic (gesto del usuario) lanza vídeo + música
+// modo EMBED (?embed): arranca AUTOMÁTICAMENTE. Los visuales no necesitan permiso;
+// el audio sí (el navegador bloquea el autoplay con sonido en pestaña nueva), así que
+// lo intentamos y, si lo bloquea, un cartel discreto invita a tocar para el sonido.
 const EMBED=/(^|[?&])embed(=|&|$)/.test(location.search);
 if(EMBED){
   document.body.classList.add('embed');
-  playing=false; stage.classList.add('paused'); setIcon();
   const poster=document.getElementById('poster');
-  poster.hidden=false;
-  poster.addEventListener('click',function go(){
-    poster.classList.add('hide');
-    if(bgm){bgm.muted=false;bgm.volume=0.6;}
-    seek(0,false);
-    if(bgm)bgm.play().catch(()=>{});   // fuerza el play dentro del gesto del clic
-  },{once:true});
+  if(bgm){bgm.muted=false;bgm.volume=0.6;}
+  seek(0,false);                       // arranca la animación al abrir
+  if(bgm){
+    const p=bgm.play();
+    if(p&&p.catch)p.catch(()=>{        // audio bloqueado por el navegador
+      if(poster){                       // dejamos el cartel de sonido, sin tapar el vídeo
+        poster.hidden=false;
+        poster.style.background='transparent';
+        const pbtn=poster.querySelector('.pbtn'); if(pbtn)pbtn.style.display='none';
+        const ptag=poster.querySelector('.ptag'); if(ptag)ptag.textContent='🔊 Toca para activar el sonido';
+        poster.addEventListener('click',function go(){
+          poster.classList.add('hide');
+          bgm.muted=false;bgm.volume=0.6;bgm.play().catch(()=>{});
+        },{once:true});
+      }
+    });
+  }
 }
 requestAnimationFrame(loop);
 </script>
