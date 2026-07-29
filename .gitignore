@@ -1,0 +1,7 @@
+# Backend privado — NO publicar (este repo es público y se sirve en GitHub Pages).
+# aviso-lead.gs contiene el ID de la hoja de leads (PII: nombres/emails/teléfonos)
+# y los IDs del formulario. Vive en Apps Script; mantener fuera del repo público.
+backend/
+
+# Fuentes de trabajo descargadas para generar assets (no forman parte del sitio).
+*.ttf
