@@ -363,13 +363,27 @@
     var u = API.replace(/\/$/,'') + '/track?ev=' + ev + '&r=' + encodeURIComponent(id);
     try{ if(navigator.sendBeacon){ navigator.sendBeacon(u); } else { fetch(u,{mode:'no-cors',keepalive:true}); } }catch(e){}
   }
+  // Cubrimos TODO con un velo hasta decidir: asi el contenido de ejemplo (demo)
+  // NUNCA se ve como si fuera un informe real. Solo se revela con datos reales.
+  var cover=document.createElement('div');
+  cover.style.cssText='position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;text-align:center;padding:32px;background:#0A1E35;color:#9FB4CC;font:600 16px system-ui,-apple-system,"Segoe UI",Arial,sans-serif';
+  cover.textContent='Cargando tu informe…';
+  document.body.appendChild(cover);
+  function reveal(){ if(cover&&cover.parentNode) cover.parentNode.removeChild(cover); }
+  function honest(msg){
+    cover.innerHTML='<div style="max-width:460px"><div style="font-size:22px;font-weight:700;color:#E7EEF6;margin-bottom:12px">No hemos podido cargar tu informe</div><p style="line-height:1.6;margin:0">'+esc(msg)+'</p><p style="margin:22px 0 0"><a href="https://evolution360ai.github.io/consultoria-evolution/" style="color:#34D399;font-weight:700;text-decoration:none">Volver a Evolution 360 &rarr;</a></p></div>';
+  }
+  function esReal(d){ return d && typeof d==='object' && (d.indice!=null || Array.isArray(d.dimensiones) || Array.isArray(d.fortalezas)); }
   if (LIVE) {
     fetch(API.replace(/\/$/,'') + '/report/' + encodeURIComponent(id))
       .then(function(r){ return r.ok ? r.json() : null; })
-      .then(function(d){ if(d) render(d); }).catch(function(){});
+      .then(function(d){ if(esReal(d)){ render(d); reveal(); } else { honest('Este informe no existe o ha caducado. Si acabas de rellenar el formulario, abre el enlace desde el email que te enviamos.'); } })
+      .catch(function(){ honest('Hubo un problema de conexion al cargar tu informe. Vuelve a intentarlo en unos minutos.'); });
     ping('open');
-  } else if (window.__REPORT__) {
-    render(window.__REPORT__);
+  } else if (esReal(window.__REPORT__)) {
+    render(window.__REPORT__); reveal();
+  } else {
+    honest('Este enlace no incluye ningun informe. Rellena el formulario en Evolution 360 para recibir el tuyo.');
   }
   function fillList(sel, arr){ var ul=document.querySelector(sel); if(ul && Array.isArray(arr)){ ul.innerHTML=arr.map(function(x){ return '<li>'+esc(x)+'</li>'; }).join(''); } }
   function animate(el, target){
