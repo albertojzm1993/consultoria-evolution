@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "base": "https://evolution360ai.github.io/consultoria-evolution",
+    "titulo_blog": "Blog · Evolution 360",
+    "descripcion_blog": "Ideas prácticas sobre crecimiento de pymes, empresas agénticas e IA aplicada al negocio. Sin humo: qué hacer y por qué.",
+    "autor": "Evolution 360",
+    "idioma": "es"
+  },
+  "posts": [
+    {
+      "slug": "que-es-una-empresa-agentica",
+      "titulo": "Qué es una empresa agéntica (y por qué tu pyme debería empezar hoy)",
+      "descripcion": "Una empresa agéntica no es la que usa IA: es la que delega trabajo real a agentes que ejecutan solos. Qué significa, en qué se nota y cómo empezar sin reventar el presupuesto.",
+      "fecha": "2026-07-29",
+      "actualizado": "2026-07-29",
+      "tags": ["empresa agéntica", "IA para pymes", "productividad"],
+      "lectura_min": 6,
+      "portada": "og/og-evolution.png",
+      "destacado": true
+    }
+  ]
+}

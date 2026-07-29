@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog · Evolution 360 — IA aplicada al negocio de tu pyme</title>
+<meta name="description" content="Ideas prácticas sobre crecimiento de pymes, empresas agénticas e IA aplicada al negocio. Sin humo: qué hacer y por qué.">
+<link rel="canonical" href="https://evolution360ai.github.io/consultoria-evolution/blog/">
+<meta name="robots" content="index,follow">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Evolution 360">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Blog · Evolution 360">
+<meta property="og:description" content="Ideas prácticas sobre crecimiento de pymes, empresas agénticas e IA aplicada al negocio.">
+<meta property="og:url" content="https://evolution360ai.github.io/consultoria-evolution/blog/">
+<meta property="og:image" content="https://evolution360ai.github.io/consultoria-evolution/og/og-evolution.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog · Evolution 360">
+<meta name="twitter:description" content="IA aplicada al negocio de tu pyme. Sin humo.">
+<meta name="twitter:image" content="https://evolution360ai.github.io/consultoria-evolution/og/og-evolution.png">
+<link rel="alternate" type="application/rss+xml" title="Blog Evolution 360" href="feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog · Evolution 360",
+  "description": "Ideas prácticas sobre crecimiento de pymes, empresas agénticas e IA aplicada al negocio.",
+  "url": "https://evolution360ai.github.io/consultoria-evolution/blog/",
+  "inLanguage": "es",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Evolution 360",
+    "url": "https://evolution360ai.github.io/consultoria-evolution/"
+  }
+}
+</script>
+<style>
+  :root{
+    --bg:#070C12; --bg2:#0A1016; --card:rgba(255,255,255,.035); --card2:rgba(255,255,255,.06);
+    --brd:rgba(255,255,255,.09); --brd2:rgba(255,255,255,.14);
+    --ink:#EAF0F8; --body:#A7B2C4; --muted:#727D93;
+    --green:#10B981; --green2:#34D399; --green-soft:rgba(16,185,129,.13);
+    --r:16px; --r-lg:22px; --max:1080px; --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--body);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;min-height:100vh}
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(1200px 760px at 50% -12%,rgba(16,185,129,.075),transparent 58%),radial-gradient(1000px 700px at 100% 112%,rgba(16,185,129,.05),transparent 60%)}
+  h1,h2,h3{font-family:Onest,system-ui,sans-serif;color:var(--ink);letter-spacing:-.02em;line-height:1.1;font-weight:700}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;position:relative;z-index:2}
+  /* header */
+  header.top{border-bottom:1px solid var(--brd);padding:18px 0;position:sticky;top:0;background:rgba(7,12,18,.82);backdrop-filter:blur(12px);z-index:20}
+  header.top .wrap{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:10px;font-family:Onest;font-weight:700;color:var(--ink);font-size:1.05rem}
+  .logo .iso{width:30px;height:30px}
+  .logo b{color:var(--green2)}
+  .top .links{display:flex;gap:22px;font-size:.92rem}
+  .top .links a{color:var(--muted)} .top .links a:hover{color:var(--green2)}
+  .cta{background:var(--green);color:#04231A;font-weight:600;padding:9px 16px;border-radius:9999px;font-size:.9rem;font-family:Onest}
+  .cta:hover{background:var(--green2)}
+  /* hero */
+  .hero{padding:72px 0 40px}
+  .eyebrow{font-family:Onest;font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green2)}
+  .hero h1{font-size:clamp(2rem,5vw,3.1rem);margin:16px 0 14px;max-width:16ch}
+  .hero p{max-width:56ch;font-size:1.08rem}
+  /* grid */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;padding:20px 0 80px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}}
+  .post{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--brd);border-radius:var(--r-lg);overflow:hidden;transition:transform .35s var(--ease),border-color .35s var(--ease)}
+  .post:hover{transform:translateY(-4px);border-color:var(--brd2)}
+  .post.feat{grid-column:1/-1;flex-direction:row}
+  @media(max-width:720px){.post.feat{flex-direction:column}}
+  .post .cover{background:linear-gradient(135deg,rgba(16,185,129,.18),rgba(7,12,18,.4));aspect-ratio:16/9;position:relative;flex:none}
+  .post.feat .cover{width:46%;aspect-ratio:auto}
+  @media(max-width:720px){.post.feat .cover{width:100%;aspect-ratio:16/9}}
+  .post .cover span{position:absolute;left:16px;top:16px;background:rgba(7,12,18,.7);border:1px solid var(--brd);color:var(--green2);font-family:Onest;font-weight:600;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;border-radius:9999px}
+  .post .body{padding:24px 24px 26px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .post .meta{font-size:.8rem;color:var(--muted);display:flex;gap:12px}
+  .post h2{font-size:1.3rem} .post.feat h2{font-size:clamp(1.5rem,3vw,2rem)}
+  .post p{font-size:.95rem;color:var(--body)}
+  .post .more{margin-top:auto;color:var(--green2);font-family:Onest;font-weight:600;font-size:.9rem}
+  .empty{padding:60px 0;color:var(--muted)}
+  /* footer */
+  footer{border-top:1px solid var(--brd);padding:40px 0;font-size:.85rem;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer a:hover{color:var(--green2)}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="../index.html" aria-label="Evolution 360 inicio">
+      <svg class="iso" viewBox="-10 -10 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#34D399"/><stop offset="1" stop-color="#10B981"/></linearGradient></defs><path d="M34 22.3 A32 32 0 1 1 60.9 19.9" fill="none" stroke="url(#g)" stroke-width="10" stroke-linecap="round"/><circle cx="60.9" cy="19.9" r="5.4" fill="#34D399"/></svg>
+      <span>Evolution<b> 360</b></span>
+    </a>
+    <nav class="links">
+      <a href="../index.html">Inicio</a>
+      <a href="./">Blog</a>
+      <a class="cta" href="../index.html#empezar">Analizar mi negocio</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Blog</span>
+    <h1>IA aplicada al negocio, sin humo</h1>
+    <p>Ideas prácticas sobre crecimiento de pymes, empresas agénticas e inteligencia artificial que sí mueve la aguja. Qué hacer, por qué y por dónde empezar.</p>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="grid" id="grid" aria-live="polite"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Evolution 360 · <a href="../politica-privacidad.html">Política de privacidad</a></span>
+    <span><a href="feed.xml">RSS</a> · Entendemos tu negocio. Diseñamos su evolución.</span>
+  </div>
+</footer>
+
+<script>
+const BASE = "https://evolution360ai.github.io/consultoria-evolution";
+const meses = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+function fecha(iso){const d=new Date(iso+"T00:00:00");return d.getDate()+" "+meses[d.getMonth()]+" "+d.getFullYear();}
+fetch("posts.json?v="+Date.now())
+  .then(r=>r.json())
+  .then(data=>{
+    const grid=document.getElementById("grid");
+    const posts=(data.posts||[]).slice().sort((a,b)=>b.fecha.localeCompare(a.fecha));
+    if(!posts.length){grid.innerHTML='<p class="empty">Aún no hay artículos publicados. Vuelve pronto.</p>';return;}
+    grid.innerHTML=posts.map((p,i)=>{
+      const feat=(p.destacado&&i===0)?" feat":"";
+      const tag=(p.tags&&p.tags[0])?p.tags[0]:"Artículo";
+      return `<article class="post${feat}">
+        <a class="cover" href="${p.slug}.html" aria-hidden="true" tabindex="-1"><span>${tag}</span></a>
+        <div class="body">
+          <div class="meta"><span>${fecha(p.fecha)}</span><span>${p.lectura_min||5} min de lectura</span></div>
+          <h2><a href="${p.slug}.html">${p.titulo}</a></h2>
+          <p>${p.descripcion}</p>
+          <a class="more" href="${p.slug}.html">Leer artículo →</a>
+        </div>
+      </article>`;
+    }).join("");
+  })
+  .catch(()=>{document.getElementById("grid").innerHTML='<p class="empty">No se pudo cargar la lista de artículos.</p>';});
+</script>
+</body>
+</html>

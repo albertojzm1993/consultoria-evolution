@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog · Evolution 360</title>
+    <link>https://evolution360ai.github.io/consultoria-evolution/blog/</link>
+    <atom:link href="https://evolution360ai.github.io/consultoria-evolution/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Ideas prácticas sobre crecimiento de pymes, empresas agénticas e IA aplicada al negocio. Sin humo: qué hacer y por qué.</description>
+    <language>es</language>
+    <lastBuildDate>Wed, 29 Jul 2026 09:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Qué es una empresa agéntica (y por qué tu pyme debería empezar hoy)</title>
+      <link>https://evolution360ai.github.io/consultoria-evolution/blog/que-es-una-empresa-agentica.html</link>
+      <guid isPermaLink="true">https://evolution360ai.github.io/consultoria-evolution/blog/que-es-una-empresa-agentica.html</guid>
+      <description>Una empresa agéntica no es la que usa IA: es la que delega trabajo real a agentes que ejecutan solos. Qué significa, en qué se nota y cómo empezar sin reventar el presupuesto.</description>
+      <pubDate>Wed, 29 Jul 2026 09:00:00 GMT</pubDate>
+      <category>empresa agéntica</category>
+      <category>IA para pymes</category>
+      <category>productividad</category>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://evolution360ai.github.io/consultoria-evolution/sitemap.xml
