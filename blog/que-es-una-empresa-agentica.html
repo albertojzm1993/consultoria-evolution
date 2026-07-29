@@ -72,15 +72,31 @@
   body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(1200px 760px at 50% -12%,rgba(16,185,129,.07),transparent 58%)}
   a{color:var(--green2);text-decoration:none}a:hover{text-decoration:underline}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;position:relative;z-index:2}
-  header.top{border-bottom:1px solid var(--brd);padding:16px 0;position:sticky;top:0;background:rgba(7,12,18,.82);backdrop-filter:blur(12px);z-index:20}
-  header.top .wrap{max-width:1080px;display:flex;align-items:center;justify-content:space-between}
-  .logo{display:flex;align-items:center;gap:10px;font-family:Onest;font-weight:700;color:var(--ink);font-size:1.05rem}
-  .logo .iso{width:30px;height:30px}.logo b{color:var(--green2)}
-  .top .links{display:flex;gap:20px;font-size:.92rem;align-items:center}
-  .top .links a{color:var(--muted)}.top .links a:hover{color:var(--green2);text-decoration:none}
-  .cta{background:var(--green);color:#04231A!important;font-weight:600;padding:9px 15px;border-radius:9999px;font-size:.88rem;font-family:Onest}.cta:hover{background:var(--green2)}
-  article{padding:44px 0 20px}
-  .crumbs{font-size:.82rem;color:var(--muted);margin-bottom:22px}
+  /* HEADER — idéntico a la landing */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(7,10,18,.72);backdrop-filter:blur(16px);border-bottom:1px solid var(--brd)}
+  .nav .wrap{max-width:1080px;display:flex;align-items:center;justify-content:space-between;height:72px}
+  .nav .links{display:flex;gap:30px}
+  .nav .links a{color:var(--body);font-size:.94rem;font-weight:500}
+  .nav .links a:hover{color:#fff;text-decoration:none}
+  @media(max-width:960px){.nav .links{display:none}}
+  .logo{display:inline-flex;align-items:center;gap:9px}
+  .logo .iso{width:24px;height:24px;flex:none;overflow:visible;align-self:center;display:block;position:relative;top:1px}
+  .logo .wm{position:relative;font-family:Onest;font-weight:700;font-size:21px;letter-spacing:-.02em;color:#fff;line-height:1;display:inline-flex;align-items:center;height:24px}
+  .logo .wm b{color:var(--green2);font-weight:700}
+  .logo .wm .full{position:absolute;left:0;top:50%;transform:translateY(-50%) translateX(-3px);white-space:nowrap;opacity:0;transition:opacity .25s var(--ease),transform .25s var(--ease);pointer-events:none}
+  .logo .wm .short{transition:opacity .2s var(--ease)}
+  .logo:hover .wm .short,.logo:focus-within .wm .short{opacity:0}
+  .logo:hover .wm .full,.logo:focus-within .wm .full{opacity:1;transform:translateY(-50%)}
+  .btn{display:inline-flex;align-items:center;gap:.55em;font-family:Onest;font-weight:600;font-size:1rem;border-radius:9999px;padding:14px 26px;border:1px solid transparent;cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s,color .2s}
+  .btn:hover{text-decoration:none}
+  .btn .ic{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .btn-primary{background:linear-gradient(180deg,var(--green2),var(--green));color:#04231A;box-shadow:0 8px 30px rgba(16,185,129,.35)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 44px rgba(16,185,129,.55)}
+  /* ilustración de cabecera del artículo */
+  .hero-fig{margin:4px 0 32px;border:1px solid var(--brd);border-radius:20px;background:radial-gradient(120% 140% at 50% 0%,rgba(16,185,129,.14),rgba(7,12,18,.2) 60%);overflow:hidden}
+  .hero-fig svg{display:block;width:100%;height:auto}
+  article{padding:60px 0 20px}
+  .crumbs{font-size:.82rem;color:var(--muted);margin-bottom:34px}
   .crumbs a{color:var(--muted)}.crumbs a:hover{color:var(--green2)}
   .kicker{font-family:Onest;font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green2)}
   h1{font-family:Onest;color:var(--ink);font-weight:800;letter-spacing:-.02em;line-height:1.1;font-size:clamp(2rem,5vw,2.7rem);margin:14px 0 16px}
@@ -105,16 +121,17 @@
 </style>
 </head>
 <body>
-<header class="top">
+<header class="nav">
   <div class="wrap">
     <a class="logo" href="../index.html" aria-label="Evolution 360 inicio">
-      <svg class="iso" viewBox="-10 -10 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#34D399"/><stop offset="1" stop-color="#10B981"/></linearGradient></defs><path d="M34 22.3 A32 32 0 1 1 60.9 19.9" fill="none" stroke="url(#g)" stroke-width="10" stroke-linecap="round"/><circle cx="60.9" cy="19.9" r="5.4" fill="#34D399"/></svg>
-      <span>Evolution<b> 360</b></span>
+      <svg class="iso" viewBox="-10 -10 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="gnav" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#34D399"/><stop offset="1" stop-color="#10B981"/></linearGradient></defs><path d="M34 22.3 A32 32 0 1 1 60.9 19.9" fill="none" stroke="url(#gnav)" stroke-width="10" stroke-linecap="round"/><circle cx="60.9" cy="19.9" r="5.4" fill="#34D399"/></svg>
+      <span class="wm"><span class="short">E<b>360</b></span><span class="full">Evolution<b> 360</b></span></span>
     </a>
     <nav class="links">
+      <a href="../index.html">Inicio</a>
       <a href="./">Blog</a>
-      <a class="cta" href="../index.html#empezar">Analizar mi negocio</a>
     </nav>
+    <a class="btn btn-primary" href="../index.html#empezar">Analizar mi negocio <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </header>
 
@@ -124,6 +141,34 @@
     <span class="kicker">IA para pymes</span>
     <h1>Qué es una empresa agéntica (y por qué tu pyme debería empezar hoy)</h1>
     <div class="meta"><span>29 jul 2026</span><span>6 min de lectura</span><span>Evolution 360</span></div>
+
+    <figure class="hero-fig" aria-label="Diagrama: delegas una tarea, el agente la ejecuta solo y devuelve el trabajo hecho">
+      <svg viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg" role="img">
+        <g font-family="Onest, system-ui, sans-serif">
+          <!-- conectores -->
+          <line x1="196" y1="115" x2="316" y2="115" stroke="#34D399" stroke-width="2" stroke-dasharray="1.5 8" stroke-linecap="round" opacity=".8"/>
+          <path d="M330 115 L318 109 L318 121 Z" fill="#34D399"/>
+          <text x="256" y="98" text-anchor="middle" fill="#727D93" font-size="14" font-weight="600">Delegas</text>
+          <line x1="436" y1="115" x2="556" y2="115" stroke="#34D399" stroke-width="2" stroke-dasharray="1.5 8" stroke-linecap="round" opacity=".8"/>
+          <path d="M570 115 L558 109 L558 121 Z" fill="#34D399"/>
+          <text x="496" y="98" text-anchor="middle" fill="#727D93" font-size="14" font-weight="600">Ejecuta solo</text>
+          <!-- nodo Tú -->
+          <circle cx="140" cy="115" r="46" fill="rgba(16,185,129,.10)" stroke="#34D399" stroke-width="1.5"/>
+          <circle cx="140" cy="106" r="9" fill="none" stroke="#EAF0F8" stroke-width="3"/>
+          <path d="M124 132 a16 16 0 0 1 32 0" fill="none" stroke="#EAF0F8" stroke-width="3" stroke-linecap="round"/>
+          <text x="140" y="192" text-anchor="middle" fill="#EAF0F8" font-size="16" font-weight="700">Tú</text>
+          <!-- nodo Agente -->
+          <circle cx="380" cy="115" r="46" fill="rgba(16,185,129,.16)" stroke="#34D399" stroke-width="1.5"/>
+          <path d="M380 92 L386 109 L403 115 L386 121 L380 138 L374 121 L357 115 L374 109 Z" fill="#34D399"/>
+          <text x="380" y="192" text-anchor="middle" fill="#EAF0F8" font-size="16" font-weight="700">Agente</text>
+          <!-- nodo Hecho -->
+          <circle cx="620" cy="115" r="46" fill="rgba(16,185,129,.10)" stroke="#34D399" stroke-width="1.5"/>
+          <rect x="604" y="96" width="32" height="40" rx="4" fill="none" stroke="#EAF0F8" stroke-width="2.5"/>
+          <path d="M611 116 l7 7 l14 -16" fill="none" stroke="#34D399" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="620" y="192" text-anchor="middle" fill="#EAF0F8" font-size="16" font-weight="700">Trabajo hecho</text>
+        </g>
+      </svg>
+    </figure>
 
     <p class="lead">Llevas un año oyendo "usa IA en tu negocio". Y probablemente la has probado: le pides un texto, un resumen, una idea. Útil, pero se queda ahí. La siguiente frontera no es <em>usar</em> IA, es <strong>delegarle trabajo</strong>. A eso se le llama empresa agéntica, y no hace falta ser una gran corporación para empezar.</p>
 
