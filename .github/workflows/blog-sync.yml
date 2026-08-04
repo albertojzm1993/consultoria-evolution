@@ -10,6 +10,7 @@ on:
     paths:
       - 'blog/posts.json'
       - 'blog/generar.mjs'
+      - 'blog/validar.mjs'
       - '.github/workflows/blog-sync.yml'
   workflow_dispatch: {}
 
@@ -29,6 +30,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Validar que cada post de posts.json tiene su .html
+        run: node blog/validar.mjs
 
       - name: Regenerar feed.xml y sitemap.xml
         run: node blog/generar.mjs

@@ -6,7 +6,17 @@
     <atom:link href="https://evolution360ai.github.io/consultoria-evolution/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Ideas prácticas sobre crecimiento de pymes, empresas agénticas e IA aplicada al negocio. Sin humo: qué hacer y por qué.</description>
     <language>es</language>
-    <lastBuildDate>Wed, 29 Jul 2026 09:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 09:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Tu primer agente: cómo elegir la tarea que debes automatizar antes que ninguna otra</title>
+      <link>https://evolution360ai.github.io/consultoria-evolution/blog/primer-agente-para-tu-pyme.html</link>
+      <guid isPermaLink="true">https://evolution360ai.github.io/consultoria-evolution/blog/primer-agente-para-tu-pyme.html</guid>
+      <description>El error no es elegir mal la herramienta, es elegir mal la primera tarea. Cuatro criterios para acertar con el primer agente de tu pyme y qué NO automatizar todavía.</description>
+      <pubDate>Tue, 04 Aug 2026 09:00:00 GMT</pubDate>
+      <category>empresa agéntica</category>
+      <category>automatización</category>
+      <category>IA para pymes</category>
+    </item>
     <item>
       <title>Qué es una empresa agéntica (y por qué tu pyme debería empezar hoy)</title>
       <link>https://evolution360ai.github.io/consultoria-evolution/blog/que-es-una-empresa-agentica.html</link>

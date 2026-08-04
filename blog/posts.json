@@ -13,10 +13,29 @@
       "descripcion": "Una empresa agéntica no es la que usa IA: es la que delega trabajo real a agentes que ejecutan solos. Qué significa, en qué se nota y cómo empezar sin reventar el presupuesto.",
       "fecha": "2026-07-29",
       "actualizado": "2026-07-29",
-      "tags": ["empresa agéntica", "IA para pymes", "productividad"],
+      "tags": [
+        "empresa agéntica",
+        "IA para pymes",
+        "productividad"
+      ],
       "lectura_min": 6,
       "portada": "img/empresa-agentica.svg",
       "destacado": true
+    },
+    {
+      "slug": "primer-agente-para-tu-pyme",
+      "titulo": "Tu primer agente: cómo elegir la tarea que debes automatizar antes que ninguna otra",
+      "descripcion": "El error no es elegir mal la herramienta, es elegir mal la primera tarea. Cuatro criterios para acertar con el primer agente de tu pyme y qué NO automatizar todavía.",
+      "fecha": "2026-08-04",
+      "actualizado": "2026-08-04",
+      "tags": [
+        "empresa agéntica",
+        "automatización",
+        "IA para pymes"
+      ],
+      "lectura_min": 3,
+      "portada": "img/primer-agente.svg",
+      "destacado": false
     }
   ]
 }
