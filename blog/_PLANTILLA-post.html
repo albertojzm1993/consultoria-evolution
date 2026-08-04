@@ -119,6 +119,17 @@
   .cta-box h3{font-size:1.5rem;margin-bottom:10px}
   .cta-box p{max-width:44ch;margin:0 auto 20px;color:var(--body)}
   .cta-box .cta{display:inline-block;padding:13px 26px;font-size:1rem}
+  /* Sigue leyendo — se rellena solo desde posts.json */
+  .more-posts{padding:6px 0 10px;margin-top:24px}
+  .more-posts h2{font-family:Onest;color:var(--ink);font-weight:700;font-size:1.35rem;margin-bottom:18px}
+  .mp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:640px){.mp-grid{grid-template-columns:1fr}}
+  .mp-card{display:flex;flex-direction:column;gap:9px;background:var(--card);border:1px solid var(--brd);border-radius:16px;padding:20px 22px;transition:transform .3s var(--ease),border-color .3s var(--ease)}
+  .mp-card:hover{transform:translateY(-3px);border-color:var(--brd2)}
+  .mp-card .tag{font-family:Onest;font-weight:600;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--green2)}
+  .mp-card h3{font-family:Onest;color:var(--ink);font-weight:700;font-size:1.06rem;line-height:1.25;margin:0}
+  .mp-card p{font-size:.9rem;color:var(--body);margin:0}
+  .mp-card .more{margin-top:6px;color:var(--green2);font-family:Onest;font-weight:600;font-size:.86rem}
   footer{border-top:1px solid var(--brd);padding:36px 0;font-size:.85rem;color:var(--muted);margin-top:40px}
   footer .wrap{max-width:1080px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   footer a{color:var(--muted)}footer a:hover{color:var(--green2)}
@@ -189,11 +200,47 @@
   </div>
 </article>
 
+<section class="more-posts wrap" id="mas" hidden>
+  <h2>Sigue leyendo</h2>
+  <div class="mp-grid" id="mp-grid"></div>
+</section>
+
 <footer>
   <div class="wrap">
     <span>© 2026 Evolution 360 · <a href="../politica-privacidad.html">Política de privacidad</a></span>
     <span><a href="./">← Volver al blog</a></span>
   </div>
 </footer>
+<script>
+/* "Sigue leyendo": lee posts.json, quita el post actual y muestra hasta 2
+   relacionados (primero los que comparten tag, luego el más reciente). */
+(function(){
+  var here=(location.pathname.split("/").pop()||"").replace(/\.html$/,"");
+  fetch("posts.json?v="+Date.now()).then(function(r){return r.json();}).then(function(data){
+    var posts=data.posts||[];
+    var cur=posts.filter(function(p){return p.slug===here;})[0]||{};
+    var curTags=cur.tags||[];
+    var rest=posts.filter(function(p){return p.slug!==here;});
+    rest.sort(function(a,b){
+      var sa=(a.tags||[]).filter(function(t){return curTags.indexOf(t)>=0;}).length;
+      var sb=(b.tags||[]).filter(function(t){return curTags.indexOf(t)>=0;}).length;
+      if(sb!==sa) return sb-sa;
+      return b.fecha.localeCompare(a.fecha);
+    });
+    var pick=rest.slice(0,2);
+    if(!pick.length) return;
+    var esc=function(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");};
+    document.getElementById("mp-grid").innerHTML=pick.map(function(p){
+      var tag=(p.tags&&p.tags[0])?p.tags[0]:"Artículo";
+      return '<a class="mp-card" href="'+p.slug+'.html">'
+        +'<span class="tag">'+esc(tag)+'</span>'
+        +'<h3>'+esc(p.titulo)+'</h3>'
+        +'<p>'+esc(p.descripcion)+'</p>'
+        +'<span class="more">Leer artículo →</span></a>';
+    }).join("");
+    document.getElementById("mas").hidden=false;
+  }).catch(function(){});
+})();
+</script>
 </body>
 </html>
