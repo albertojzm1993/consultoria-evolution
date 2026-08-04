@@ -8,6 +8,21 @@
   },
   "posts": [
     {
+      "slug": "cuanto-cuesta-automatizar-pyme",
+      "titulo": "Cuánto cuesta automatizar una pyme (y por qué el software es lo más barato)",
+      "descripcion": "Spoiler: las herramientas suelen ser gratis o casi. Lo que cuesta es elegir bien qué automatizar y diseñar el proceso. Los tres niveles de inversión y cómo saber si te sale a cuenta.",
+      "fecha": "2026-08-05",
+      "actualizado": "2026-08-05",
+      "tags": [
+        "automatización",
+        "IA para pymes",
+        "empresa agéntica"
+      ],
+      "lectura_min": 4,
+      "portada": "img/cuanto-cuesta-automatizar-pyme.svg",
+      "destacado": false
+    },
+    {
       "slug": "que-es-una-empresa-agentica",
       "titulo": "Qué es una empresa agéntica (y por qué tu pyme debería empezar hoy)",
       "descripcion": "Una empresa agéntica no es la que usa IA: es la que delega trabajo real a agentes que ejecutan solos. Qué significa, en qué se nota y cómo empezar sin reventar el presupuesto.",

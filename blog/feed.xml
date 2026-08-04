@@ -6,7 +6,17 @@
     <atom:link href="https://evolution360ai.github.io/consultoria-evolution/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Ideas prácticas sobre crecimiento de pymes, empresas agénticas e IA aplicada al negocio. Sin humo: qué hacer y por qué.</description>
     <language>es</language>
-    <lastBuildDate>Tue, 04 Aug 2026 09:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 09:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Cuánto cuesta automatizar una pyme (y por qué el software es lo más barato)</title>
+      <link>https://evolution360ai.github.io/consultoria-evolution/blog/cuanto-cuesta-automatizar-pyme.html</link>
+      <guid isPermaLink="true">https://evolution360ai.github.io/consultoria-evolution/blog/cuanto-cuesta-automatizar-pyme.html</guid>
+      <description>Spoiler: las herramientas suelen ser gratis o casi. Lo que cuesta es elegir bien qué automatizar y diseñar el proceso. Los tres niveles de inversión y cómo saber si te sale a cuenta.</description>
+      <pubDate>Wed, 05 Aug 2026 09:00:00 GMT</pubDate>
+      <category>automatización</category>
+      <category>IA para pymes</category>
+      <category>empresa agéntica</category>
+    </item>
     <item>
       <title>Tu primer agente: cómo elegir la tarea que debes automatizar antes que ninguna otra</title>
       <link>https://evolution360ai.github.io/consultoria-evolution/blog/primer-agente-para-tu-pyme.html</link>
