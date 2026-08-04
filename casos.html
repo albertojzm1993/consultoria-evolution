@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casos prácticos · Evolution 360</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0E2A47; --navy-deep:#0A1E35; --green:#10B981; --green-text:#0A6E50;
+    --green-soft:#E7F7F1; --navy-soft:#EAF0F7; --grad:linear-gradient(120deg,#0E2A47,#10B981);
+    --ink:#0B1220; --body:#3F4652; --muted:#71767F; --line:#E5E8EC;
+    --surface:#fff; --bg:#F6F8FB;
+    --r-md:12px; --r-lg:20px; --pill:9999px;
+    --sh-sm:0 1px 2px rgba(10,30,53,.06); --sh-md:0 8px 24px rgba(10,30,53,.10); --sh-lg:0 24px 60px rgba(10,30,53,.16);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--body);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Poppins,system-ui,sans-serif;color:var(--ink);line-height:1.15;letter-spacing:-.02em;margin:0}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+  /* HERO */
+  header{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;inset:0;background:radial-gradient(900px 400px at 85% -10%,rgba(16,185,129,.28),transparent 60%);pointer-events:none}
+  .hero{position:relative;z-index:1;padding:34px 0 72px}
+  .logo{display:flex;align-items:center;gap:12px;margin-bottom:56px}
+  .logo svg{height:38px;width:auto}
+  .eyebrow{font-family:Poppins;font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin:0 0 16px}
+  .hero h1{color:#fff;font-size:clamp(2.1rem,4.6vw,3.3rem);font-weight:700;max-width:16ch}
+  .hero p{color:#C7D2DD;font-size:1.2rem;max-width:60ch;margin:20px 0 0}
+  .hero .tag{margin-top:28px;display:inline-flex;gap:8px;flex-wrap:wrap}
+  .hero .tag span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#EAF0F7;padding:7px 14px;border-radius:var(--pill);font-size:.86rem;font-weight:500}
+
+  /* GRID */
+  main{padding:64px 0 40px}
+  .lead{max-width:64ch;margin:0 auto 48px;text-align:center}
+  .lead h2{font-size:1.9rem;margin-bottom:12px}
+  .lead p{color:var(--muted);font-size:1.05rem;margin:0}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 30px 26px;box-shadow:var(--sh-sm);position:relative;transition:transform .18s ease,box-shadow .18s ease;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg)}
+  .card::before{content:"";position:absolute;left:0;top:26px;bottom:26px;width:4px;border-radius:var(--pill);background:var(--grad);opacity:.9}
+  .num{font-family:Poppins;font-weight:700;font-size:.82rem;color:var(--green-text);letter-spacing:.04em}
+  .card h3{font-size:1.34rem;margin:10px 0 14px;color:var(--navy)}
+  .who{font-size:.9rem;color:var(--muted);margin:0 0 18px}
+  .who b{color:var(--body);font-weight:600}
+  .block{margin:0 0 14px;font-size:.985rem}
+  .block .k{font-family:Poppins;font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green-text);display:block;margin-bottom:3px}
+  .quote{border-left:3px solid var(--green);background:var(--green-soft);padding:12px 16px;border-radius:0 var(--r-md) var(--r-md) 0;color:var(--navy);font-style:italic;margin:0 0 16px;font-size:.97rem}
+  .foot{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .state{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;font-weight:600;color:var(--body)}
+  .dot{width:9px;height:9px;border-radius:50%;flex:none}
+  .live .dot{background:var(--green);box-shadow:0 0 0 3px rgba(16,185,129,.2)}
+  .soon .dot{background:#D97706;box-shadow:0 0 0 3px rgba(217,119,6,.18)}
+  .sol{font-size:.8rem;color:var(--muted);text-align:right}
+
+  footer{background:var(--navy);color:#C7D2DD;margin-top:48px;padding:44px 0}
+  footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  footer strong{color:#fff;font-family:Poppins;font-weight:600}
+  footer a{color:var(--green);text-decoration:none;font-weight:600}
+  .note{max-width:1160px;margin:22px auto 0;padding:0 24px;color:var(--muted);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hero">
+    <div class="logo">
+      <svg viewBox="0 0 430 100" xmlns="http://www.w3.org/2000/svg" aria-label="Evolution 360">
+        <defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#8FB0D6"/><stop offset="1" stop-color="#34D399"/></linearGradient></defs>
+        <g transform="translate(6,13) scale(0.74)"><path d="M34 22.3 A32 32 0 1 1 60.9 19.9" fill="none" stroke="url(#g)" stroke-width="10" stroke-linecap="round"/><circle cx="60.9" cy="19.9" r="5.2" fill="#34D399"/></g>
+        <text x="94" y="64" font-family="Poppins, sans-serif" font-size="45" font-weight="600" letter-spacing="-1" fill="#fff">Evolution<tspan fill="#34D399" font-weight="700"> 360</tspan></text>
+      </svg>
+    </div>
+    <p class="eyebrow">Casos prácticos</p>
+    <h1>Así dejamos de perder tiempo en tareas que una máquina hace sola.</h1>
+    <p>No prometemos: enseñamos. Cada caso es un problema real de un negocio pequeño y
+       cómo lo resolvemos. La tecnología es el motor; lo que ves es el cambio en el negocio.</p>
+    <div class="tag"><span>Prueba &gt; promesa</span><span>Casos anonimizados</span><span>Sin tecnicismos</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="lead">
+    <h2>Once problemas que ya sabemos resolver</h2>
+    <p>De la agenda en un Excel del 97 al lead que se pierde el fin de semana. Cada tarjeta
+       lleva su estado real: lo que <b>ya funciona</b> y lo que se monta a medida.</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- 1 -->
+    <article class="card">
+      <span class="num">CASO 01</span>
+      <h3>El "Excel del 97" te está costando un empleado</h3>
+      <p class="who">Para <b>dueños que "van tirando" con sus sistemas de siempre</b></p>
+      <p class="quote">"Tengo un Excel del 97, estamos en la prehistoria."</p>
+      <p class="block"><span class="k">Qué costaba</span>La agenda de cientos de pacientes en una hoja, la base de datos en un móvil. Le robaron el teléfono y perdió parte de los datos. Todo colgaba de una persona.</p>
+      <p class="block"><span class="k">Cómo lo resolvemos</span>Montamos el sistema mínimo que ordena agenda, contactos y cobros en un solo sitio y empieza a generar datos solo, sin cambiarle la forma de trabajar.</p>
+      <div class="foot"><span class="state soon"><span class="dot"></span>Piezas en vivo · a medida</span><span class="sol">Catálogo #2 · #7</span></div>
+    </article>
+
+    <!-- 2 -->
+    <article class="card">
+      <span class="num">CASO 02</span>
+      <h3>Tu mejor persona, haciendo el peor trabajo</h3>
+      <p class="who">Para <b>dueños con un equipo pequeño y saturado</b></p>
+      <p class="quote">La terapeuta titulada del centro se pasaba el día contestando WhatsApp.</p>
+      <p class="block"><span class="k">Qué costaba</span>El talento mejor pagado, ocupado en lo que menos valor aporta. Cuello de botella para crecer y persona clave quemándose.</p>
+      <p class="block"><span class="k">Cómo lo resolvemos</span>La máquina se come lo repetitivo —recordatorios, reservas, avisos— y la persona vuelve a lo que solo ella sabe hacer. Automatizar no es despedir.</p>
+      <div class="foot"><span class="state soon"><span class="dot"></span>Piezas en vivo · a medida</span><span class="sol">Catálogo #2 · #7</span></div>
+    </article>
+
+    <!-- 3 -->
+    <article class="card">
+      <span class="num">CASO 03</span>
+      <h3>El cliente que te escribió el sábado y perdiste el lunes</h3>
+      <p class="who">Para <b>negocios sin nadie que conteste fuera de horario</b></p>
+      <p class="block"><span class="k">Qué costaba</span>Los interesados con más ganas escriben cuando no hay nadie. Cada fin de semana sin cobertura es una lista de clientes que se van a la competencia.</p>
+      <p class="block"><span class="k">Cómo lo resolvemos</span>El formulario recoge a cada interesado y te avisa al momento, separando al curioso del que pidió contacto de verdad. Te enteras cuando entra, no dos días después.</p>
+      <div class="foot"><span class="state live"><span class="dot"></span>En producción</span><span class="sol">Catálogo #2</span></div>
+    </article>
+
+    <!-- 4 -->
+    <article class="card">
+      <span class="num">CASO 04</span>
+      <h3>Llevas el negocio por intuición: ¿y si además pudieras verlo?</h3>
+      <p class="who">Para <b>dueños alérgicos a los números, pero curiosos</b></p>
+      <p class="quote">"Esa métrica no la tengo… lo tuve un tiempo y era del 80%."</p>
+      <p class="block"><span class="k">Qué costaba</span>Sin datos no ves un bajón hasta que es un agujero, ni sabes qué campaña funcionó. Decisiones a ojo.</p>
+      <p class="block"><span class="k">Cómo lo resolvemos</span>El sistema guarda lo que pasa —sin que apuntes nada— y lo convierte en un panel simple. Además de tu intuición, la foto.</p>
+      <div class="foot"><span class="state soon"><span class="dot"></span>Diagnóstico listo · panel a medida</span><span class="sol">Catálogo #2 · #3</span></div>
+    </article>
+
+    <!-- 5 -->
+    <article class="card">
+      <span class="num">CASO 05</span>
+      <h3>La gente que probó y no volvió es tu mina de oro</h3>
+      <p class="who">Para <b>negocios que no miden a sus "casi clientes"</b></p>
+      <p class="block"><span class="k">Qué costaba</span>Mucha gente probaba y no se quedaba, y nadie sabía por qué. Cada "no" se perdía sin dejar un aprendizaje.</p>
+      <p class="block"><span class="k">Cómo lo resolvemos</span>Cuando el sistema guarda quién probó y no volvió, se hace un seguimiento sencillo y automático: un mensaje a tiempo, una pregunta que recoge la objeción.</p>
+      <div class="foot"><span class="state soon"><span class="dot"></span>Sobre el sistema de datos</span><span class="sol">Catálogo #2 · #7</span></div>
+    </article>
+
+    <!-- 6 -->
+    <article class="card">
+      <span class="num">CASO 06</span>
+      <h3>Publicamos en 4 redes a la vez sin abrir una sola app</h3>
+      <p class="who">Para <b>dueños que no tienen tiempo para redes</b></p>
+      <p class="block"><span class="k">Qué costaba</span>Entrar cada día a Instagram, Facebook y LinkedIn a subir lo mismo, una por una. El contenido es lo primero que se abandona con prisa.</p>
+      <p class="block"><span class="k">Cómo lo resolvemos</span>Se escribe una pieza y el sistema la adapta y publica sola en cada red, a su hora, por los canales oficiales. Un único visto bueno: el contenido.</p>
+      <div class="foot"><span class="state live"><span class="dot"></span>En vivo (IG · FB · LinkedIn)</span><span class="sol">Catálogo #1</span></div>
+    </article>
+
+    <!-- 7 -->
+    <article class="card">
+      <span class="num">CASO 07</span>
+      <h3>El formulario que te avisa en cuanto entra un cliente</h3>
+      <p class="who">Para <b>negocios que pierden interesados por no enterarse a tiempo</b></p>
+      <p class="block"><span class="k">Qué costaba</span>Webs con un formulario que nadie mira: el dato cae en una bandeja olvidada y la respuesta llega tarde, o no llega.</p>
+      <p class="block"><span class="k">Cómo lo resolvemos</span>Cada respuesta queda guardada y te avisa al momento, separando al curioso del que quiere que le llames. La web deja de ser un folleto y pasa a ser una puerta con timbre.</p>
+      <div class="foot"><span class="state live"><span class="dot"></span>En producción</span><span class="sol">Catálogo #2</span></div>
+    </article>
+
+    <!-- 8 -->
+    <article class="card">
+      <span class="num">CASO 08</span>
+      <h3>De una reunión grabada a un informe el mismo día</h3>
+      <p class="who">Para <b>consultores y gestores que pierden horas pasando notas</b></p>
+      <p class="block"><span class="k">Qué costaba</span>Tras una reunión de una hora, las horas de verdad: volver a escuchar el audio y ordenar a mano los problemas del negocio.</p>
+      <p class="block"><span class="k">Cómo lo resolvemos</span>El audio se transcribe en el propio ordenador, sin subirlo a ninguna nube, se extraen los hallazgos clasificados y se rellena la hoja lista para PDF. La reunión de la mañana es informe por la tarde.</p>
+      <div class="foot"><span class="state live"><span class="dot"></span>En vivo · 100% local</span><span class="sol">Catálogo #5</span></div>
+    </article>
+
+    <!-- 9 -->
+    <article class="card">
+      <span class="num">CASO 09</span>
+      <h3>Una web que capta clientes mientras duermes</h3>
+      <p class="who">Para <b>negocios invisibles en Google que dependen del boca a boca</b></p>
+      <p class="block"><span class="k">Qué costaba</span>Muchos buenos negocios no existen en Google. Si nadie te recomienda esa semana, no entra nadie. La captación depende de la suerte.</p>
+      <p class="block"><span class="k">Cómo lo resolvemos</span>Web con blog y SEO donde cada artículo se crea con un comando —sin maquetar a mano— y trabaja como captación pasiva 24/7. Es como está montada la web de Evolution.</p>
+      <div class="foot"><span class="state live"><span class="dot"></span>Construido y probado</span><span class="sol">Catálogo #4</span></div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card">
+      <span class="num">CASO 10</span>
+      <h3>Tu negocio puntuado en 5 minutos</h3>
+      <p class="who">Para <b>dueños que quieren ver antes de comprometerse</b></p>
+      <p class="block"><span class="k">Qué costaba</span>Saber por dónde falla un negocio pedía horas de análisis —o una reunión de ventas disfrazada. El primer paso siempre exigía un salto de fe.</p>
+      <p class="block"><span class="k">Cómo lo resolvemos</span>Revisamos la presencia digital y devolvemos una nota de 0 a 100 y un nivel, con fortalezas, oportunidades y el primer paso, en una página visual de marca. Un diagnóstico honesto antes de gastar un euro.</p>
+      <div class="foot"><span class="state live"><span class="dot"></span>Rápido listo · informe en curso</span><span class="sol">Catálogo #3</span></div>
+    </article>
+
+    <!-- 11 -->
+    <article class="card">
+      <span class="num">CASO 11</span>
+      <h3>Un informe hecho para ti, aunque nunca nos hayas escrito</h3>
+      <p class="who">Para <b>empresas que reciben muchos correos comerciales iguales</b></p>
+      <p class="block"><span class="k">Qué costaba</span>El correo comercial de siempre huele a plantilla: el mismo texto para mil empresas con el nombre cambiado. Se borra sin abrir.</p>
+      <p class="block"><span class="k">Cómo lo resolvemos</span>A partir de una lista de negocios, generamos un mini-diagnóstico real de cada uno —hecho para esa empresa— y lo presentamos como página propia. Algo útil antes de pedirte nada.</p>
+      <div class="foot"><span class="state live"><span class="dot"></span>Motor y ejemplos reales</span><span class="sol">Catálogo #6</span></div>
+    </article>
+
+  </div>
+</main>
+
+<p class="note">Los casos nacidos de un cliente real van anonimizados: nunca su nombre ni datos que lo identifiquen. El dolor sí se usa como materia prima. No se inventan cifras: si no hay dato medido, se cuenta el cambio en cualitativo.</p>
+
+<footer>
+  <div class="wrap">
+    <strong>¿Cuál de estos es tu problema?</strong>
+    <span>Diagnóstico gratis de 5 minutos · <a href="mailto:evolution360.ai@gmail.com">evolution360.ai@gmail.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -8,6 +8,21 @@
   },
   "posts": [
     {
+      "slug": "excel-del-97",
+      "titulo": "El “Excel del 97” te está costando un empleado (y ni lo notas)",
+      "descripcion": "Llevar la agenda, los cobros y la lista de clientes a mano parece gratis, pero se paga en horas y en riesgo. El coste real y cómo se ordena sin cambiarte la forma de trabajar.",
+      "fecha": "2026-08-05",
+      "actualizado": "2026-08-05",
+      "tags": [
+        "automatización",
+        "IA para pymes",
+        "productividad"
+      ],
+      "lectura_min": 5,
+      "portada": "img/excel-del-97.svg",
+      "destacado": true
+    },
+    {
       "slug": "como-empezar-con-ia-en-tu-pyme",
       "titulo": "Cómo empezar con IA en tu pyme: la guía para no perder tiempo ni dinero",
       "descripcion": "La guía completa para dar el primer paso con IA en una pyme sin humo ni gasto inútil: cambiar el chip, elegir la primera tarea, calcular el retorno y montar un sistema que crece contigo.",
@@ -20,7 +35,7 @@
       ],
       "lectura_min": 11,
       "portada": "img/como-empezar-con-ia-en-tu-pyme.svg",
-      "destacado": true
+      "destacado": false
     },
     {
       "slug": "cuanto-cuesta-automatizar-pyme",

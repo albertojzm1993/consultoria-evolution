@@ -1,0 +1,38 @@
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Un Excel del 97 frente a un sistema que se ordena solo">
+  <defs>
+    <linearGradient id="gstar" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#34D399"/><stop offset="1" stop-color="#10B981"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#10B981" stop-opacity=".16"/>
+      <stop offset="60%" stop-color="#0A1016" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="#070C12"/>
+  <rect width="1280" height="720" fill="url(#glow)"/>
+  <g font-family="Onest, system-ui, -apple-system, Segoe UI, sans-serif">
+    <!-- hoja de cálculo antigua -->
+    <g>
+      <rect x="210" y="250" width="330" height="215" rx="14" fill="rgba(255,255,255,.03)" stroke="#3A4657" stroke-width="2"/>
+      <line x1="210" y1="300" x2="540" y2="300" stroke="#3A4657" stroke-width="1.5"/>
+      <line x1="300" y1="250" x2="300" y2="465" stroke="#3A4657" stroke-width="1.5"/>
+      <line x1="210" y1="355" x2="540" y2="355" stroke="#3A4657" stroke-width="1.5"/>
+      <line x1="210" y1="410" x2="540" y2="410" stroke="#3A4657" stroke-width="1.5"/>
+      <rect x="228" y="315" width="52" height="12" rx="6" fill="#2C3646"/>
+      <rect x="320" y="315" width="120" height="12" rx="6" fill="#2C3646"/>
+      <rect x="228" y="370" width="52" height="12" rx="6" fill="#2C3646"/>
+      <rect x="320" y="370" width="150" height="12" rx="6" fill="#2C3646"/>
+      <text x="375" y="512" text-anchor="middle" fill="#727D93" font-size="26" font-weight="600">Excel del 97</text>
+    </g>
+    <!-- flecha -->
+    <path d="M600 357 L700 357 M672 335 L700 357 L672 379" fill="none" stroke="#34D399" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- sistema ordenado (estrella en anillo) -->
+    <g>
+      <circle cx="905" cy="357" r="120" fill="rgba(16,185,129,.13)" stroke="#34D399" stroke-width="2.5"/>
+      <path d="M905 285 L925 342 L982 357 L925 372 L905 429 L885 372 L828 357 L885 342 Z" fill="url(#gstar)"/>
+      <text x="905" y="512" text-anchor="middle" fill="#9BD3C1" font-size="26" font-weight="600">Un sistema que se ordena solo</text>
+    </g>
+    <!-- kicker -->
+    <text x="640" y="150" text-anchor="middle" fill="#34D399" font-size="24" font-weight="700" letter-spacing="4">EVOLUTION 360 · CASO PRÁCTICO</text>
+  </g>
+</svg>
