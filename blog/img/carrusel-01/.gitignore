@@ -1,1 +1,4 @@
-blog/img/carrusel-01/*.html
+*.html
+gfonts.css
+fonts-embedded.css
+fonts/
